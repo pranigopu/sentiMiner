@@ -1,0 +1,41 @@
+Sentiment analysis
+---*---*---
+LINKS FOR RESOURCES
+___
+Amazon Customer Review Dataset:
+https://data.world/datafiniti/consumer-reviews-of-amazon-products
+---*---*---
+DEFINITION
+___
+Sentiment analysis is a natural language processing (NPL) technique used to determine the underlying subjective sentiment (usually divided into the categories "positive", "negative" and "neutral") behind certain data.
+
+Sentiment analysis is often performed on textual data, and can be used to
+- Monitor brand and product sentiments in customer feedback
+- Understand customer needs and desires
+---*---*---
+TYPES
+___
+Fine-grained sentiment analysis
+--x--
+Used when polarity precision (i.e. inclusion of more precise points within a polar scale) is important. Hence, a bipolar scale such as "positive" to "negative" is divided into categories such as:
+- Very positive
+- Positive
+- Neutral
+- Negative
+- Very negative
+
+Another common application of fine-grained sentiment analysis is on a rating based scale (ex. 5 stars => very positive, 1 star => very negative, and everything in between is defined accordingly).
+___
+Emotion detection sentiment analysis
+--x--
+Used to help detect underlying emotions in the data, such as happiness, sadness or anger. Such sentiment analysis may use lexicons that relate various words to the respective emotions, which has its drawbacks, since a word or a set of words may have many different, even constrasting meanings, depending on the context, which can be hard to study and grasp algorithmically.
+___
+Aspect-based sentiment analysis
+--x--
+Used to determine not only what the underlying sentiment in the data is, but also what specifically is the sentiment directed towards.
+
+For example, in the sentence, "The customer service was not able to respond to any of my technical needs", aspect-based sentiment analysis may be able to identify that there is a negative sentiment towards customer service.
+___
+Multilingual sentiment analysis
+--x--
+As the name suggests, it is used to deal with texts that are or may be in multiple languages. It can also involve language detection.
