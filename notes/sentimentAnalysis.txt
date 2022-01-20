@@ -1,10 +1,5 @@
 Sentiment analysis
 ---*---*---
-LINKS FOR RESOURCES
-___
-Amazon Customer Review Dataset:
-https://data.world/datafiniti/consumer-reviews-of-amazon-products
----*---*---
 DEFINITION
 ___
 Sentiment analysis is a natural language processing (NPL) technique used to determine the underlying subjective sentiment (usually divided into the categories "positive", "negative" and "neutral") behind certain data.
