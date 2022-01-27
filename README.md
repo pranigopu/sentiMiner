@@ -21,8 +21,9 @@ http://www.cse.aucegypt.edu/~rafea/SATA/Reports/RequirementsSpecifications-Rafea
 https://towardsdatascience.com/scraping-tripadvisor-text-mining-and-sentiment-analysis-for-hotel-reviews-cc4e20aef333
 <br>
 https://github.com/inistory/Yelp-restaurant-review-sentiment-analysis/blob/master/Yelp_crawler.ipynb
- <br>
+<br>
 https://www.youtube.com/watch?v=6jhwS5JmAbc
+<br>
 https://www.octoparse.com/blog/web-data-crawling-bag-of-words-for-data-mining#
 <br>
 #### Chrome extension
