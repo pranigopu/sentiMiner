@@ -4,6 +4,8 @@
 https://data.world/datafiniti/consumer-reviews-of-amazon-products
 ### Source code & tutorials
 #### General
+https://asperbrothers.com/blog/sentiment-analysis-in-python/
+<br>
 https://techvidvan.com/tutorials/python-sentiment-analysis/
 <br>
 https://monkeylearn.com/blog/opinion-mining/
