@@ -33,3 +33,5 @@ https://www.freecodecamp.org/news/how-to-create-and-publish-a-chrome-extension-i
 <br>
 ## Description
 A project on sentiment analysis of textual data, particularly textual reviews and feedback.
+## Sentiment Analysis Training Model Data using LSTM neural network
+https://asperbrothers.com/blog/sentiment-analysis-in-python/
