@@ -35,3 +35,12 @@ https://www.freecodecamp.org/news/how-to-create-and-publish-a-chrome-extension-i
 A project on sentiment analysis of textual data, particularly textual reviews and feedback.
 ## Sentiment Analysis Training Model Data using LSTM neural network
 https://asperbrothers.com/blog/sentiment-analysis-in-python/
+<br>
+## Chrome Extension using Python Backend (Please do refer these sites):
+https://medium.com/@oaishi.faria/connecting-chrome-extension-with-python-backend-912d1d0db26
+<br>
+https://towardsdatascience.com/building-a-serverless-chrome-extension-f684740e1ffc
+<br>
+https://morioh.com/p/0e3b33fe9851
+<br>
+https://pythonspot.com/create-a-chrome-plugin-with-python/
