@@ -1,4 +1,9 @@
 # Sentiment analysis
+## References
+- Defining artificial intelligence: https://www.britannica.com/technology/artificial-intelligence
+- Defining structured data: https://www.tibco.com/reference-center/what-is-structured-data
+- Steps in text mining: https://www.lexalytics.com/lexablog/text-analytics-functions-explained
+
 ## Defining the problem
 - What is the sentiment behind a text?
 - What sentiments are directed towards what aspects?
@@ -58,7 +63,7 @@ The broad area of machine learning involved here is natural language processing 
 
 ### Elaborating on relevant NLP concepts
 #### Overview
-NLP is a subfield of both linguistics and artificial intelligence. It is the study of computational  methods to process, analyze and interpret natural language data. It involves two broad components:
+NLP is a subfield of both linguistics and artificial intelligence. It is the study of computational<sup>[1](#f1)</sup> methods to process, analyze and interpret natural language data. It involves two broad components:
 1.	Natural language understanding (NLU)
 2.	Natural language generation (NLG)
 
@@ -159,3 +164,6 @@ For our purposes, the tokens are individual words of the text. English follows a
 Sentences are independent units of meaning. Relationships between linguistic units, such objects and modifiers, or aspect and sentiment, are mostly contained within sentences. The end of a sentence signals a temporary end of the process of establishing relationships between linguistic units, which helps in finalizing the observed relationships until that point.
 <br><br>
 End of sentences can be signaled by punctuations such as the period, the exclamation mark or the question mark. But this is not always the case, such punctuations may appear in other contexts.
+
+## Footnotes
+<a name="f1">1</a>: Computation is any type of calculation that includes both arithmetical and non-arithmetical steps and which follows a well-defined model. [https://en.wikipedia.org/wiki/Computation
