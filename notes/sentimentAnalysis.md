@@ -10,17 +10,15 @@ Sentiment refers to
 - Expression of emotion (or lack thereof)
 - Expression of approval (or lack thereof)
 
-**_Identifying sentiment without identifying its target_**<br>
+##### Identifying sentiment without identifying its target
 Sentiment presupposes a target (i.e. an entity or event) for the sentiment. In other words, sentiment is always sentiment about something. However, natural languages allow for more generalized expressions of sentiment i.e. they allow for the identification of a sentiment without having to specify the target of the sentiment, which does exist, but may exist in any form. In other words, we can identify the sentiment (either approximately or accurately) without having to specify what the sentiment is directed towards.
-<br><br>
-**_Context and sequence_**<br>
+##### Context and sequence
 The context in which a linguistic unit is used can play a significant role in determining the linguistic unit's meaning and sentiment. Here, context can be defined as the combination of
 - The known circumstances surrounding the linguistic unit
 - Other linguistic units neighboring the linguistic unit
 - The domain of discussion (ex. subject doubts, hotel reviews, movie critiques...)
 
 Evaluating each unit of the text in appropriate context can be key in determining the meaning and sentiment of the text.
-<br><br>
 Secondly, the sequence in which linguistic units appear, particularly words, can greatly impact the meaning and sentiment of the given text, particularly in more analytical  languages like English. The sequence can help determine
 - Emphases
 - Subjects and objects of a sentence
@@ -29,46 +27,46 @@ Secondly, the sequence in which linguistic units appear, particularly words, can
 - Link between entities, events and actions
 
 #### Machine learning
-**_General overview_**
+##### General overview
 Machine learning is a subset of artificial intelligence. Artificial intelligence, in general terms, is a machine's capacity to perform tasks that used to require sentient intelligence. In more precise terms, artificial intelligence is a machine's capacity to reason, discover meaning in data, generalize observations or learn to past experiences .
-
+<br><br>
 Machine learning is artificial intelligence that learns from available data, and adapts accordingly. In other words, in machine learning, the machine's behavior does not rely only on programmed instructions, but also on the machine's interpretation of available data. Here, programmed instructions define the machine's approach to interpreting the data, but not the machine's ultimate behavior.
 
-Need for machine learning
-1. Computation power
+##### Need for machine learning
+###### Computation power
 Increasing computation power increases the scalability of an application. Machine learning harnesses the computational power of a computer, allowing for applications that process a much greater quantity of data in much lesser time, compared to human labor. Processing more data is helps in the following:
-•	Increasing the probability of find underlying patterns
-•	Decreasing the effect of outliers or abnormal data
-•	Identifying more variables and classes
+- Increasing the probability of find underlying patterns
+- Decreasing the effect of outliers or abnormal data
+- Identifying more variables and classes
 
 Furthermore, being able to process greater quantities of data in much lesser time can help in creating a more useful and usable application.
 
-2. Necessity to adapt to data
+###### Necessity to adapt to data
 Natural language is extremely diverse in terms of concepts and expressions, and varies greatly depending on context. Furthermore, the number of permutations and combinations in which concepts and expressions may appear are practically infinite, and the effects of these permutations and combinations on meaning are often significant.
-
+<br><br>
 However, language is based on rules, which may be clearly defined or implicit in usage. Usage of language usually follows discernible patterns that human speakers learn to identify over time, through experience and education. Similarly, in order to interpret natural language texts accurately, using available data to shape a computer's models of natural language meaning seems to be the best approach.
-
+<br><br>
 Note that this does not consider the validity of the source of the data. For example, the frontpage of a hotel's website may contain overwhelmingly positive reviews, while online review sections may contain a more diverse range of reviews.
 
-Case specific
-Requirement
+##### Case specific
+###### Requirement
 In our case, we need the machine to interpret texts that are written in English, and thereby determine:
-•	The overall underlying sentiment
-•	The underlying sentiments with respect to aspects
+- The overall underlying sentiment
+- The underlying sentiments with respect to aspects
 
 The broad area of machine learning involved here is natural language processing (NLP), which includes sentiment analysis (our area of focus). The logical, algorithmic and programming approach to sentiment analysis is discussed later.
 
-Elaborating on relevant NLP concepts
-Overview
+### Elaborating on relevant NLP concepts
+#### Overview
 NLP is a subfield of both linguistics and artificial intelligence. It is the study of computational  methods to process, analyze and interpret natural language data. It involves two broad components:
 1.	Natural language understanding (NLU)
 2.	Natural language generation (NLG)
 
 For this project, the focus will be on NLU, which deals with the computer's reading comprehension i.e. the ability of the computer to gather, structure and analyze the elements of a natural language source. In this project, we will only focus on digital text sources.
 
-NLU approach
-Text mining
-1. Overview
+#### NLU approach
+##### Text mining
+###### Overview
 Text mining or text analytics is the process of transforming unstructured text into a structured, normalized data. Structured data  implies
 1.	Standardized format (i.e. format uniformly used for every use case)
 2.	Well-defined structure
@@ -79,20 +77,20 @@ Data normalization is the organization of data into a more logical structure, wh
 2.	Data munging (i.e. transforming the data into a more usable format)
 3.	Grouping data according to shared characteristics
 
-2. Purpose
+###### Purpose
 Structuring and normalizing data makes complex processes like machine learning more efficient and effective, since machine learning relies on data quality and accessibility. For example, structuring and normalizing data can help in:
-•	Iterating through elements more efficiently (ex. iterating through words)
-•	Dealing with necessary data (by removing redundancies)
-•	Generalizing a computational method for a standardized format
-•	Efficiently accessing necessary metadata (ex. word index, word count)
+- Iterating through elements more efficiently (ex. iterating through words)
+- Dealing with necessary data (by removing redundancies)
+- Generalizing a computational method for a standardized format
+- Efficiently accessing necessary metadata (ex. word index, word count)
 
-Dealing with ambiguity
+###### Dealing with ambiguity
 Ambiguity in natural language can appear in the following forms:
 1.	Lexical ambiguity (also called semantic ambiguity)
 2.	Syntactic ambiguity
 3.	Referential ambiguity
-Solution approach
-Breakdown
+## Solution approach
+### Breakdown
 The different parts of our solution are covered in the following order:
 1.	Data gathering
 a.	Identifying appropriate online sources
