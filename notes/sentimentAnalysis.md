@@ -166,4 +166,4 @@ Sentences are independent units of meaning. Relationships between linguistic uni
 End of sentences can be signaled by punctuations such as the period, the exclamation mark or the question mark. But this is not always the case, such punctuations may appear in other contexts.
 
 ## Footnotes
-<a name="f1">1</a>: Computation is any type of calculation that includes both arithmetical and non-arithmetical steps and which follows a well-defined model. [https://en.wikipedia.org/wiki/Computation
+<a name="f1">1</a>: Computation is any type of calculation that includes both arithmetical and non-arithmetical steps and which follows a well-defined model. [https://en.wikipedia.org/wiki/Computation]
