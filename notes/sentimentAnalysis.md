@@ -93,49 +93,55 @@ Ambiguity in natural language can appear in the following forms:
 ### Breakdown
 The different parts of our solution are covered in the following order:
 1.	Data gathering
-a.	Identifying appropriate online sources
-b.	Web scraping methods
-c.	Data storage and usage
+  - Identifying appropriate online sources
+  -	Web scraping methods
+  -	Data storage and usage
 2.	Analyzing the overall sentiments for a single text
-a.	Text mining
-b.	Analyzing sentiment
-i.	Conceptual method
-ii.	Machine learning algorithm
-iii.	Programming
+  -	Text mining
+  -	Analyzing sentiment
+    -	Conceptual method
+    -	Machine learning algorithm
+    -	Programming
 3.	Analyzing aspects for a single text
-a.	Text mining
-i.	Conceptual method
-ii.	Machine learning algorithm
-iii.	Programming
+  -	Text mining
+    -	Conceptual method
+    -	Machine learning algorithm
+    -	Programming
 4.	Analyzing relationship between aspects and sentiments
 5.	Scaling up sentiment analysis
 6.	Packaging the application
-Domain of focus
-For the purpose of simplicity, the sentiment analysis is focused on online reviews of hotels. This domain was chosen because hotels depend on reputation and customer satisfaction, and must aim to understand their customers' needs quickly and carefully, which is why sentiment analysis of hotel reviews is a potentially useful application.
 
+### Domain of focus
+For the purpose of simplicity, the sentiment analysis is focused on online reviews of hotels. This domain was chosen because hotels depend on reputation and customer satisfaction, and must aim to understand their customers' needs quickly and carefully, which is why sentiment analysis of hotel reviews is a potentially useful application.
+<br><br>
 Furthermore, hotels must not only gather the overall sentiments of their customers, but also gather their sentiments regarding the different aspects of hotel services, such as housekeeping, furnishing, amenities, etc., so that they can obtain information they can act upon more precisely.
-Data gathering
-Overview
+
+## Data gathering
+### Overview
 Before discussing the methods of analyzing text, we must discuss the methods of acquiring the necessary data. Digital textual data can be available in many forms, such as:
-•	Plain text
-•	Rich text
-•	HTML elements
-•	Photographs
+- Plain text
+- Rich text
+- HTML elements
+- Photographs
 
 Since the focus of our project is on analyzing online hotel reviews, we will be gathering data from websites. Hence, we will focus on gathering data from plain text and HTML elements.
-Identifying appropriate online sources
+
+### Identifying appropriate online sources
 For an online source to be appropriate for our purpose, it needs to be:
-•	Directly related to the hotel business
-•	Contain a well-defined reviews section
-Web scraping methods
+- Directly related to the hotel business
+- Contain a well-defined reviews section
+
+### Web scraping methods
 Web scraping is the extraction of data from websites, which can be done manually or through a program. Our focus is on creating programs to perform web scraping and automatically detect and retrieve reviews.
-Analyzing the overall sentiments for a single text
-Overview
+
+## Analyzing the overall sentiments for a single text
+### Overview
 Here, we aim to understand the methods through which we can identify:
-•	The level of appreciation or disapproval
-•	The level of positive or negative emotions
-•	The overall tone and mood of the text
-Text mining
+-	The level of appreciation or disapproval
+-	The level of positive or negative emotions
+-	The overall tone and mood of the text
+
+### Text mining
 Before any analysis is performed, we need to obtain the necessary data in an efficient and usable form. Text mining involves the following steps :
 1.	Tokenization
 2.	Sentence breaking
@@ -144,13 +150,12 @@ Before any analysis is performed, we need to obtain the necessary data in an eff
 5.	Syntax parsing
 6.	Sentence chaining
 
-Tokenization
+#### Tokenization
 This divides a text into a collection of individual units (tokens). This is the first step in structuring text data, since tokenization converts a text into a well-defined data structure (such as a list or an array) with each unit accessible through simple iteration.
-
+<br><br>
 For our purposes, the tokens are individual words of the text. English follows a regular set of rules defining the division of words, phrases and sentences, making tokenization straightforward. At the most basic level, we can split the text string by whitespace characters.
 
-Sentence breaking
+#### Sentence breaking
 Sentences are independent units of meaning. Relationships between linguistic units, such objects and modifiers, or aspect and sentiment, are mostly contained within sentences. The end of a sentence signals a temporary end of the process of establishing relationships between linguistic units, which helps in finalizing the observed relationships until that point.
-
+<br><br>
 End of sentences can be signaled by punctuations such as the period, the exclamation mark or the question mark. But this is not always the case, such punctuations may appear in other contexts.
-![image](https://user-images.githubusercontent.com/69959590/155014544-09188f8e-73f2-4fbf-af4c-dde5bf6dff6e.png)
