@@ -31,7 +31,7 @@ https://www.octoparse.com/blog/web-data-crawling-bag-of-words-for-data-mining#
 #### Chrome extension
 https://www.freecodecamp.org/news/how-to-create-and-publish-a-chrome-extension-in-20-minutes-6dc8395d7153/
 <br>
-#### Chrome Extension using Python Backend (Please do refer these sites):
+#### Chrome extension using Python backend (IMPORTANT)
 https://medium.com/@oaishi.faria/connecting-chrome-extension-with-python-backend-912d1d0db26
 <br>
 https://towardsdatascience.com/building-a-serverless-chrome-extension-f684740e1ffc
@@ -40,7 +40,7 @@ https://morioh.com/p/0e3b33fe9851
 <br>
 https://pythonspot.com/create-a-chrome-plugin-with-python/
 <br>
-#### Sentiment Analysis Training Model Data using LSTM neural network
+#### Sentiment analysis training model data using LSTM neural network
 https://asperbrothers.com/blog/sentiment-analysis-in-python/
 <br>
 ## Description
