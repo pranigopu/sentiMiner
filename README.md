@@ -38,9 +38,8 @@ https://www.rcciit.org/students_projects/projects/cse/2018/GR20.pdf
 - https://asperbrothers.com/blog/sentiment-analysis-in-python/
 
 #### Group Publisher for Chrome Web Store Related:
-## 1. For group email ID and related managing dashboard:
-https://groups.google.com/g/hbp142325cs
-## 2. For chrome developer Dashboard :
+1. For group email ID and related managing dashboard:<br>https://groups.google.com/g/hbp142325cs
+2. For chrome developer dashboard
 
 
 ## Defining the problem
