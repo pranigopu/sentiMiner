@@ -187,21 +187,12 @@ Here, we aim to understand the methods through which we can identify:
 ### Text mining
 Before any analysis is performed, we need to obtain the necessary data in an efficient and usable form. Text mining involves the following steps :
 1.	Tokenization
-2.	Sentence breaking
-3.	Part of speech tagging
-4.	Chunking
-5.	Syntax parsing
-6.	Sentence chaining
+2.	Normalization
 
 #### Tokenization
 This divides a text into a collection of individual units (tokens). This is the first step in structuring text data, since tokenization converts a text into a well-defined data structure (such as a list or an array) with each unit accessible through simple iteration.
 <br><br>
 For our purposes, the tokens are individual words of the text. English follows a regular set of rules defining the division of words, phrases and sentences, making tokenization straightforward. At the most basic level, we can split the text string by whitespace characters.
-
-#### Sentence breaking
-Sentences are independent units of meaning. Relationships between linguistic units, such objects and modifiers, or aspect and sentiment, are mostly contained within sentences. The end of a sentence signals a temporary end of the process of establishing relationships between linguistic units, which helps in finalizing the observed relationships until that point.
-<br><br>
-End of sentences can be signaled by punctuations such as the period, the exclamation mark or the question mark. But this is not always the case, such punctuations may appear in other contexts.
 
 ## Footnotes
 <a name="f1">1</a>: Computation is any type of calculation that includes both arithmetical and non-arithmetical steps and which follows a well-defined model. [https://en.wikipedia.org/wiki/Computation]
