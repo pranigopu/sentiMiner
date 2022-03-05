@@ -117,11 +117,11 @@ A content script has full access to the DOM of a webpage, so you can do things l
 Importantly, the content script is a source code (which can also include and reference CSS) that runs right after the page loads. Hence, when you load or reload a page with the extension active, the content script executes.
 <br><br>
 The manifest.json file should reference your content script, in the "content_scripts" field. For example:
-  "content_scripts": [
-  {
-    "js": ["content.js"]
-  }
-  ]
+> "content_scripts": [
+>   {
+>     "js": ["content.js"]
+>   }
+> ]
 <br><br>
 You also need to specify which URLs the content script should run on. Furthermore, you can use the wildcard * to encompass all paths on a given domain. For example, the following would run the content script on any github.com page:
 <br><br>
