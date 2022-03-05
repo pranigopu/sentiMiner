@@ -19,10 +19,10 @@ An extension version is the version given to the current form of the extension b
 Chrome's autoupdate system compares versions to determine whether an installed extension needs to be updated. If the published extension has a newer version string than the installed extension, then the extension is automatically updated. The comparison starts with the leftmost integers. If those integers are equal, the integers to the right are compared, and so on. For example, 1.2.0 is a newer version than 1.1.9.9999. A missing integer is equal to zero. For example, 1.1.9.9999 is newer than 1.1 and 1.1.9.9999 is older than 1.2.
 <br><br>
 In addition to the version field, which is used for update purposes, version_name can be set to a descriptive version string and will be used for display purposes, if present. Here are some examples of version names:
-"version_name": "1.0 beta"
-"version_name": "build rc2"
-"version_name": "3.1.2.4567"
-<br><br>
+- "version_name": "1.0 beta"
+- "version_name": "build rc2"
+- "version_name": "3.1.2.4567"
+
 If no version name is present, the version field will be used for display purposes as well.
 
 ### REFERENCES:
@@ -30,10 +30,11 @@ If no version name is present, the version field will be used for display purpos
 
 ## Overriding Chrome pages
 Chrome extensions allow you to replace the default chrome pages for bookmarks, history, and new tab. Override pages are a way to substitute an HTML file from your Chrome browser extension for a page that Google Chrome normally provides. In addition to HTML, an override page usually has CSS and JavaScript code. To replace new tab, for example, add the following to manifest.json.
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  }
-<br><br>
+```
+"chrome_url_overrides": {
+  "newtab": "newtab.html"
+}
+```
 An extension can replace any one of the following pages:
 - Bookmark manager
 - History
@@ -96,7 +97,7 @@ A 'Promise' is an object representing the eventual completion or failure of an a
 ### Advantages of using promises
 Unlike regular callbacks, a promise comes with some guarantees...
 
-1. Callbacks added with then() will never be invoked before the completion of the current run of the JavaScript event loop.
+1. Callbacks added with 'then()' will never be invoked before the completion of the current run of the JavaScript event loop.
 2. Callbacks will be invoked even if they were added after the success or failure of the asynchronous operation that the promise represents.
 3. Multiple callbacks may be attached to the same promise by calling then() several times. They will be invoked one after another, in the order in which they were inserted.
 4. Chaining of callbacks can be done, i.e. two or more asynchronous operations can be executed back to back, where each subsequent operation starts when the previous operation succeeds, with the result from the previous step. We accomplish this by creating a promise chain.
@@ -111,7 +112,7 @@ Unlike regular callbacks, a promise comes with some guarantees...
 Content scripts are files that run in the context of web pages. By using the standard Document Object Model (DOM), they are able to read details of the web pages the browser visits, make changes to them, and pass information to their parent extension.
 
 A content script has full access to the DOM of a webpage, so you can do things like alter content, styles, layout, images, anything that is on the page. In other words, a content script deals specifically with the contents of the webpage, and not the browser in general. You can access the DOM in the content script's source code through the 'document' object and its attributes and methods available in JavaScript. For example...
-  document.getElementByTagName("h1");
+`document.getElementByTagName("h1");`
 ... will obtain all the "h1" elements of the current webpage (on which the extension is active).
 <br><br>
 Importantly, the content script is a source code (which can also include and reference CSS) that runs right after the page loads. Hence, when you load or reload a page with the extension active, the content script executes.
