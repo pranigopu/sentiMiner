@@ -117,37 +117,38 @@ A content script has full access to the DOM of a webpage, so you can do things l
 Importantly, the content script is a source code (which can also include and reference CSS) that runs right after the page loads. Hence, when you load or reload a page with the extension active, the content script executes.
 <br><br>
 The manifest.json file should reference your content script, in the "content_scripts" field. For example:
-'''
+```
 "content_scripts": [
   {
     "js": ["content.js"]
   }
 ]
-'''
+```
 You also need to specify which URLs the content script should run on. Furthermore, you can use the wildcard * to encompass all paths on a given domain. For example, the following would run the content script on any github.com page:
-<br><br>
-  "content_scripts": [
-  {
-    "matches": [
-      "http://github.com/*",
-      "https://github.com/*",
-      "http://*.github.com/*",
-      "https://*.github.com/*"
-      ],
-     "js": ["content.js"]
-    }
-  ]
-<br><br>
+```
+"content_scripts": [
+{
+  "matches": [
+    "http://github.com/*",
+    "https://github.com/*",
+    "http://*.github.com/*",
+    "https://*.github.com/*"
+    ],
+   "js": ["content.js"]
+  }
+]
+```
 For allowing it to run on all URLs, you would add:
-  "content_scripts": [
-    {
-    "matches": [
-      "<all_urls>"
-      ],
-    "js": ["content.js"]
-      }
-  ]
-<br><br>
+```
+"content_scripts": [
+  {
+  "matches": [
+    "<all_urls>"
+    ],
+  "js": ["content.js"]
+    }
+]
+```
 Content scripts can access Chrome APIs used by their parent extension by exchanging messages with the extension. They can also access the URL of an extension's file with 'chrome.runtime.getURL()' and use the result the same as other URLs.
 
 ### REFERENCES:
@@ -188,47 +189,49 @@ In JavaScript, the console is an object which provides access to the browser deb
 
 ## Anonymous functions in JavaScript
 Functions in JavaScript can be anonymous.
-  function() {
-    alert('unicorn!');
-  }
-<br><br>
+```
+function() {
+  alert('unicorn!');
+}
+```
 And if you put that whole anonymous function in parentheses and then add parentheses after it, it’s a self-executing function. Meaning it’s called the moment it’s defined.
-  (function() {
-    alert('unicorn!');
-  })();
-
-<br><br>
+```
+(function() {
+  alert('unicorn!');
+})();
+```
 If your code is complicated and long it’s often simpler to just put it in another JS file and reference it like so:
-
-  (function () {
-    var script = document.createElement('script');
-    script.src = 'someRandomCode.js';
-    document.body.appendChild(script);
-  })();
-
+```
+(function () {
+  var script = document.createElement('script');
+  script.src = 'someRandomCode.js';
+  document.body.appendChild(script);
+})();
+```
 ## Messaging in JavaScript
 If you want to execute some code in the content script (to manipulate the DOM) whenever the user triggers the browser action, you need to use "messaging". A message is a JavaScript object (of your own design) that you send from the background service worker / background script to the content script. For example:
-  // IN BACKGROUND SCRIPT
-  function buttonClicked(tab){
-    var msg = {
-      message: "user clicked!"
-    }
-    chrome.tabs.sendMessage(tab.id, msg);
+```
+// IN BACKGROUND SCRIPT
+function buttonClicked(tab){
+  var msg = {
+    message: "user clicked!"
   }
-
-<br><br>
+  chrome.tabs.sendMessage(tab.id, msg);
+}
+```
 Then, in the content script, you can receive the message and perform an action. Lots of data comes in with the message, but the actual object you send is the one denoted by the request variable. For example:
-  // IN CONTENT SCRIPT
-  // Listen for messages
-  chrome.runtime.onMessage.addListener(receiver);
+```
+// IN CONTENT SCRIPT
+// Listen for messages
+chrome.runtime.onMessage.addListener(receiver);
 
-  // Callback for when a message is received
-  function receiver(request, sender, sendResponse) {
-    if (request.message === "user clicked!") {
-      // Do something!
-    }
+// Callback for when a message is received
+function receiver(request, sender, sendResponse) {
+  if (request.message === "user clicked!") {
+    // Do something!
   }
-<br><br>
+}
+```
 SEE ALSO:
 - Omnibox
 
