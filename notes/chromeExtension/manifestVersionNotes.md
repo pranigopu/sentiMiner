@@ -15,7 +15,7 @@ To utilize the format and features of manifest version n (currently, the only su
 
 ## Differences between manifest versions 2 & 3
 ### 1.
-Browser action ("browser_action") is simply action ("action").
+Browser action ("browser_action") is simply action ("action"). Furthermore, the "chrome.browserAction" and "chrome.pageAction" APIs have been replaced by "chrome.action" API for extensions based on manifest version 3.
 ### 2.
 Background scripts are now referred to as background service workers. In manifest version 2, to include background scripts, we did:
 ```
