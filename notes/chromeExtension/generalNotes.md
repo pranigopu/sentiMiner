@@ -1,18 +1,3 @@
-## Manifest & manifest version
-Extensions, themes, websites and applications are simply bundles of resources, wrapped up with a manifest.json file that describes the package's contents. In particular, every Chrome extension has a JSON-formatted manifest file, named manifest.json, that provides important information i.e. metadata about your extension.
-<br><br>
-Manifest versions are Chrome browser's rules for browser extensions. Each extensions manifest version update introduces backwards-incompatible changes, supposedly to move the platform forward. The manifest version specifies:
-- The required format for a manifest file
--  The features available for the manifest file (i.e. the attributes available)
-
-To utilize the format and features of manifest version n (currently, the only supported versions are 2 and 3), give the "manifest_version" attribute as follows:
-"manifest_version": n
-
-### REFERENCES:
-- https://developer.chrome.com/docs/extensions/mv3/manifest/
-- https://developer.chrome.com/docs/extensions/mv2/manifestVersion/
-- https://developer.chrome.com/docs/extensions/mv3/manifest/manifest_version/
-
 ## Extension version & version name
 An extension version is the version given to the current form of the extension by the programmer. One to four dot-separated integers (given as a string i.e. within double quotes) can be used to identify the version of this extension. A couple of rules apply to the integers: they must be between 0 and 65535, inclusive, and non-zero integers can't start with 0. For example, 99999 and 032 are both invalid.
 <br><br>
@@ -43,8 +28,8 @@ An extension can replace any one of the following pages:
 ### REFERENCES:
 - https://developer.chrome.com/docs/extensions/mv3/override/
 
-## Browser action
-A browser action is a button that your extension adds to the browser's toolbar. The button has an icon, and may optionally have a popup whose content is specified using HTML, CSS, and JavaScript.
+## Browser action (action in manifest version 3)
+A browser action (or simply action in manifest version 3) is a button that your extension adds to the browser's toolbar. The button has an icon, and may optionally have a popup whose content is specified using HTML, CSS, and JavaScript.
 <br><br>
 Note that browser and page actions can’t access the DOM itself, however, they can communicate with the content script via the chrome “messaging” API. A browser action should have an icon (for the button) as well as a JavaScript file for the code.
 <br><br>
@@ -151,6 +136,8 @@ For allowing it to run on all URLs, you would add:
 ]
 ```
 Content scripts can access Chrome APIs used by their parent extension by exchanging messages with the extension. They can also access the URL of an extension's file with 'chrome.runtime.getURL()' and use the result the same as other URLs.
+<br><br>
+Note that 
 
 ### REFERENCES:
 - https://developer.chrome.com/docs/extensions/mv3/content_scripts/
@@ -174,16 +161,26 @@ Extensions monitor these events using scripts in their background service worker
 <br><br>
 Once loaded, an extensions's service worker generally keeps running as long as it is performing an action, such as calling a Chrome API or issuing a network request. Effective background scripts lay dormant until the event they are listening for fires, which is when they react based on specified instructions, and then unload.
 
-### Registering bacground scripts
+### Registering background service workers
 Extensions register their background service workers in the manifest, under the "background" field. This field associates the "service_worker" key to the JavaScript file of the background script. The script for the service worker must be located in your extenstion's root directory.
 <br><br>
 You can optionally specify an extra key within the "background" field, called "type". For this, if you specify "module" (we will not discuss this here).
+
+### Debug console for background service workers
+Note that the debug console of a service worker differs from the webpage debug console (which can show the outputs of the `console.log` commands of the content scripts). Rather, a service worker has a different debug console (which can show the outputs of the `console.log` commands of the service worker's script), that can be accessed through the developer mode in the browser extensions display page (chrome://extensions for Google Chrome), usually by clicking the relevant option on the desired extension's information box, such as _Inspect views service worker_.
 
 ### REFERENCES:
 - https://developer.chrome.com/docs/extensions/mv3/service_workers/
 
 ## Note on content scripts & background service workers
-Content script actions refect on the JavaScript console of the active web page. However, background service worker actions do not. Furthermore, a content script does not detect browser actions. To allow a background service worker to communicate to the content script, we use the messaging services of the chrome.runtime API provided my chrome.
+Content script actions refect on the JavaScript console of the active web page. However, background service worker actions do not. This is because the debug console's scope is the contents of the webpage.
+<br><br>
+Furthermore, a content script cannot detect browser actions. To allow a background service worker to communicate to the content script, we use the messaging services of the chrome.runtime API provided my chrome.
+<br><br>
+A content script can access the DOM of the webpage that has been loaded (provided the extension is active), but has access to only a limited subset of the browser's (JavaScript) APIs. A background service worker has access to all the browser's (JavaScript) APIs, but cannot directly access the DOM of any webpage. This is why interaction between the content and background service worker is necessary to achieve more functionalities in your browser extension.
+
+### References
+- https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts
 
 ## Console
 In JavaScript, the console is an object which provides access to the browser debugging console.
