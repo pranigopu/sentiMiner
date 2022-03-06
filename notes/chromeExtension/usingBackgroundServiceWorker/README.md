@@ -1,4 +1,4 @@
-# Extensions using a background service worker
+# Extension using a background service worker
 ## Project aims
 Understand how to create and implement a background service worker, and how to send a message from this service worker to a content script. The aim of this project is mainly conceptual, with minimal complexity in terms of coding.
 ## Code aims
