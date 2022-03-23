@@ -34,7 +34,7 @@ Lemmatization reduces data complexity (by removing variation in word forms), all
 A statistical language model is a probability distribution of words or word sequences. In practice, a language model gives the probability of a certain word sequence being 'valid' in a given context. Note that validity here is not grammatical validity, but validity with respect to the actual usage of language. In other words, it aims to model how people use language.
 
 ## Removing stopwords
-Stop words are the very common words like 'if', 'but', 'we', 'he', 'she', and 'they'. We can usually remove these words without changing the semantics of a text and doing so often (but not always) improves the performance of a model. Removing stopwords reduces data size. However, sentiment analysis is more sensitive to
+Stop words are the very common words like 'if', 'but', 'we', 'he', 'she', and 'they'. We can usually remove these words without changing the semantics of a text and doing so often (but not always) improves the performance of a model, since removing stopwords reduces data size and can reduce the processing of irrelevant data. However, sentiment analysis is more sensitive to
 - Sequence of words appearance
 - Word context
 
