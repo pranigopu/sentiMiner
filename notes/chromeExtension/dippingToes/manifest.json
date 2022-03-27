@@ -1,8 +1,0 @@
-{
-    "manifest_version": 2,
-    "version": "1",
-    "name": "Dipping toes",
-    "description": "Dipping my toes into the waters of Chrome extensions",
-    "browser_action": {"default_popup": "popup.html", "default_title": "Hello there!"},
-    "permissions": ["activeTab"]
-}
