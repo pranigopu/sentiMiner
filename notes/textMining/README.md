@@ -1,4 +1,4 @@
-# Text preprocessing
+# Text preprocessing & text mining guidelines
 ## References
 1. Importance of normalization:<br>https://towardsdatascience.com/text-normalization-7ecc8e084e31
 2. Definition of language models:<br>https://towardsdatascience.com/the-beginners-guide-to-language-models-aa47165b57f9
