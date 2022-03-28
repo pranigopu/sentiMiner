@@ -1,4 +1,4 @@
-# Message relay from popup to service worker & back
+# Messaging back and forth from script to script
 ## Project aims
 Introducing popups, and understanding how messaging is done from
 
