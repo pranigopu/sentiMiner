@@ -87,5 +87,8 @@ To prevent leaks of sensitive information, webpages are generally not allowed to
 <br><br>
 Content scripts are injected into a webpage, hence run from the context of a particular webpage, which means this restriction often applies to request made from content scripts. Popup scripts are included in the popup page, hence run from the context of a particular popup page. While not technically a webpage, the restriction seems to apply to them in this case. This is due to Google Chrome's particular CORS policy, which subsumes Chrome extensions. To circumvent this, we use the service worker to make cross origin requests, since service workers do not run from the context of any webpage.
 
+### Reiteration of key point and side notes
+Just to emphasise the point, the extension package and Django-based backend are stored in and run from different domains, hence a request from the extension scripts to the server web application's service is a cross-origin request. When working within the localhost, and when not having published the extension, this difference in domains is simply reflected in the difference in the directories in which the source codes for each are present and run from.
+
 ### REFERENCES
 - https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/
