@@ -11,10 +11,12 @@ Having implemented a simple Django-based website on my own computer (localhost),
 - Display the results within the popup
 
 ## Notes on implementation
-I used the background service worker to make requests to my localhost server, instead of using the popup script itself. This is because when I applied the necessary code for making requests from the popup script, I got the following errors
+I used the background service worker to make requests to my localhost server, instead of using the popup script itself _(the source code for this is present in the 'extensions' directory as 'popup (INVALID).js')_. This is because when I applied the necessary code for making requests from the popup script, I got the following errors
 <br>**ERROR 1**<br>
 ```
-Access to fetch at 'http://127.0.0.1:8000/alpha/name?name=Prani' from origin 'chrome-extension://pehhkdndjcmeebmpmkeofnbaiideooeh' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+Access to fetch at 'http://127.0.0.1:8000/alpha/name?name=Prani' from origin 'chrome-extension://pehhkdndjcmeebmpmkeofnbaiideooeh' 
+has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.If an opaque response 
+serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 ```
 <br>**ERROR 2**<br>
 ```
