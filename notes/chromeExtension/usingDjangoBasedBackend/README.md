@@ -1,6 +1,8 @@
 # Learning to make requests to a Django-based backend
 ## Project aims
 Having implemented a simple Django-based website on my own computer (localhost), using an emulated server, I will make requests to particular endpoints (services i.e. view functions) within the server from within a Chrome extension. Functionally, the end product here is simply a Chrome extension that uses functions written in Python using the respective URL's of the functions.
+<br><br>
+Using an external server to host the web applications containing the actual services required for your extension is not ideal, especially on a practical level i.e. if we want to publish our extension as a usable tool. But since much of our testing code is in Python, we have used this as a temporary "proof of concept" kind of solution, using our codes in Python for now the time being before we come up with JavaScript implementations for the same.
 
 ## Code aims
 - Make a service i.e. view function in the server that takes the 'name' option's value and returns the vowels in the name
