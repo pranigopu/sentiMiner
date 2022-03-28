@@ -1,6 +1,6 @@
-document.querySelector("#submit").addEventListener("click", sendToActiveTab);
+document.querySelector("#submit").addEventListener("click", react);
 // For querying ID, we use '#'. For querying classes, we would use '.'.
-function sendToActiveTab(){
+function react(){
     /*
     To get current tab, since popup is running in a non-tab context, we use chrome.tabs.query.
     The main arguments are chrome.tabs.query(object queryInfo, function callback).
