@@ -119,3 +119,21 @@ The return value of **fetch** returns a promise object. It returns a promise, wh
 
 ### REFERENCES
 - https://www.geeksforgeeks.org/javascript-fetch-method/
+
+## CORS policy
+CORS => **C**ross-**O**rigin **R**esource **S**haring
+<br><br>
+A CORS policy specifies the settings that can be applied to resources to allow resource sharing between for web applications hosted at different origins/domains.
+<br><br>
+CORS in particular is a mechanism that uses an additional HTTP header (applied to an HTTP request made from one web application to another) to inform the browser to allow a web application running at one origin/domain have permission to access selected resources from a server at a different origin/domain.
+<br><br>
+Note that you can create your own CORS policies for your API or website.
+
+### REFERENCES
+- https://www.ibm.com/docs/en/sva/10.0.1?topic=control-cross-origin-resource-sharing-cors-policies
+
+## Opaque response
+An opaque response is for a request made for a resource on a different origin that doesn't return CORS headers. With an opaque response we won't be able to read the data returned or view the status of the request, meaning we can't check if the request was successful or not.
+
+### REFERENCES
+- https://developers.google.com/web/updates/2015/03/introduction-to-fetch
