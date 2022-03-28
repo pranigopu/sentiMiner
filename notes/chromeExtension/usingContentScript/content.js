@@ -32,7 +32,7 @@ for(let i = 0; i < headings.length; i++ )
 // PART 2: Replacing words
 //------------------------
 let paragraphs = document.getElementsByTagName("p");
-var swaps = {
+let swaps = {
     "the": "da",
     "this": "dis",
     "that": "dat",
