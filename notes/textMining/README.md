@@ -41,4 +41,4 @@ Stop words are the very common words like 'if', 'but', 'we', 'he', 'she', and 't
 Hence, removing stopwords can hide the effect of the sequence of words preceding a word. Furthermore, removing certain stopwords can change the sentiment underlying the text. For example, if 'don't' is considered a stopword, negatives may be interpreted as positives.
 
 ## Conclusions
-For preserving the maximum possible meaning of the text while reducing its complexity, we will only perform lemmatization on our texts.
+For preserving the maximum possible meaning of the text while reducing its complexity, we will only perform lemmatization on our texts, without removing stopwords.
