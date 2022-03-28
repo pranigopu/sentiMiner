@@ -1,6 +1,9 @@
 document.querySelector("#submit").addEventListener("click", react);
 // For querying ID, we use '#'. For querying classes, we would use '.'.
 function react(){
+    // OBTAINING TAB ID'S FOR PASSING MESSAGE TO CONTENT SCRIPT
+    // (this is not needed for passing message to background service worker)
+    
     /*
     To get current tab, since popup is running in a non-tab context, we use chrome.tabs.query.
     The main arguments are chrome.tabs.query(object queryInfo, function callback).
@@ -16,6 +19,13 @@ function react(){
     The callback of this query accepts the info of tabs as an argument.
     Through this, the required object containing tab info can be obtained within the callback.
     Note that the argument's scope is within the function, and you cannot use it outside.
+    */
+    
+    /*
+    NOTE:
+    Here, we have done all the messaging within the 'getTabs' callback that we have defined here.
+    However, since messaging to background script does not require any tab ID, we obviously don't need it for that.
+    Nevertheless, I have done the following simply because it was more convenient to lay out.
     */
     function getTabs(tabs){
         console.log("Getting tabs...");
