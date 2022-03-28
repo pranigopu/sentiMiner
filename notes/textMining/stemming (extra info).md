@@ -11,6 +11,9 @@ Stemming is the process of substituting a word for its root word i.e. stem. For 
 - N-gram stemmer
 - Snowball stemmer
 
+## Purpose and usage + advantages over lemmatization (for word searching)
+Stemming is useful for extracting the base pattern of a word, not considering the meaning. This is especially useful when searching for potential matches. For example, you may type something, such as "partishun", meaning "partition". Lemmatization may not return a reduced word, since there is no lexical reduction of a "partishun", since it is not a valid word. But stemming would produce a reduced form, which may be close to the reduced form of "partition", such as "part" or "parti". This would likely provide more satisfactory potential matches compared to lemmatization.
+
 ## Potential issues
 Over-stemming is when a word is reduced more than appropriate, which leads to two or more words being reduced to the same root word or stem (incorrectly) when they should have been reduced to two or more stem words. For example, 'university' and 'universe' are supposed to be considered as different roots, since their meanings are significantly distinct.
 <br><br>
