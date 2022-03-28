@@ -1,4 +1,4 @@
-# EXPLORING CHROME EXTENSIONS
+# Exploring Chrome extensions
 ## Definition
 Google Chrome extensions are programs that can be installed into Chrome in order to change the browser's functionality. This includes adding new features to Chrome or modifying the existing behavior of the program itself to make it more convenient for the user.
 
