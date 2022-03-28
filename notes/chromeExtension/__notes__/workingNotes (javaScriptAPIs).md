@@ -58,5 +58,34 @@ function respondToMessage(message, sender, sendResponse){
 ```
 Here, we see that sendResponse has not been defined anywhere, and takes on some default definition. I am not too sure about the exact mechanism.
 
-### Sending multiple messages
+## Sending multiple messages
 I found that, when trying to send messages from popup script to content script and popup script to background service worker within the same event handler, only the message from popup script to background service worker got a response, no matter whether I first messaged the content script or the background service worker. I need to look into this...
+
+## Making requests to an external domain from the extension
+For my mini-project where I tried to make requests and get responses from the web applications of my Django-based localhost server, used the background service worker to make requests, instead of using the popup script itself. This is because when I applied the necessary code for making requests from the popup script, I got the following errors
+<br>**ERROR 1**<br>
+```
+Access to fetch at 'http://127.0.0.1:8000/alpha/name?name=Prani' from origin 'chrome-extension://pehhkdndjcmeebmpmkeofnbaiideooeh' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+```
+<br>**ERROR 2**<br>
+```
+Uncaught (in promise) TypeError: Failed to fetch
+```
+<br>
+The latter error is due to the former. Furthermore, I haven't included a **.catch** function for my **fetch** function call, so errors are 'uncaught' and handled automatically.
+<br><br>
+From these errors and some reading, I learnt that
+-  We can make requests from the popup script if we set the 'mode' option in the **fetch** funtion to 'no-cors'<br><br>(**NOTE**:<br> **fetch** has two main arguments, one being the URL to make the requets to, the other being the set of properties to apply to the request... if none are applied, the request is a simple GET request)
+-  Requests we make from the popup script using the above option will return an opaque response only i.e. we cannot
+  - read response data
+  - check request status (to see if it was successful or not)
+
+The above clearly presents an undesirable situation.
+
+### Apparent cause
+To prevent leaks of sensitive information, webpages are generally not allowed to fetch cross-origin data. Unless a valid CORS header is present on the response, the page's request will fail with an error like the one above.
+<br><br>
+Content scripts are injected into a webpage, hence run from the context of a particular webpage, which means this restriction often applies to request made from content scripts. Popup scripts are included in the popup page, hence run from the context of a particular popup page. While not technically a webpage, the restriction seems to apply to them in this case. This is due to Google Chrome's particular CORS policy, which subsumes Chrome extensions. To circumvent this, we use the service worker to make cross origin requests, since service workers do not run from the context of any webpage.
+
+### REFERENCES
+- https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/
