@@ -22,7 +22,7 @@ function react(){
         console.log("Getting tabs...");
         console.log(tabs)
         // Sending message (in our case, it is simply the entered name)
-        var userinput = document.querySelector("#name").value;
+        let userinput = document.querySelector("#name").value;
         let message = {
             "name": userinput,
             "activeTab": tabs[0].id,
