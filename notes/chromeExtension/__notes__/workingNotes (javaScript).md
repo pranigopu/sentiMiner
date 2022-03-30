@@ -1,4 +1,4 @@
-# WORKING NOTES
+# WORKING NOTES (JavaScript)
 ## Anonymous functions in JavaScript
 Functions in JavaScript can be anonymous.
 ```
