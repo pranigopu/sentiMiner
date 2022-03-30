@@ -1,4 +1,4 @@
-# CONCEPT NOTES
+# CONCEPT NOTES (JavaScript)
 ## Console
 In JavaScript, the console is an object which provides access to the browser debugging console.
 
