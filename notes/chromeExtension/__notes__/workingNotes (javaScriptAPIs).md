@@ -98,7 +98,7 @@ To handle CORS headers in Python, I installed the `django-cors-headers` package.
 
 - Added `corsheaders` in the `INSTALLED_APPS` list
 - Added `corsheaders.middleware.CorsMiddleware` in the `MIDDLEWARE` list
-- To allow any possible host (for my website) to add the valid CORS header to the website's responses, I did the following
+- To allow any possible host (for my website) to add the valid CORS header to the website's responses, I did the following (within the 'settings.py' file)
 
 ```
 ALLOWED_HOSTS=['*']
