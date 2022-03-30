@@ -1,4 +1,4 @@
-# WORKING NOTES (browser extension)
+# WORKING NOTES (Chrome extension)
 
 ## Note on browser actions and accessing action events
 In order to access the events of browser and the methods associated with it, you must add an "action" field in the manifest of the extension. Otherwise, the return values of API calls from the `chrome.action` API will return NULL values, and you will not be able to handle events. Hence, for messaging the content script from the pop-up
