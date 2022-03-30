@@ -1,4 +1,4 @@
-# WORKING NOTES
+# WORKING NOTES (JavaScript APIs)
 ## NOTE ON NAMING FORMAL ARGUMENTS OF CALLBACKS
 The arguments discussed for the callbacks are not keywords, unless otherwise specified, i.e. any name can be given to them, provided they are passed in the appropriate order. However, for convenience, we usually use the above names as the formal arguments of our callback definitions.
 
