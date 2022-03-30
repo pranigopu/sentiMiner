@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+# Use 'pip install django-cors-headers'.
+# This is to enable access to the server from external requests according to the Chrome CORS policy.
+# Add this in INSTALLED_APPS as 'corsheaders' and MIDDLEWARE as ''corsheaders.middleware.CorsMiddleware'.
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'alpha'
+    'alpha',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -48,7 +52,21 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
+
+# Allowing access to the server from external requests
+ALLOWED_HOSTS=['*'] # You can also particular addresses, for specificity
+CORS_ORIGIN_ALLOW_ALL = True
+# If you want to not allow all hosts to allow access to them from any origin
+"""
+CORS_ORIGIN_ALLOW_ALL = FALSE
+CORS_ORIGIN_WHITELIST = (
+       '<host_address_1',
+       '<host_address_2',
+       ...
+)
+"""
 
 ROOT_URLCONF = 'backend.urls'
 
