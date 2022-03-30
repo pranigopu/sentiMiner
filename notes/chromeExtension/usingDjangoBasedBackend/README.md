@@ -12,7 +12,7 @@ Using an external server to host the web applications containing the actual serv
 - Obtain the response and send it in a serialised format as a response to the popup script's messaging call
 - Display the results within the popup
 
-## Notes on implementation
+## NOTE 1: Cross origin request from extension to server
 When trying to make requests from extension scripts (service worker, specifically) I got the following errors
 <br>**ERROR 1**<br>
 ```
@@ -48,7 +48,7 @@ To handle CORS headers in Python, I installed the `django-cors-headers` package.
 
 - Added `corsheaders` in the `INSTALLED_APPS` list
 - Added `corsheaders.middleware.CorsMiddleware` in the `MIDDLEWARE` list
-- To allow any possible host (for my website) to add the valid CORS header to the website's responses, I did the following
+- To allow any possible host (for my website) to add the valid CORS header to the website's responses, I did the following (within the 'settings.py' file)
 
 ```
 ALLOWED_HOSTS=['*']
@@ -58,3 +58,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 ### REFERENCES
 - https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/
 - https://dzone.com/articles/how-to-fix-django-cors-error
+
+## NOTE 2: Using service worker vs. using popup script
+To make the request to the server, we can use any extension script. Using popup script would have been most direct, since messaging would not be necessary, and we can directly show the response in the popup page. To see this code for the popup script, see 'popup (ALTERNATE).js'.
