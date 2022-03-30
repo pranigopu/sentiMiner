@@ -48,7 +48,7 @@ function react(){
     })
     .then(d => {
         console.log(d);
-        document.querySelector("#blank").innerHTML = "Vowels" + d['vowels'];
+        document.querySelector("#blank").innerHTML = "Vowels: " + d['vowels'];
     });
     /*
     SIDE NOTE
