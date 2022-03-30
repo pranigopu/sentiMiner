@@ -1,4 +1,4 @@
-# CONCEPT NOTES
+# CONCEPT NOTES (Chrome extension)
 ## Extension version & version name
 An extension version is the version given to the current form of the extension by the programmer. One to four dot-separated integers (given as a string i.e. within double quotes) can be used to identify the version of this extension. A couple of rules apply to the integers: they must be between 0 and 65535, inclusive, and non-zero integers can't start with 0. For example, 99999 and 032 are both invalid.
 <br><br>
