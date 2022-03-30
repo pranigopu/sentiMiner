@@ -13,12 +13,10 @@ Using an external server to host the web applications containing the actual serv
 - Display the results within the popup
 
 ## Notes on implementation
-I used the background service worker to make requests to my localhost server, instead of using the popup script itself. This is because when I applied the necessary code for making requests from the popup script _(the source code for this is present in the 'extensions' directory as 'popup (INVALID).js')_, I got the following errors<br>
+When trying to make requests from extension scripts (service worker, specifically) I got the following errors
 <br>**ERROR 1**<br>
 ```
-Access to fetch at 'http://127.0.0.1:8000/alpha/name?name=Prani' from origin 'chrome-extension://pehhkdndjcmeebmpmkeofnbaiideooeh' 
-has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.If an opaque response 
-serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+Access to fetch at 'http://127.0.0.1:8000/alpha/name?name=Prani' from origin 'chrome-extension://pehhkdndjcmeebmpmkeofnbaiideooeh' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 ```
 <br>**ERROR 2**<br>
 ```
@@ -28,21 +26,35 @@ Uncaught (in promise) TypeError: Failed to fetch
 The latter error is due to the former. Furthermore, I haven't included a **.catch** function for my **fetch** function call, so errors are 'uncaught' and handled automatically.
 <br><br>
 From these errors and some reading, I learnt that
-
--  We can make requests from the popup script if we set the 'mode' option in the **fetch** funtion to 'no-cors'<br><br>(**NOTE**:<br> **fetch** has two main arguments, one being the URL to make the requets to, the other being the set of properties to apply to the request... if none are applied, the request is a simple GET request)
--  Requests we make from the popup script using the above option will return an opaque response only i.e. we cannot
-    -  read response data
-    -  check request status (to see if it was successful or not)
+-  We can make requests from the extension script if we set the 'mode' option in the **fetch** funtion to 'no-cors'<br><br>(**NOTE**:<br> **fetch** has two main arguments, one being the URL to make the requets to, the other being the set of properties to apply to the request... if none are applied, the request is a simple GET request)
+-  Requests we make from the extension script using the above option will return an opaque response only i.e. we cannot
+  - read response data
+  - check request status (to see if it was successful or not)
 
 The above clearly presents an undesirable situation.
 
 ### Apparent cause
 To prevent leaks of sensitive information, webpages are generally not allowed to fetch cross-origin data. Unless a valid CORS header is present on the response, the page's request will fail with an error like the one above.
 <br><br>
-Content scripts are injected into a webpage, hence run from the context of a particular webpage, which means this restriction often applies to request made from content scripts. Popup scripts are included in the popup page, hence run from the context of a particular popup page. While not technically a webpage, the restriction seems to apply to them in this case. This is due to Google Chrome's particular CORS policy, which subsumes Chrome extensions. To circumvent this, we use the service worker to make cross origin requests, since service workers do not run from the context of any webpage.
+A valid CORS header in this case would indicate that the requested resource (in whose response the header would be present) (ex. a server host or website) allows requests from other origins (ex. other server hosts or websites) to access its resources (ex. response data)
 
 ### Reiteration of key point and side notes
-Just to emphasise the point, the extension package and Django-based backend are stored in and run from different domains, hence a request from the extension scripts to the server web application's service is a cross-origin request. When working within the localhost, and when not having published the extension, this difference in domains is simply reflected in the difference in the directories in which the source codes for each are present and run from.
+Just to emphasise the point, the extension package and Django-based backend are stored in and run from different domains, hence a request from the extension scripts to the server web application's service is a cross-origin request.
+<br><br>
+To allow the cross-origin request (from the extension's scripts) to access the requested resource (i.e. the localhost server's web application's service), the server host (my computer's local IP address) must add the appropriate header to its responses, so that there is no issue according to the CORS policy.
+
+### Solution details
+To handle CORS headers in Python, I installed the `django-cors-headers` package. In the Django-based website's configurations directory (i.e. backend/backend), in the 'settings.py' file, I did the following:
+
+- Added `corsheaders` in the `INSTALLED_APPS` list
+- Added `corsheaders.middleware.CorsMiddleware` in the `MIDDLEWARE` list
+- To allow any possible host (for my website) to add the valid CORS header to the website's responses, I did the following
+
+```
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
+```
 
 ### REFERENCES
 - https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/
+- https://dzone.com/articles/how-to-fix-django-cors-error
