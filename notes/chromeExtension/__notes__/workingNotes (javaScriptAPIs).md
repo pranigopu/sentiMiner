@@ -8,7 +8,10 @@ _Why is cannot be used for pop-ups or background service workers..._
 `chrome.tabs.getCurrent(function callback)` returns an object containing information on the tab in which the script call is made. It may be undefined if it is called from a non-tab context, such as a background page, background script and pop-up views. Note that to allow the extension to access current tab, you must give the permission 'activeTab' in the 'manifest.json' file.
 
 ## chrome.tabs.query()
-`chrome.tabs.query(object queryInfo, function callback)` returns objects containing information for every tab that satisfies the properties specified in `queryInfo`. If no properties are specified, it returns objects containing information for every open tab in the browser. Note that to allow the extension to access all tabs, you must give the permission 'tabs' in the 'manifest.json' file.
+`chrome.tabs.query(object queryInfo, function callback)` returns objects containing information for every tab that satisfies the properties specified in `queryInfo`. If no properties are specified, it returns objects containing information for every open tab in the browser. Note that
+
+- To allow the extension to access current tab, you must give the permission 'activeTab' in the 'manifest.json' file
+- To allow the extension to access all tabs, you must give the permission 'tabs' in the 'manifest.json' file.
 
 ## Anatomy of chrome.runtime.sendMessage
 `chrome.runtime.sendMessage` can have the following optional arguments:
