@@ -2,7 +2,7 @@
 let serverhost = "http://127.0.0.1:8000/" // localhost address
 // NOTE: localhost => my own computer
 
-// To demonstrate that the onMessage event from the popup script is not detected by the background script...
+// Checking if background service worker is loaded properly
 console.log("Background service worker, check.");
 
 chrome.runtime.onMessage.addListener(respondToMessage);
