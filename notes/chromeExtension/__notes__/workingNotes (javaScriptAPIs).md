@@ -14,6 +14,7 @@ _Why is cannot be used for pop-ups or background service workers..._
 - To allow the extension to access all tabs, you must give the permission 'tabs' in the 'manifest.json' file.
 
 ## Anatomy of chrome.runtime.sendMessage
+__Also applies for chrome.tabs.sendMessage__ <br><br>
 `chrome.runtime.sendMessage` can have the following optional arguments:
 
 - message (to be sent)
@@ -34,6 +35,7 @@ function getResponse(response){
 ```
 
 ## Anatomy of a chrome.runtime.onMessage event listener callback
+__Also applies for chrome.tabs.sendMessage__ <br><br>
 To detect an `onMessage` event, we add a listener for this event using `chrome.runtime.onMessage.addListener(<callback>)`.
 <br><br>
 The callback (i.e. the function that whose call will be triggered upon event) here has three optional arguments:
