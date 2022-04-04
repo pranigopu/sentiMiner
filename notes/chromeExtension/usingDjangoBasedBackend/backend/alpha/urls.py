@@ -1,5 +1,6 @@
 from django.urls import path, include
 from .views import *
 urlpatterns = [
-    path('name', getName)
+    path('getvowels', getVowels),
+    path('scrape', scrape)
 ]
