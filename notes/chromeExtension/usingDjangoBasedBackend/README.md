@@ -8,9 +8,11 @@ Using an external server to host the web applications containing the actual serv
 - Make a service i.e. view function in the server that takes the 'name' option's value and returns the vowels in the name
 - Make a popup interface in the Chrome extension to allow user input
 - Message the user input to the service worker
-- Make a request from the service worker using the received name
+- Make a request from the service worker using the received input
 - Obtain the response and send it in a serialised format as a response to the popup script's messaging call
 - Display the results within the popup
+
+Additionally, I wanted to add some Python webscraping as a service of the web application, with the service triggered from the extension and the output shown in the computer's terminal.
 
 ## NOTE 1: Cross origin request from extension to server
 When trying to make requests from extension scripts (service worker, specifically) I got the following errors <br>
