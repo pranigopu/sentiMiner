@@ -1,16 +1,16 @@
 # Sentiment Analysis
 ## References used in while developing this project
-### Personal notes
+### 1. Personal notes
 - Learning about text mining:<br>https://github.com/pranigopu/textMining
 - Learning about browser extension:<br>https://github.com/pranigopu/browserExtensions
 - Learning TensorFlow:<br>https://github.com/pranigopu/learningTensorFlow
 
-### Conceptual information references
+### 2. Conceptual information references
 - Defining artificial intelligence:<br>https://www.britannica.com/technology/artificial-intelligence
 - Defining structured data:<br>https://www.tibco.com/reference-center/what-is-structured-data
 - Steps in text mining:<br>https://www.lexalytics.com/lexablog/text-analytics-functions-explained
 
-### External source codes & tutorials
+### 3. External source codes & tutorials
 #### Sentiment analysis basics
 - https://asperbrothers.com/blog/sentiment-analysis-in-python/
 - https://techvidvan.com/tutorials/python-sentiment-analysis/
@@ -35,7 +35,7 @@
 #### Sentiment analysis training model data using LSTM neural network
 - https://asperbrothers.com/blog/sentiment-analysis-in-python/
 
-### Documentation guidelines & references
+### 4. Documentation guidelines & references
 #### Software requirements specification examples
 - https://senior.ceng.metu.edu.tr/2016/fixit/SRS.pdf
 - https://www.koreascience.or.kr/article/JAKO202002761602619.pdf
@@ -44,14 +44,14 @@
 #### Creating Overall Report Format:
 https://www.rcciit.org/students_projects/projects/cse/2018/GR20.pdf
 
-### Datasets for training and testing
+### 5. Datasets for training and testing
 #### Amazon customer review dataset
 https://data.world/datafiniti/consumer-reviews-of-amazon-products
 
-### Reference material for natural language processing (using Python)
+### 6. Reference material for natural language processing (using Python)
 - _"Natural Language Processing Recipes"_ by Akshay Kulkarni & Adarsha Shivananda
 
-#### Group Publisher for Chrome Web Store Related:
+### 7. Group Publisher for Chrome Web Store Related:
 1. For group email ID and related managing dashboard:<br>https://groups.google.com/g/hbp142325cs
 
 ## Defining the problem
