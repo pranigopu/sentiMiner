@@ -27,7 +27,7 @@ https://data.world/datafiniti/consumer-reviews-of-amazon-products
 - https://www.youtube.com/watch?v=6jhwS5JmAbc
 - https://www.octoparse.com/blog/web-data-crawling-bag-of-words-for-data-mining
 #### Reference Material for Web Scraping, Usage of Python to extract API's:
-- Refer Whatsapp Docs for NLP Receipe PDF
+- Natural Language Processing Recipes by Akshay Kulkarni & Adarsha Shivananda
 #### Creating Overall Report Format:
 https://www.rcciit.org/students_projects/projects/cse/2018/GR20.pdf
 #### Chrome extension
