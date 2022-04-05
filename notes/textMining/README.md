@@ -34,11 +34,13 @@ Lemmatization reduces data complexity (by removing variation in word forms), all
 A statistical language model is a probability distribution of words or word sequences. In practice, a language model gives the probability of a certain word sequence being 'valid' in a given context. Note that validity here is not grammatical validity, but validity with respect to the actual usage of language. In other words, it aims to model how people use language.
 
 ## Removing stopwords
-Stop words are the very common words like 'if', 'but', 'we', 'he', 'she', and 'they'. We can usually remove these words without changing the semantics of a text and doing so often (but not always) improves the performance of a model, since removing stopwords reduces data size and can reduce the processing of irrelevant data. However, sentiment analysis is more sensitive to
+Stop words are the very common words like 'if', 'but', 'we', 'he', 'she', and 'they'. We can usually remove these words without changing the semantics of a text and doing so often (but not always) improves the performance of a model, , since removing stopwords reduces data size and can reduce the processing of irrelevant data. However, sentiment analysis is more sensitive to
 - Sequence of words appearance
 - Word context
-
-Hence, removing stopwords can hide the effect of the sequence of words preceding a word. Furthermore, removing certain stopwords can change the sentiment underlying the text. For example, if 'don't' is considered a stopword, negatives may be interpreted as positives.
+<br><br>
+Hence, removing certain stopwords can hide the effect of the sequence of words preceding a word. Furthermore, removing certain stopwords can change the sentiment underlying the text. For example, if 'don't' is considered a stopword, negatives may be interpreted as positives.
+<br><br>
+However, not removing stopwords introduces a big problem with respect to data summarisation and analysis, including sentiment analysis. In data summarisation, for example wordclouds and word frequencies, the most common words are often words that offer little to no information about the unique characteristics, topics or sentiments of a text. Words such as 'the', 'a', 'in' etc. hog the spotlight, reducing the effectiveness of the summarisation of the textual data. In sentiment analysis, the model is forced to process multiple words that are insignificant in helping determing a text's sentiment.
 
 ## Conclusions
-For preserving the maximum possible meaning of the text while reducing its complexity, we will only perform lemmatization on our texts, without removing stopwords.
+To increase increase the training efficiency and effectiveness and thus improve the performance of our model, we must remove stopwords. But, we must be careful not to remove words that are important in giving context, such as 'not'. Hence, we will use a custom list of stopwords, and also convert abbreviated negatives such as 'don't' to 'not'. For preserving the maximum possible meaning of the text while reducing its complexity, we will only perform lemmatization on our texts.
