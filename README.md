@@ -1,5 +1,9 @@
 # Sentiment Analysis
 ## Links for resources
+### Personal notes
+- Learning about text mining:<br>https://github.com/pranigopu/textMining
+- Learning about browser extension:<br>https://github.com/pranigopu/browserExtensions
+- Learning TensorFlow:<br>https://github.com/pranigopu/learningTensorFlow
 ### Information
 - Defining artificial intelligence:<br>https://www.britannica.com/technology/artificial-intelligence
 - Defining structured data:<br>https://www.tibco.com/reference-center/what-is-structured-data
