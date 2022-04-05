@@ -1,5 +1,5 @@
 # Sentiment Analysis
-## Links for resources
+## References used in while developing this project
 ### Personal notes
 - Learning about text mining:<br>https://github.com/pranigopu/textMining
 - Learning about browser extension:<br>https://github.com/pranigopu/browserExtensions
