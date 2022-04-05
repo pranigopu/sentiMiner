@@ -4,35 +4,29 @@
 - Learning about text mining:<br>https://github.com/pranigopu/textMining
 - Learning about browser extension:<br>https://github.com/pranigopu/browserExtensions
 - Learning TensorFlow:<br>https://github.com/pranigopu/learningTensorFlow
-### Information
+
+### Conceptual information references
 - Defining artificial intelligence:<br>https://www.britannica.com/technology/artificial-intelligence
 - Defining structured data:<br>https://www.tibco.com/reference-center/what-is-structured-data
 - Steps in text mining:<br>https://www.lexalytics.com/lexablog/text-analytics-functions-explained
-### Datasets for training and testing
-#### Amazon customer review dataset
-https://data.world/datafiniti/consumer-reviews-of-amazon-products
-### Source code & tutorials
-#### General
+
+### External source codes & tutorials
+#### Sentiment analysis basics
 - https://asperbrothers.com/blog/sentiment-analysis-in-python/
 - https://techvidvan.com/tutorials/python-sentiment-analysis/
 - https://monkeylearn.com/blog/opinion-mining/
 - https://pub.towardsai.net/sentiment-analysis-opinion-mining-with-python-nlp-tutorial-d1f173ca4e3c#1531
-#### Software requirements specification examples
-- https://senior.ceng.metu.edu.tr/2016/fixit/SRS.pdf
-- https://www.koreascience.or.kr/article/JAKO202002761602619.pdf
-- http://www.cse.aucegypt.edu/~rafea/SATA/Reports/RequirementsSpecifications-Rafea-3.pdf
+
 #### Web scraping & crawling
 - https://towardsdatascience.com/scraping-tripadvisor-text-mining-and-sentiment-analysis-for-hotel-reviews-cc4e20aef333
 - https://github.com/inistory/Yelp-restaurant-review-sentiment-analysis/blob/master/Yelp_crawler.ipynb
 - https://www.youtube.com/watch?v=6jhwS5JmAbc
 - https://www.octoparse.com/blog/web-data-crawling-bag-of-words-for-data-mining
-#### Reference Material for Web Scraping, Usage of Python to extract API's:
-- Natural Language Processing Recipes by Akshay Kulkarni & Adarsha Shivananda
-#### Creating Overall Report Format:
-https://www.rcciit.org/students_projects/projects/cse/2018/GR20.pdf
+
 #### Chrome extension
 - https://www.freecodecamp.org/news/how-to-create-and-publish-a-chrome-extension-in-20-minutes-6dc8395d7153/
-#### Chrome extension using Python backend (IMPORTANT)
+
+#### Chrome extension using Python backend
 - https://medium.com/@oaishi.faria/connecting-chrome-extension-with-python-backend-912d1d0db26
 - https://towardsdatascience.com/building-a-serverless-chrome-extension-f684740e1ffc
 - https://morioh.com/p/0e3b33fe9851
@@ -41,10 +35,24 @@ https://www.rcciit.org/students_projects/projects/cse/2018/GR20.pdf
 #### Sentiment analysis training model data using LSTM neural network
 - https://asperbrothers.com/blog/sentiment-analysis-in-python/
 
+### Documentation guidelines & references
+#### Software requirements specification examples
+- https://senior.ceng.metu.edu.tr/2016/fixit/SRS.pdf
+- https://www.koreascience.or.kr/article/JAKO202002761602619.pdf
+- http://www.cse.aucegypt.edu/~rafea/SATA/Reports/RequirementsSpecifications-Rafea-3.pdf
+
+#### Creating Overall Report Format:
+https://www.rcciit.org/students_projects/projects/cse/2018/GR20.pdf
+
+### Datasets for training and testing
+#### Amazon customer review dataset
+https://data.world/datafiniti/consumer-reviews-of-amazon-products
+
+### Reference material for natural language processing (using Python)
+- _"Natural Language Processing Recipes"_ by Akshay Kulkarni & Adarsha Shivananda
+
 #### Group Publisher for Chrome Web Store Related:
 1. For group email ID and related managing dashboard:<br>https://groups.google.com/g/hbp142325cs
-2. For chrome developer dashboard
-
 
 ## Defining the problem
 - What is the sentiment behind a text?
