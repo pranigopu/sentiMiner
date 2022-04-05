@@ -6,6 +6,7 @@
 4. When & when not to stem, lemmatize and remove stopwords:<br>https://opendatagroup.github.io/data%20science/2019/03/21/preprocessing-text.html
 5. Stopword removal:<br>https://towardsdatascience.com/sentiment-analysis-with-python-part-2-4f71e7bde59a
 6. Why not to remove stopwords:<br>https://medium.com/@limavallantin/why-is-removing-stop-words-not-always-a-good-idea-c8d35bd77214
+7. Not removing stopwords blindly:<br>https://dev.to/sunilaleti/don-t-blindly-remove-stopwords-in-sentiment-analysis-3nok
 
 ## Purpose
 The goal of text preprocessing is to reduce redundancies in the data, thereby facilitating the deep learning process that uses this data. Redundant or irrelevant data being processed in the machine learning algorithm can affect the speed and accuracy of the learning process, since they are insignificant contributors to the sentiment of the text. Yet, weights of the neural network may be adjusted by traversing these redundant or irrelevant data as inputs to the network, and due to the insignificant contribution of this data to the sentiment, the changes may cause the weights to adjust without causing improvements in the accuracy of the model, potentially even increasing the error of the output.
