@@ -147,13 +147,13 @@ The different parts of our solution are covered in the following order:
   - Identifying appropriate online sources
   -	Web scraping methods
   -	Data storage and usage
-2.	Analyzing the overall sentiments for a single text
+2.	Analyzing the overall sentiments for given texts
   -	Text mining
   -	Analyzing sentiment
     -	Conceptual method
     -	Machine learning algorithm
     -	Programming
-3.	Analyzing aspects for a single text
+3.	Analyzing aspects for given texts
   -	Text mining
     -	Conceptual method
     -	Machine learning algorithm
@@ -184,23 +184,3 @@ For an online source to be appropriate for our purpose, it needs to be:
 
 ### Web scraping methods
 Web scraping is the extraction of data from websites, which can be done manually or through a program. Our focus is on creating programs to perform web scraping and automatically detect and retrieve reviews.
-
-## Analyzing the overall sentiments for a single text
-### Overview
-Here, we aim to understand the methods through which we can identify:
--	The level of appreciation or disapproval
--	The level of positive or negative emotions
--	The overall tone and mood of the text
-
-### Text mining
-Before any analysis is performed, we need to obtain the necessary data in an efficient and usable form. Text mining involves the following steps :
-1.	Tokenization
-2.	Normalization
-
-#### Tokenization
-This divides a text into a collection of individual units (tokens). This is the first step in structuring text data, since tokenization converts a text into a well-defined data structure (such as a list or an array) with each unit accessible through simple iteration.
-<br><br>
-For our purposes, the tokens are individual words of the text. English follows a regular set of rules defining the division of words, phrases and sentences, making tokenization straightforward. At the most basic level, we can split the text string by whitespace characters.
-
-## Footnotes
-<a name="f1">1</a>: Computation is any type of calculation that includes both arithmetical and non-arithmetical steps and which follows a well-defined model. [https://en.wikipedia.org/wiki/Computation]
