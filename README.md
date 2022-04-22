@@ -1,6 +1,6 @@
 # Sentiment Analysis
 ## Prototypes
-- https://github.com/pranigopu/sentimentAnalysisExtension--prototype
+- https://github.com/pranigopu/textMining-sentimentAnalysis--prototype/
 
 ## References used in while developing this project
 ### Personal notes
