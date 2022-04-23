@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <h1>Prototype</h1>
+
+        <label for="userinput">Input string: </label><br>
+        <input id = "userinput", type="text"><br>
+        
+        <label for="command">Command string: </label><br>
+        <input id = "command", type="text"><br>
+
+        <label for="option">Option string: </label><br>
+        <input id = "option", type="text"><br>
+        <br>
+        <input id = "go", type="submit" value="GO">
+        <!--NOTE: type="submit" makes it a button-like element-->
+
+        <!--Blank paragraph to display basic results-->
+        <i><p id="blank">Hello there!</p></i>
+
+        <!--Script should be loaded after the rest of the DOM. Hence it is here and not in the head-->
+        <script src="./chart/chart.js"></script>
+        <script src="./wordcloud/wordcloud2.js"></script>
+        
+        <script src="popup_graphics.js"></script>
+        <script src="popup_helpersFor_summarize.js"></script>
+        <script src="popup_helpersFor_analyze.js"></script>
+        <script src="popup.js"></script>
+    </body>
+</html>
