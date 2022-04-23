@@ -1,8 +1,9 @@
 # Text mining & sentiment analysis extension prototype
 ## Personal learning and testing repositories for this project
-- Learning about text mining:<br>https://github.com/pranigopu/textMining
-- Learning about browser extension:<br>https://github.com/pranigopu/browserExtensions
-- Learning TensorFlow:<br>https://github.com/pranigopu/learningTensorFlow
+- Learning about text mining:<br>https://github.com/pranigopu/exploringTextMining
+- Learning about sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
+- Learning about browser extension:<br>https://github.com/pranigopu/exploringChromeExtensions
+- Learning TensorFlow:<br>https://github.com/pranigopu/exploringTensorFlow
 
 ## Project aims
 Run and view the results of text mining and sentiment analysis functions implemented in a Python backend using a Chrome extension.
