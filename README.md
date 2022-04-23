@@ -1,7 +1,9 @@
 # Text mining & sentiment analysis extension prototype
-## Personal learning and testing repositories for this project
+## Test repositories for this project
+- Test codes and notes for sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
+
+## Other learning repositories
 - Learning about text mining:<br>https://github.com/pranigopu/exploringTextMining
-- Learning about sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
 - Learning about browser extension:<br>https://github.com/pranigopu/exploringChromeExtensions
 - Learning TensorFlow:<br>https://github.com/pranigopu/exploringTensorFlow
 
