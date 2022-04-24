@@ -20,12 +20,22 @@ Make requests to the Django-based localhost server and send response to popup sc
 ## Python backend dependencies
 To run the backend properly, make sure that you have installed the following Python packages in your Python environment:
 
+- django<br>_Needed for running the backend (the localhost server)_
+- django-cors-headers<br>_Needed for allow the localhost server to send data as responses to cross-origin requests (in our case, these are requests from the extension) by setting the appropriate CORS headers (discussed further in implementation notes).__
 - nltk<br>_Needed for word tokenization & POS tagging._
 - textblob<br>_Needed for lemmatization & sentiment analysis._
 - requests<br>_Needed for making get requests to a URL to obtain the webpage HTML DOM._
 - bs4<br>_Has **BeautifulSoup** needed for parse the received data from a **get** request as HTML._
 - pandas<br>_Needed for reading from and writing to CSV files._
 - re<br>_Needed for string pattern identification and processing._
+
+## How to use
+- Download the repository (it will be available as a local directory)
+- Go to "chrome://extensions/" and toggle developer mode on (toggle switch at window's top right)
+- Select the "Load unpacked" option (button near window's top left)
+- Select the "extension" subdirectory from the local repository directory
+- In your terminal / command prompt, navigate to the "backend" subdirectory in the local repository directory
+- Run the command 
 
 ## Implementation notes
 ### Using service worker vs. using popup script
