@@ -44,14 +44,14 @@ The popup of the extension has three input boxes. The first input denotes the HT
 
 **Testing functions...**<br>
 
-- scrape (to simply perform scraping and obtain the data as CSV in the subdirectory "backend/data")
-- clean (to simply perform simple text processing and obtain the data as CSV in the subdirectory "backend/data")
-- normalize (to simply perform text mining and lemmatization and obtain the data as CSV in the subdirectory "backend/data")
+- scrape _(to simply perform scraping and obtain the data as CSV in the subdirectory "backend/data")_
+- clean _(to simply perform simple text processing and obtain the data as CSV in the subdirectory "backend/data")_
+- normalize _(to simply perform text mining and lemmatization and obtain the data as CSV in the subdirectory "backend/data")_
 
 **End-user functions...**<br>
 
-- summarize (to obtain the word cloud and word frequency bar graph for the normalized data)
-- analyze (to obtain bipolar sentiment analysis summary and fine grained analysis of sentiment polarities)<br>_(Note that sentiment analysis is done element by element. For example, if you have scraped paragraphs using **p** in the first input, the sentiment analysis will be done for each paragraph)_
+- summarize _(to obtain the word cloud and word frequency bar graph for the normalized data)_
+- analyze _(to obtain bipolar sentiment analysis summary and fine grained analysis of sentiment polarities)_<br>_(Note that sentiment analysis is done element by element. For example, if you have scraped paragraphs using **p** in the first input, the sentiment analysis will be done for each paragraph)_
 
 The third input denotes the particular option you want to add to the command. The option list is as follows, for each command that has options:
 
