@@ -29,13 +29,44 @@ To run the backend properly, make sure that you have installed the following Pyt
 - `pandas`<br>_Needed for reading from and writing to CSV files._
 - `re`<br>_Needed for string pattern identification and processing._
 
-## How to use
+## How to install
 - Download the repository (it will be available as a local directory)
-- Go to "chrome://extensions/" and toggle developer mode on (toggle switch at window's top right)
+- In Google Chrome, go to "chrome://extensions/" and toggle developer mode on (toggle switch at window's top right)
 - Select the "Load unpacked" option (button near window's top left)
 - Select the "extension" subdirectory from the local repository directory
-- In your terminal / command prompt, navigate to the "backend" subdirectory in the local repository directory
-- Run the command 
+- In your local system's terminal / command prompt, navigate to the "backend" subdirectory in the local repository directory
+- Run the "manage.py" file with the option "runserver", i.e. type and enter `python manage.py runserver`
+- In Google Chrome, click the extensions icon in the menu bar and pin this extension (called "Beta")
+- Click the button of the pinned extension to view the popup and enter commands
+
+## How to use
+The popup of the extension has three input boxes. The first input denotes the HTML element (in lowercase only) that you want to extract from the current webpage's DOM, such as _p_, _div_, _h1_... The second input denotes the particular command you want to perform on the scraped data. The command list is as follows (in lowercase only):
+
+**Testing functions...**<br>
+
+- scrape (to simply perform scraping and obtain the data as CSV in the subdirectory "backend/data")
+- clean (to simply perform simple text processing and obtain the data as CSV in the subdirectory "backend/data")
+- normalize (to simply perform text mining and lemmatization and obtain the data as CSV in the subdirectory "backend/data")
+
+**End-user functions...**<br>
+
+- summarize (to obtain the word cloud and word frequency bar graph for the normalized data)
+- analyze (to obtain bipolar sentiment analysis summary and fine grained analysis of sentiment polarities)<br>_(Note that sentiment analysis is done element by element. For example, if you have scraped paragraphs using **p** in the first input, the sentiment analysis will be done for each paragraph)_
+
+The third input denotes the particular option you want to add to the command. The option list is as follows, for each command that has options:
+
+**summarize**<br>
+
+- wordcloud (to only obtain word cloud)
+- freqdist (to only obtain word frequency distribution of top 10 most frequent words)
+- freqdist, n (where n is an integer, to only obtain word frequency distribution of top n most frequent words)
+
+**analyze**<br>
+
+- bipolar (to only obtain bipolar sentiments pie chart (positive, negative and neutral))
+- bipolar, noneutral (where noneutral is as it is, to only obtain bipolar sentiments pie chart (positive and negative, no neutral))
+- finegrained (to only obtain finegrained distribution of sentiment polarities within 4 class intervals)
+- finegrained, n (where n is an integer, to only obtain finegrained distribution of sentiment polarities within n class intervals)
 
 ## Implementation notes
 ### Using service worker vs. using popup script
