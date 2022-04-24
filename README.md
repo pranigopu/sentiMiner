@@ -57,16 +57,16 @@ The third input denotes the particular option you want to add to the command. Th
 
 **summarize**<br>
 
-- wordcloud (to only obtain word cloud)
-- freqdist (to only obtain word frequency distribution of top 10 most frequent words)
-- freqdist, n (where n is an integer, to only obtain word frequency distribution of top n most frequent words)
+- wordcloud _(to only obtain word cloud)_
+- freqdist _(to only obtain word frequency distribution of top 10 most frequent words)_
+- freqdist, n _(where n is an integer, to only obtain word frequency distribution of top n most frequent words)_
 
 **analyze**<br>
 
-- bipolar (to only obtain bipolar sentiments pie chart (positive, negative and neutral))
-- bipolar, noneutral (where noneutral is as it is, to only obtain bipolar sentiments pie chart (positive and negative, no neutral))
-- finegrained (to only obtain finegrained distribution of sentiment polarities within 4 class intervals)
-- finegrained, n (where n is an integer, to only obtain finegrained distribution of sentiment polarities within n class intervals)
+- bipolar _(to only obtain bipolar sentiments pie chart (positive, negative and neutral))_
+- bipolar, noneutral _(where noneutral is as it is, to only obtain bipolar sentiments pie chart (positive and negative, no neutral))_
+- finegrained _(to only obtain finegrained distribution of sentiment polarities within 4 class intervals)_
+- finegrained, n _(where n is an integer, to only obtain finegrained distribution of sentiment polarities within n class intervals)_
 
 ## Implementation notes
 ### Using service worker vs. using popup script
