@@ -17,7 +17,7 @@ Process user input, make requests to the background service worker for data, get
 **Background service worker**:<br>
 Make requests to the Django-based localhost server and send response to popup script. Background service worker is used since it only unloads when the process it has performed has completed, while popup script will unload if you click away from the popup page. This can pose problems, since HTTP requests and data processing can take time, and we want to be able to collect the necessary data any time it is ready.
 
-## Dependencies
+## Python backend dependencies
 To run the backend properly, make sure that you have installed the following Python packages in your Python environment:
 
 - nltk<br>_Needed for word tokenization & POS tagging._
