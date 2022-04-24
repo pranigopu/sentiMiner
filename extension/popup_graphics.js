@@ -116,9 +116,9 @@ function createBarChart(dataset, n){
     objects from using the same key i.e. canvas element.
     
     Applying .destroy to a chart object destroys a created chart instance.
-    This will clean up any references stored to the chart object within Chart.js,
-    along with any associated event listeners attached by Chart.js.
-    This must be called before the canvas is reused for a new chart.
+    This will clean up any references stored in the chart object,
+    along with any associated event listeners attached to the JavaScript code
+    by the 'Chart.js' library. This must be called before the canvas is reused for a new chart.
 
     To obtain the previous chart object created for the given canvas element,
     we shall use the function 'getChart' defined in the 'chart.js' module, called as
