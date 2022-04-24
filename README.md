@@ -74,25 +74,54 @@ To make the request to the server, we can use any extension script. Using popup 
 <br><br>
 My reason for using background service worker was because a background service worker loads when an event it listens for is triggered, and only halts after the completion of its code's exectution. However, a popup script will only run as long as the popup page is loaded. While in this mini-project, this is not an issue, since the processes happen quite quickly, for more time consuming processes, such as text mining or sentiment analysis, it could be an issue, since closing the popup page would halt those processes.
 
-### Wordcloud script
-The JavaScript code for wordcloud was taken from
+### Word cloud script
+The JavaScript code for word cloud was taken from the 'wordcloud' library:
 
 - https://www.npmjs.com/package/wordcloud
 
-I have modified the installed package, removing all the files I deemed unnecessary and renaming the package directory to simply 'wordcloud'.
+I have modified the installed package (in the "extension" directory in the repository), removing all the files I deemed unnecessary and renaming the package directory to simply 'wordcloud'.
 
 #### Accessing through popup script
 To access the 'WordCloud' function from 'wordcloud2.js' using the popup script, I simply include the script in 'popup.html' before the popup script. The required canvas element must be created in the popup page's DOM, either dynamically or in the HTML document itself.
 
-#### Accessing through content script
+#### Accessing through content script (unused)
 __(And why this approach was abandoned)__ <br><br>
-To access the 'WordCloud' function from 'wordcloud2.js' using the content script, I simply added the relative path to 'wordcloud2.js' in the "content_scripts" field of the 'manifest.json' file. Accessing the wordcloud functionalities in the content script was necessary to create and insert a canvas object with the wordcloud within the current webpage's DOM (since the current webpage is not stored locally in the extension's directory, we cannot simply add a script tag with a reference to 'wordcloud2.js' using the relative path).
+To access the 'WordCloud' function from 'wordcloud2.js' using the content script, I simply added the relative path to 'wordcloud2.js' in the "content_scripts" field of the 'manifest.json' file. Accessing the word cloud functionalities in the content script was necessary to create and insert a canvas object with the word cloud within the current webpage's DOM (since the current webpage is not stored locally in the extension's directory, we cannot simply add a script tag with a reference to 'wordcloud2.js' using the relative path).
 <br><br>
 This approach to a user interface was abandoned due to the following reasons:
 
-- Even if we insert the canvas at the beginning of the current webpage, and even if we do it within a division (div) tag, the result may not appear as desired for every webpage as desired, due to the possible particular features applied for the webpage. For example, when trying to insert the canvas at the beginning of a Wikipedia page's body, the wordcloud display always clashed with the Wikipedia logo at the top left of the page. We could fine-tune our code for Wikipedia, but then we would lose generality.
+- Even if we insert the canvas at the beginning of the current webpage, and even if we do it within a division (div) tag, the result may not appear as desired for every webpage as desired, due to the possible particular features applied for the webpage. For example, when trying to insert the canvas at the beginning of a Wikipedia page's body, the word cloud display always clashed with the Wikipedia logo at the top left of the page. We could fine-tune our code for Wikipedia, but then we would lose generality.
 - As a user, it may be more convenient to have the results always readily accessible in the popup page, and not at the very top of the webpage's body. This inconvenience may occur if the user wishes to scroll around the webpage or go to other tabs but still wishes to have the results easily accessible through the extension's button (that would open the popup page).<br><br> __The issue with a popup page, however, is that a popup page and its script are only loaded when the popup page is opened, and the dynamic results on the page are not persistent. If this issue can be overcome, the popup page interface would be undoubtedly superior, in my eyes.__
 - To display the results in the current webpage's DOM, anu open webpage had to be reloaded whenever the extension was reloaded in developer mode. This issue is not going to occur for the end-user of course, since the end-user is not supposed to want to (or be able to) reload the extension as a developer. But this is a minor developer hassle that added to our other woes.
+
+### Graph and chart script
+The JavaScript code for charts, and in particular, for the bar and pie charts used in the extension, was taken from the 'Chart.js' library:
+
+- https://www.chartjs.org/docs/latest/getting-started/installation.html
+
+I have modified the installed package (in the "extension" directory in the repository), removing all the files I deemed unnecessary and renaming the package directory to simply 'chart'.
+
+#### Accessing through popup script
+To access and instantiate the 'Chart' class from 'chart.js' using the popup script, I simply include the script in 'popup.html' before the popup script. The required canvas element must be created in the popup page's DOM, either dynamically or in the HTML document itself.
+
+#### NOTE ON THE Chart.js library AND REUSING CANVAS ELEMENT
+    
+Unlike the word cloud function we used, we cannot simply add the new chart to the same canvas element if we had already added an instance to it. This is because the canvas element for which the chart object was created acts as a unique key for the chart object, hence preventing other chart objects from using the same key i.e. canvas element. Applying `.destroy` to a chart object destroys a created chart instance. This will clean up any references stored in the chart object, along with any associated event listeners attached to the JavaScript code by the 'Chart.js' library. This must be called before the canvas is reused for a new chart.
+<br><br>
+To obtain the previous chart object created for the given canvas element, we shall use the function 'getChart' defined in the 'chart.js' module, called as
+
+```
+Chart.getChart(key)
+```
+
+Here, `key` refers to the canvas element. It can be any one of the following:
+
+- String denoting the ID of the canvas element
+- HTML DOM element object _(HTMLElement)_
+- CanvasRenderingContext2D object
+    
+##### REFERENCES
+- https://stackoverflow.com/questions/40056555/destroy-chart-js-bar-graph-to-redraw-other-graph-in-same-canvas
 
 ### Cross origin request from extension to localhost server
 To prevent leaks of sensitive information, webpages are generally not allowed to fetch cross-origin data. Unless a valid CORS header is present on the response, the page's request will fail with an error like the one above.
