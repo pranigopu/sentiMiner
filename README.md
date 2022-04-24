@@ -25,7 +25,7 @@ To run the backend properly, make sure that you have installed the following Pyt
 - nltk<br>_Needed for word tokenization & POS tagging._
 - textblob<br>_Needed for lemmatization & sentiment analysis._
 - requests<br>_Needed for making get requests to a URL to obtain the webpage HTML DOM._
-- bs4<br>_Has **BeautifulSoup** needed for parse the received data from a **get** request as HTML._
+- bs4<br>_Has **BeautifulSoup**, which is needed to parse the received data from a **get** request as HTML._
 - pandas<br>_Needed for reading from and writing to CSV files._
 - re<br>_Needed for string pattern identification and processing._
 
