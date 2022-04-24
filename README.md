@@ -66,7 +66,7 @@ The third input denotes the particular option you want to add to the command. Th
 - bipolar _(to only obtain bipolar sentiments pie chart (positive, negative and neutral))_
 - bipolar, noneutral _(where noneutral is as it is, to only obtain bipolar sentiments pie chart (positive and negative, no neutral))_
 - finegrained _(to only obtain finegrained distribution of sentiment polarities within 4 class intervals)_
-- finegrained, n _(where n is an integer, to only obtain finegrained distribution of sentiment polarities within n class intervals)_
+- finegrained, n _(where n is an integer, to only obtain fine-grained distribution of sentiment polarities within n class intervals)_
 
 ## Implementation notes
 ### Using service worker vs. using popup script
