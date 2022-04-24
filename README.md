@@ -21,7 +21,7 @@ Make requests to the Django-based localhost server and send response to popup sc
 To run the backend properly, make sure that you have installed the following Python packages in your Python environment:
 
 - django<br>_Needed for running the backend (the localhost server)_
-- django-cors-headers<br>_Needed for allow the localhost server to send data as responses to cross-origin requests (in our case, these are requests from the extension) by setting the appropriate CORS headers (discussed further in implementation notes).__
+- django-cors-headers<br>_Needed for allow the localhost server to send data as responses to cross-origin requests (in our case, these are requests from the extension) by setting the appropriate CORS headers (discussed further in implementation notes)._
 - nltk<br>_Needed for word tokenization & POS tagging._
 - textblob<br>_Needed for lemmatization & sentiment analysis._
 - requests<br>_Needed for making get requests to a URL to obtain the webpage HTML DOM._
