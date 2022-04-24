@@ -20,14 +20,14 @@ Make requests to the Django-based localhost server and send response to popup sc
 ## Python backend dependencies
 To run the backend properly, make sure that you have installed the following Python packages in your Python environment:
 
-- django<br>_Needed for running the backend (the localhost server)_
-- django-cors-headers<br>_Needed for allow the localhost server to send data as responses to cross-origin requests (in our case, these are requests from the extension) by setting the appropriate CORS headers (discussed further in implementation notes)._
-- nltk<br>_Needed for word tokenization & POS tagging._
-- textblob<br>_Needed for lemmatization & sentiment analysis._
-- requests<br>_Needed for making get requests to a URL to obtain the webpage HTML DOM._
-- bs4<br>_Has **BeautifulSoup**, which is needed to parse the received data from a **get** request as HTML._
-- pandas<br>_Needed for reading from and writing to CSV files._
-- re<br>_Needed for string pattern identification and processing._
+- `django`<br>_Needed for running the backend (the localhost server)_
+- `django-cors-headers`<br>_Needed for allow the localhost server to send data as responses to cross-origin requests (in our case, these are requests from the extension) by setting the appropriate CORS headers (discussed further in implementation notes)._
+- `nltk`<br>_Needed for word tokenization & POS tagging._
+- `textblob`<br>_Needed for lemmatization & sentiment analysis._
+- `requests`<br>_Needed for making get requests to a URL to obtain the webpage HTML DOM._
+- `bs4`<br>_Has **BeautifulSoup**, which is needed to parse the received data from a **get** request as HTML._
+- `pandas`<br>_Needed for reading from and writing to CSV files._
+- `re`<br>_Needed for string pattern identification and processing._
 
 ## How to use
 - Download the repository (it will be available as a local directory)
