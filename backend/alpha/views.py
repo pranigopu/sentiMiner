@@ -401,7 +401,6 @@ def sortedWordFreq(request):
     #------------------------
     # Packing the lists as necessary for the wordcloud function in the extension scripts
     res = list(zip(keys, values))
-    print(res)
     return res
 #================================================
 # DATA SUMMARY
