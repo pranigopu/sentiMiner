@@ -389,7 +389,6 @@ def wordFreq(request):
 # SORTED WORD FREQUENCIES (purely intermediate function)
 # Needs word frequency dictionary.
 # Sorting by descending order of frequency
-
 def sortedWordFreq(request):
     freqDist = wordFreq(request)
     if len(freqDist) == 0: return []
