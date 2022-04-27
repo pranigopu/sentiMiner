@@ -67,8 +67,6 @@ function makeRequest(){
                     if(response.data.length == 0){return}
                     //------------------------------------
                     // If data is non-empty, then acting based on response operation and user-given option
-                    // Acting also based on the operation performed
-                    // Note that in JavaScript, switch-case works with strings as well.
                     
                     // Checking for user inputted options (that offer functionalities on top of the respective command)
                     /*
@@ -93,6 +91,7 @@ function makeRequest(){
                     if((useropt[0] == null) || (useropt[0].length == 0)){useropt = "*";}
 
                     // Acting based on command
+                    // (Note that in JavaScript, switch-case works with strings as well)
                     switch(response.operation){
                         case "summarize":
                             // If option does not exist in options list for the command
