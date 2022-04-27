@@ -66,7 +66,7 @@ function makeRequest(){
                     // Terminating the function if response data is empty
                     if(response.data.length == 0){return}
                     //------------------------------------
-                    // If success is given as 'success', then acting based on response
+                    // If data is non=empty, then acting based on response operation and user-given option
                     // Acting also based on the operation performed
                     // Note that in JavaScript, switch-case works with strings as well.
                     
