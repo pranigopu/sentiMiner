@@ -65,6 +65,7 @@ function respondToMessage(message, sender, sendResponse){
         {
             'operation': <text>,
             'report': <text>
+            'data': <any>
         }
         With this in mind, we shall send the following response...
         */
@@ -73,10 +74,6 @@ function respondToMessage(message, sender, sendResponse){
             "report": "Backend not responding.",
             "data": []
         }
-        /*
-        "operation" is left blank so that the switch-case in 'popup.js'
-        will go to the default case and simply print the report.
-        */
         sendResponse(response)});
     /*
     SIDE NOTE

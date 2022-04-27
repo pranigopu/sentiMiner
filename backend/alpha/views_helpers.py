@@ -55,7 +55,10 @@ def sendResponse(operationName, hasSucceeded, data):
     else:
         # Special report message case
         report = hasSucceeded
-    return JsonResponse({'operation': operationName, 'report': report, 'data': data})
+    return JsonResponse({
+        'operation': operationName,
+        'report': report,
+        'data': data})
 #================================================
 # FOR PYTHON WEB SCRAPER
 def getArgs(userinput):
@@ -175,4 +178,48 @@ as opposed to the directionless quote that is common in code.
 NOTE ON SINGLE QUOTES:
 The character U+2019 "’" could be confused with
 the character U+0060 "`", which is more common in source code.
+"""
+#================================================
+# MERGE SORT WITH LABELS (descending order)
+# Thanks to: https://www.geeksforgeeks.org/merge-sort/
+def mergeSort(x, y):
+    # x denotes labels i.e. keys
+    # y denotes values
+    # NOTE: y will be sorted, x will be changed correspondingly
+    
+    # If more than one element, split into two and perform merge sort on each subtree
+    if len(y) > 1:
+        mid = len(y) // 2
+        # Dividing into left and right subtrees
+        Lx, Ly = x[:mid], y[:mid]
+        Rx, Ry = x[mid:], y[mid:]
+        # Applying merge sort for each subtree
+        mergeSort(Lx, Ly)
+        mergeSort(Rx, Ry)
+        # Merging into descending order
+        i = j = k = 0
+        while i < len(Ly) and j < len(Ry):
+            if Ly[i] > Ry[j]: x[k], y[k], i = Lx[i], Ly[i], i+1
+            else: x[k], y[k], j = Rx[j], Ry[j], j + 1
+            k += 1
+        # If an element was left out in left subtree
+        while i < len(Ly): x[k], y[k], i, k = Lx[i], Ly[i], i+1, k+1
+        # If an element were left out in left subtree
+        while j < len(Ry): x[k], y[k], j, k = Rx[j], Ry[j], j+1, k+1
+        """
+        NOTE ON ELEMENTS LEFT AFTER 1ST WHILE LOOP
+        Due to the way the elements are added in the first while loop,
+        elements will be left out either in the left subtree or in the
+        right subtree, but never in both.
+        """
+
+"""
+NOTE ON MERGE SORT
+At the last nested call of 'mergeSort' with x and y lengths being more than one,
+the function handles subtrees having either 1 or 0 elements.
+This means the previous call will handle subtrees having either 2 or 1 elements.
+On the whole, this means individual subtrees will be properly sorted.
+Hence, suppose we add all the elements of one subtree in the 1st loop,
+even if we add all the remaining elements of the other subtree in the 2nd or 3rd
+loop, the sorting order will be achieved.
 """

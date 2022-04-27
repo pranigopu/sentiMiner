@@ -41,7 +41,7 @@ function makeRequest(){
             let message = {
                 "operation": usercmd,
                 "userinput": userinput,
-                "targeturl": tabs[0].url
+                "targeturl": tabs[0].url,
             }
 
             // Displaying a statement indicating that the extension is waiting for a response
@@ -53,9 +53,9 @@ function makeRequest(){
                     /*
                     The response's expected structure is
                     {
-                        'process': <text>,
+                        'operation': <text>,
                         'report': <text>,
-                        'data': <any>
+                        'data': <any>,
                     }
                     Using this, we do the following...
                     */
@@ -63,7 +63,10 @@ function makeRequest(){
                     // Displaying response report
                     document.querySelector("#blank").innerHTML = response.report;
                     //------------------------------------
-                    // Acting based on response
+                    // Terminating the function if response data is empty
+                    if(response.data.length == 0){return}
+                    //------------------------------------
+                    // If success is given as 'success', then acting based on response
                     // Acting also based on the operation performed
                     // Note that in JavaScript, switch-case works with strings as well.
                     

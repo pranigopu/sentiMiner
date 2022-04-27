@@ -383,34 +383,25 @@ def wordFreq(request):
     I used a dictionary above since it is the most efficient
     data structure for updating word-frequency pairs.
     """
-    if len(freqDist) == 0: return {"No response!": 0.25}
+    if len(freqDist) == 0: return {}
     return freqDist
 #================================================
 # SORTED WORD FREQUENCIES (purely intermediate function)
 # Needs word frequency dictionary.
 # Sorting by descending order of frequency
+
 def sortedWordFreq(request):
     freqDist = wordFreq(request)
     if len(freqDist) == 0: return []
     #------------------------
+    # Obtaining words and corresponding frequencies
     keys, values = list(freqDist.keys()), list(freqDist.values())
-    upper = len(values)
-    # Sorting using insertion sort
-    for i in range(0, upper):
-        k, switchAt = values[i], -1
-        for j in range(i - 1, -1, -1):
-            # Keep looping back until we reach index 0 or until we find a value greater than the maximum.
-            if values[j] > k:
-                switchAt = j + 1
-                break
-        # Swapping
-        if switchAt > -1:
-            tmp1, tmp2 = values[i], keys[i]
-            values[i], keys[i] = values[switchAt], keys[switchAt]
-            values[switchAt], keys[switchAt] = tmp1, tmp2
+    # Sorting using merge sort
+    mergeSort(keys, values)
     #------------------------
     # Packing the lists as necessary for the wordcloud function in the extension scripts
     res = list(zip(keys, values))
+    print(res)
     return res
 #================================================
 # DATA SUMMARY
