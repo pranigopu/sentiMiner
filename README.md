@@ -128,12 +128,12 @@ To prevent leaks of sensitive information, webpages are generally not allowed to
 <br><br>
 A valid CORS header in this case would indicate that the requested resource (in whose response the header would be present) (ex. a server host or website) allows requests from other origins (ex. other server hosts or websites) to access its resources (ex. response data)
 
-### Reiteration of key point and side notes
+#### Reiteration of key point and side notes
 Just to emphasise the point, the extension package and Django-based backend are stored in and run from different domains, hence a request from the extension scripts to the server web application's service is a cross-origin request.
 <br><br>
 To allow the cross-origin request (from the extension's scripts) to access the requested resource (i.e. the localhost server's web application's service), the server host (my computer's local IP address) must add the appropriate header to its responses, so that there is no issue according to the CORS policy.
 
-### Solution details
+#### Solution details
 To handle CORS headers in Python, we installed the `django-cors-headers` package. In the Django-based website's configurations directory (i.e. backend/backend), in the 'settings.py' file, we did the following:
 
 - Added `corsheaders` in the `INSTALLED_APPS` list
@@ -145,6 +145,6 @@ ALLOWED_HOSTS=['*']
 CORS_ORIGIN_ALLOW_ALL = True
 ```
 
-### REFERENCES
+#### REFERENCES
 - https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/
 - https://dzone.com/articles/how-to-fix-django-cors-error
