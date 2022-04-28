@@ -1,4 +1,5 @@
-# Text mining & sentiment analysis extension prototype
+# SentiMiner
+_Text mining & sentiment analysis extension prototype_
 ## Test repositories for this project
 - Test codes and notes for sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
 
