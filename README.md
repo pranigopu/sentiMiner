@@ -1,5 +1,5 @@
 # SentiMiner
-_Text mining & sentiment analysis extension prototype_
+_Text mining & sentiment analysis Chrome extension (prototype)_
 ## Test repositories for this project
 - Test codes and notes for sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
 
