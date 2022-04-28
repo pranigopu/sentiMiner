@@ -188,7 +188,7 @@ function createPieChart(dataset){
     NOTE ON Chart.js AND REUSING CANVAS ELEMENT
     Reference: https://stackoverflow.com/questions/40056555/destroy-chart-js-bar-graph-to-redraw-other-graph-in-same-canvas
 
-    Discussed in detail in 'popup_helpersFor_summarize.js'
+    Discussed in detail for the previous function.
     */
     
     // Creating new bar chart within above canvas
