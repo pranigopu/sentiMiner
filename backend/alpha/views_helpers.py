@@ -19,7 +19,6 @@ def userInputPresent(request):
 #================================================
 # SAVING AS CSV
 import csv
-import string
 def saveCSV(fileName, headers, rows):
     # Saving as CSV file
     file = open(fileName + ".csv", 'w', encoding='UTF8')
