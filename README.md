@@ -11,7 +11,7 @@ _Text mining & sentiment analysis Chrome extension (prototype)_
 ## Project aims
 Run and view the results of text mining and sentiment analysis functions implemented in a Python backend using a Chrome extension.
 
-## Purpose of each script
+## Purpose of each extension script
 **Popup script**:<br>
 Process user input, make requests to the background service worker for data, get response, and perform operations on the data to finally present it in the popup page.
 
