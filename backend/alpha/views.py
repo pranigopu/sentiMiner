@@ -76,7 +76,7 @@ def scrape(request):
     print("TARGET URL:", targeturl)
     print("USER INPUT:", scrapeby)
 
-    # If user input is empty or NoneType...
+    # If "scrape by" value is empty or NoneType...
     r = notEmptyString(scrapeby)
     if r == False: return []
     elif r == -1: return -1
@@ -251,16 +251,16 @@ def removeStopwords(data):
 def clean(request):
     # Checking for user input...
     data = []
-    # If user input is not empty
+    # If "scrape by" value is not empty
     """
     For 'clean', we need user input value to check if
     we need to split scraped data into sentences.
     (If so, scrapeby == "sentence" will be true)
     """
-    scrapeby = scrapeBy(request)
+    scrapeby = scrapeByValue(request)
     if scrapeby != False: data = scrape(request)
     else: 
-        # If user input empty, obtaining data from the scraped dataset
+        # If "scrape by" value empty, obtaining data from the scraped dataset
         try: data = pd.read_csv(SCRAPED + ".csv")['value']
         except: return []
     #------------------------
@@ -301,10 +301,10 @@ through the module "Word".
 def normalize(request):
     # Checking for user input...
     data = []
-    # If user input is not empty
-    if scrapeBy(request) != False: data = clean(request)
+    # If "scrape by" value is not empty
+    if scrapeByValue(request) != False: data = clean(request)
     else: 
-        # If user input empty, obtaining data from the cleaned dataset
+        # If "scrape by" value empty, obtaining data from the cleaned dataset
         try: data = pd.read_csv(CLEANED + ".csv")['value']
         except: return []
     #------------------------
@@ -380,11 +380,11 @@ def normalizeEndpoint(request): return endpoint(request=request, operation='norm
 def wordFreq(request):
     # Checking for user input...
     data = []
-    # If user input is not empty
-    if scrapeBy(request) != False: data = normalize(request)['summarizable']
+    # If "scrape by" value is not empty
+    if scrapeByValue(request) != False: data = normalize(request)['summarizable']
     # If no summarizable data available for 'normalize'
     else: 
-        # If user input empty, obtaining data from the cleaned dataset
+        # If "scrape by" value empty, obtaining data from the cleaned dataset
         try: data = pd.read_csv(SUMMARIZABLE + ".csv")['value']
         except: return {}
     #------------------------
@@ -436,10 +436,10 @@ polarity-based sentiment analysis model. We will be using this.
 def analyze(request):
     # Checking for user input...
     data = []
-    # If user input is not empty
-    if scrapeBy(request) != False: data = clean(request)
+    # If "scrape by" value is not empty
+    if scrapeByValueValue(request) != False: data = clean(request)
     else: 
-        # If user input empty, obtaining data from the tokenized dataset
+        # If "scrape by" value empty, obtaining data from the tokenized dataset
         try: data = pd.read_csv(CLEANED + ".csv")['value']
         except: return []
     #------------------------
