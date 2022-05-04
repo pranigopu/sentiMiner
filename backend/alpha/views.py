@@ -437,7 +437,7 @@ def analyze(request):
     # Checking for user input...
     data = []
     # If "scrape by" value is not empty
-    if scrapeByValueValue(request) != False: data = clean(request)
+    if scrapeByValue(request) != False: data = clean(request)
     else: 
         # If "scrape by" value empty, obtaining data from the tokenized dataset
         try: data = pd.read_csv(CLEANED + ".csv")['value']
