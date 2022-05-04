@@ -15,14 +15,14 @@ function respondToMessage(message, sender, sendResponse){
     Accessing the URL of the
     Django web framework designed
     backend's app's particular view functions
-    (giving the user's input as the userinput option in the request)
+    (giving the user's "scrape by" input as the "scrapeby" option in the request)
 
     NOTE: For the URL to work, the server should be running!
     */
     let url = serverhost + "alpha/"; // Base URL, including the web application URL;
 
     // Endpoint URL based on the requested service (from the popup script)
-        url = url + message.operation + "?targeturl=" + message.targeturl + "&userinput=" + message.userinput;
+        url = url + message.operation + "?targeturl=" + message.targeturl + "&scrapeby=" + message.scrapeby;
     // Viewing the URL for confirmation in the console
     console.log("Endpoint URL:", url)
     //------------------------------------

@@ -13,9 +13,10 @@ def notEmptyString(s):
     """
     return True
 # For requests
-def userInputPresent(request):
-    userinput = request.GET.get('userinput')
-    return notEmptyString(userinput)
+def scrapeBy(request):
+    scrapeby = request.GET.get('scrapeby')
+    if notEmptyString(scrapeby) == False: return False
+    else: return scrapeby
 #================================================
 # SAVING AS CSV
 import csv

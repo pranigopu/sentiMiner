@@ -69,20 +69,21 @@ def scrape(request):
     # Target URL
     targeturl = request.GET.get('targeturl')
     # User input
-    userinput = request.GET.get('userinput')
+    scrapeby = request.GET.get('scrapeby')
+    if scrapeby == "sentence": scrapeby = "p"
 
     # Printing request obtained values
     print("TARGET URL:", targeturl)
-    print("USER INPUT:", userinput)
+    print("USER INPUT:", scrapeby)
 
     # If user input is empty or NoneType...
-    r = notEmptyString(userinput)
+    r = notEmptyString(scrapeby)
     if r == False: return []
     elif r == -1: return -1
     """
     REASON FOR SPECIAL CASE FOR 'r == -1'
     Sometimes, for requests to certain webpages, I noticed that I am unable to
-    get any value for 'userinput' that I give in my request URL, getting a NoneType object instead.
+    get any value for 'scrapeby' that I give in my request URL, getting a NoneType object instead.
     I am not sure why this issue occurs for certain webpages.
     For now, I want to give a special message to indicate this.
     Hence, the special case.
@@ -111,7 +112,7 @@ def scrape(request):
     since no matches would be found. Hence, we have the below if-else condition...
     """
     # Getting the arguments for the 'find_all' function
-    (tag, keywordArgs) = getArgs(userinput)
+    (tag, keywordArgs) = getArgs(scrapeby)
     # 'getArgs' from the .viewsHelpers module
 
     # Getting the results
@@ -177,11 +178,14 @@ easier. This makes
 For example, if the spell-checking operations are taking too long and are not that essential to include,
 I can easily comment the 'spellCheck' function call and modify the 'clean' function accordingly.
 """
-def format(data): # Simultaneously performs tokenization
+def format(data, splitBySentence): # Simultaneously performs tokenization
     """
-    We are using 'nltk.word_tokenize' from the 'nltk' library
+    We are using 'nltk.word_tokenize' from the 'nltk' library to tokenize words
     since it efficiently removes punctuations appearing next to words
     ex. commas, quotes, colons. This is not achieved when using .split() alone.
+
+    For a similar reason, we are using 'nltk.sent_tokenize' from the nltk library
+    to split a paragraphs into sentences (if splitBySentence == True).
     """
     # Removing punctuations and empty texts
     formattedData = []
@@ -196,7 +200,14 @@ def format(data): # Simultaneously performs tokenization
             except: pass
         # Adding row to the list only if row is non-empty
         if len(row) > 0:
-            formattedData.append(' '.join(row))
+            row = ' '.join(row)
+            # If we need to split paragraphs into sentences...
+            if splitBySentence:
+                row = nltk.sent_tokenize(row)
+                for sentence in row:
+                    formattedData.append(sentence)
+            # If we don't need to split paragraphs into sentences...
+            else: formattedData.append(row)
     print("Formatting complete!")
 
     # Saving the formatted data in the CSV file (only for my own reference while testing)
@@ -241,14 +252,20 @@ def clean(request):
     # Checking for user input...
     data = []
     # If user input is not empty
-    if userInputPresent(request) == True: data = scrape(request)
+    """
+    For 'clean', we need user input value to check if
+    we need to split scraped data into sentences.
+    (If so, scrapeby == "sentence" will be true)
+    """
+    scrapeby = scrapeBy(request)
+    if scrapeby != False: data = scrape(request)
     else: 
         # If user input empty, obtaining data from the scraped dataset
         try: data = pd.read_csv(SCRAPED + ".csv")['value']
         except: return []
     #------------------------
     # Removing punctuations + Converting to lowercase
-    cleanedData = format(data)
+    cleanedData = format(data, scrapeby=="sentence")
     #------------------------
     # Correcting spelling
     # cleanedData = format(cleanedData)
@@ -285,7 +302,7 @@ def normalize(request):
     # Checking for user input...
     data = []
     # If user input is not empty
-    if userInputPresent(request) == True: data = clean(request)
+    if scrapeBy(request) != False: data = clean(request)
     else: 
         # If user input empty, obtaining data from the cleaned dataset
         try: data = pd.read_csv(CLEANED + ".csv")['value']
@@ -364,7 +381,7 @@ def wordFreq(request):
     # Checking for user input...
     data = []
     # If user input is not empty
-    if userInputPresent(request) == True: data = normalize(request)['summarizable']
+    if scrapeBy(request) != False: data = normalize(request)['summarizable']
     # If no summarizable data available for 'normalize'
     else: 
         # If user input empty, obtaining data from the cleaned dataset
@@ -389,6 +406,7 @@ def wordFreq(request):
 # SORTED WORD FREQUENCIES (purely intermediate function)
 # Needs word frequency dictionary.
 # Sorting by descending order of frequency
+
 def sortedWordFreq(request):
     freqDist = wordFreq(request)
     if len(freqDist) == 0: return []
@@ -419,7 +437,7 @@ def analyze(request):
     # Checking for user input...
     data = []
     # If user input is not empty
-    if userInputPresent(request) == True: data = clean(request)
+    if scrapeBy(request) != False: data = clean(request)
     else: 
         # If user input empty, obtaining data from the tokenized dataset
         try: data = pd.read_csv(CLEANED + ".csv")['value']

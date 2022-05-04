@@ -1,14 +1,25 @@
 <html>
     <body>
-        <h1>Prototype</h1>
+        <h1>SentiMiner</h1>
 
-        <label for="userinput">Input string: </label><br>
-        <input id = "userinput", type="text"><br>
+        <label for="scrapeby">Scrape by: </label><br>
+        <input id="scrapeby" type="text" list="scrapebychoices">
+        <datalist id = "scrapebychoices">
+            <option value="Paragraph">
+            <option value="Sentence">
+        </datalist><br><br>
         
-        <label for="command">Command string: </label><br>
-        <input id = "command", type="text"><br>
+        <label for="command">Command: </label><br>
+        <select id = "command">
+            <option></option>
+            <option value="scrape">Scrape</option>
+            <option value="clean">Clean</option>
+            <option value="normalize">Normalize</option>
+            <option value="summarize">Summarize</option>
+            <option value="analyze">Analyze</option>
+        </select><br><br>
 
-        <label for="option">Option string: </label><br>
+        <label for="option">Option: </label><br>
         <input id = "option", type="text"><br>
         <br>
         <input id = "go", type="submit" value="GO">

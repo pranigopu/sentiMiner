@@ -1,8 +1,25 @@
 index,value
-0,Search
-1,Main menu
-2,Mobile menu
-3,The memes shared by Star Wars prequel fans in a very nerdy corner of the internet may help us understand how memes create community. 
-4,Carolyn Olmsted
-5,Footer menu
-6,Department of Linguistics 
+0,Create a drop-down list with four options:
+1,"More ""Try it Yourself"" examples below."
+2,The <select> element is used to create a drop-down list.
+3,"The <select> element is most often used in a form, to collect user input."
+4,"The name attribute is needed to reference 
+the form data after the form is submitted (if you omit the 
+name attribute, no data from the drop-down list will be submitted)."
+5,"The id attribute is needed to associate the 
+drop-down list with a label."
+6,"The <option> tags inside the <select> element define the available options in 
+the drop-down list."
+7,"Tip: Always add the <label> tag 
+for best accessibility practices!"
+8,The <select> tag also supports the Global Attributes in HTML.
+9,The <select> tag also supports the Event Attributes in HTML.
+10,Use <select> with <optgroup> tags:
+11,HTML DOM reference: Select Object
+12,CSS Tutorial: Styling Forms
+13,None.
+14,We just launchedW3Schools videos
+15,Get certifiedby completinga course today!
+16,"If you want to report an error, or if you want to make a suggestion, do not hesitate to send us an e-mail:"
+17,help@w3schools.com
+18,Your message has been sent to W3Schools.

@@ -1,6 +1,14 @@
 document.querySelector("#go").addEventListener("click", makeRequest);
 // For querying ID, we use '#'. For querying classes, we would use '.'.
 //================================================
+function getscrapeby(){
+    let scrapeby = document.querySelector("#scrapeby").value;
+    switch(scrapeby){
+        case "Paragraph": return "p";
+        case "Sentence": return "sentence";
+        default: return scrapeby
+    }
+}
 function makeRequest(){
     //------------------------------------
     // Checking if the command input is valid
@@ -37,10 +45,10 @@ function makeRequest(){
             console.log("Current tab URL:", tabs[0].url);
 
             // Creating message
-            let userinput = document.querySelector("#userinput").value;
+            let scrapeby = getscrapeby();
             let message = {
                 "operation": usercmd,
-                "userinput": userinput,
+                "scrapeby": scrapeby,
                 "targeturl": tabs[0].url,
             }
 
@@ -63,12 +71,20 @@ function makeRequest(){
                     // Displaying response report
                     document.querySelector("#blank").innerHTML = response.report;
                     //------------------------------------
+                    // Clearing the "scrapeby" value
+                    /*
+                    This is done so that if you want to perform another command
+                    on the scraped data, you don't have to manually remove the
+                    "scrapeby" value, and can simply enter the next command.
+                    */
+                    document.querySelector("#scrapeby").value = " "
+                    //------------------------------------
                     // Terminating the function if response data is empty
                     if(response.data.length == 0){return}
                     //------------------------------------
                     // If data is non-empty, then acting based on response operation and user-given option
                     
-                    // Checking for user inputted options (that offer functionalities on top of the respective command)
+                    // Checking for "scrapeby" valueted options (that offer functionalities on top of the respective command)
                     /*
                     The full intended format of an option is
                     <option name>, <parameter1>, <parameter2>...
