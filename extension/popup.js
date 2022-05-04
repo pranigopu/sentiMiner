@@ -1,7 +1,7 @@
 document.querySelector("#go").addEventListener("click", makeRequest);
 // For querying ID, we use '#'. For querying classes, we would use '.'.
 //================================================
-function getscrapeby(){
+function getScrapeBy(){
     let scrapeby = document.querySelector("#scrapeby").value;
     switch(scrapeby){
         case "Paragraph": return "p";
@@ -45,7 +45,7 @@ function makeRequest(){
             console.log("Current tab URL:", tabs[0].url);
 
             // Creating message
-            let scrapeby = getscrapeby();
+            let scrapeby = getScrapeBy();
             let message = {
                 "operation": usercmd,
                 "scrapeby": scrapeby,
