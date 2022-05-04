@@ -13,7 +13,7 @@ def notEmptyString(s):
     """
     return True
 # For requests
-def scrapeBy(request):
+def scrapeByValue(request):
     scrapeby = request.GET.get('scrapeby')
     if notEmptyString(scrapeby) == False: return False
     else: return scrapeby
