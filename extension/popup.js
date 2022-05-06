@@ -15,6 +15,7 @@ function makeRequest(){
     // Object relating commands to numbers (allows switch-case based on command later on)
     let commands = {
         "scrape": [],
+        "format": [],
         "clean": [],
         "normalize": [],
         "summarize": ["wordcloud", "freqdist", "*"],

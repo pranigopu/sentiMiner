@@ -42,6 +42,7 @@ def sendResponse(operationName, hasSucceeded, data):
     elif hasSucceeded == False:
         report = {
             'scrape': 'No matches found!',
+            'format': 'Empty result!',
             'clean': 'Empty result!',
             'normalize': 'Empty result!',
             'summarize': 'Empty result!',
@@ -122,8 +123,36 @@ def getArgs(userinput):
     **keywordArgs
     """
 #================================================
-# ABBREVIATION DECONTRACTION FOR WHOLE PHRASE
+# TOKENIZERS
 import re
+def wordTokenize(txt):
+    txt += ' '
+    """
+    NOTE ON THE ABOVE OPERATION
+    If you notice the below loop, you will see that
+    if the variable 'txt' does not end with a space,
+    the last word (that is being constructed in 'tmp')
+    will not be appended to the list of words.
+    Hence, we add a space at the end of 'txt' to
+    make the code add the last word as well.
+    """
+    punctuations = '.,;:,\'\"()\{\}[]<>«»'
+    words, tmp = [], ''
+    for c in txt:
+        if c in punctuations:
+            words.append(tmp)
+            words.append(c) 
+            tmp = ''
+        elif not c.isspace(): tmp += c
+        elif tmp != '':
+            words.append(tmp)
+            tmp = ''
+    return words
+
+def sentenceTokenize(txt):
+    return re.split(r"\s*[\.\!\?]+\s*", txt)
+#================================================
+# ABBREVIATION DECONTRACTION FOR WHOLE PHRASE
 def decontracted(phrase):
     phrase = phrase.lower()
 

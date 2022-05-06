@@ -149,3 +149,32 @@ CORS_ORIGIN_ALLOW_ALL = True
 #### REFERENCES
 - https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/
 - https://dzone.com/articles/how-to-fix-django-cors-error
+
+### Word and sentence tokenization
+We were using 'nltk.word_tokenize' from the 'nltk' library to tokenize words since it efficiently removes punctuations appearing next to words (ex. commas, quotes, colons), and includes these punctuations as separate items. This is not achieved when using .split() alone, or using regular expressions alone. However, to reduce the dependencies for this code, we have created a function to achieve what 'nltk.word_tokenize' achieves.
+<br><br>
+For a similar reason, we were using 'nltk.sent_tokenize' from the nltk library to split a paragraphs into sentences (if splitBySentence == True). However, to reduce the dependencies for this code, we have created a function to achieve what 'nltk.sent_tokenize' achieves.
+
+### Data formatting and cleaning
+### PROCESS FLOW
+The data formatting and cleaning functions were intended to be executed in the same order as they are defined in the code. 'clean' is the function that calls 'format' 'spellCheck' and 'removeStopwords', though 'format' can be a standalone endpoint function as well.
+The intended order of the operations is:
+
+- Formatting
+- Spell checking
+- Stopword removal
+
+(Spell checking may be omitted)
+
+#### Reason for separation into functions
+The preprocessing operations were separated into different functions to make the programming and testing process easier. This makes
+
+- Individual testing easier
+- Modification of 'clean' function easier
+
+For example, if the spell-checking operations are taking too long and are not that essential to include, I can easily comment the 'spellCheck' function call and modify the 'clean' function accordingly.
+
+#### Note on the difference in formatting and cleaning
+Formatted data is better for sentiment analysis, since key stopwords such as 'not', 'don't', etc. are not omitted, and hence the full underlying sentiment is preserved.
+<br><br>
+Formatted data after stopword removal is better for summarizing, since stopwords are omitted, and only the words more indicative of the contents of the text are retained.

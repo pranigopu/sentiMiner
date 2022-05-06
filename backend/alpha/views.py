@@ -2,12 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from textblob import Word, TextBlob
 import pandas as pd
-import nltk
 import re
-#================================================
-# MAINTENANCE CODE
-# Ensuring the required NLTK modules are downloaded and are up-to-date
-nltk.download('punkt')
 #================================================
 # Create your views here.
 from .views_globals import * # Global variables and objects
@@ -33,6 +28,7 @@ def endpoint(*, request, operation, returnData=True, specialCase=None):
     # (We don't ValueError exceptions since we don't expect them to happen in this context)
     data = {
         'scrape': scrape,
+        'format': format,
         'clean': clean,
         'normalize': normalize,
         'summarize': summarize,
@@ -156,63 +152,68 @@ http://127.0.0.1:8000/alpha/name?name=xyz
 If the attribute is not found, 'None' is returned.
 """
 #================================================
-# DATA CLEANING
+# DATA PREPROCESSING 1: FORMATTING
 # Simultaneously performs tokenization
-"""
-PROCESS FLOW
-The following functions were intended to be executed in the same order as they are defined here.
-'clean' is the function that calls 'format', 'spellCheck' and 'removeStopwords'.
-The intended order of the operations is:
-- Formatting
-- Spell checking
-- Stopword removal
 
-(Spell checking may be omitted)
-____________
-REASON FOR SEPARATION INTO FUNCTIONS
-The preprocessing operations were separated into different functions to make the programming and testing process
-easier. This makes
-- Individual testing easier
-- Modification of 'clean' function easier
-
-For example, if the spell-checking operations are taking too long and are not that essential to include,
-I can easily comment the 'spellCheck' function call and modify the 'clean' function accordingly.
-"""
-def format(data, splitBySentence): # Simultaneously performs tokenization
+# As an intermediate function
+def format(request): # Simultaneously performs tokenization
+    # Checking for user input...
+    data = []
+    # If "scrape by" value is not empty
     """
-    We are using 'nltk.word_tokenize' from the 'nltk' library to tokenize words
-    since it efficiently removes punctuations appearing next to words
-    ex. commas, quotes, colons. This is not achieved when using .split() alone.
-
-    For a similar reason, we are using 'nltk.sent_tokenize' from the nltk library
-    to split a paragraphs into sentences (if splitBySentence == True).
+    For 'format', we need user input value to check if
+    we need to split scraped data into sentences.
+    (If so, scrapeby == "sentence" will be true)
     """
+    scrapeby = scrapeByValue(request)
+    if scrapeby != False: data = scrape(request)
+    else: 
+        # If "scrape by" value empty, obtaining data from the scraped dataset
+        try: data = pd.read_csv(SCRAPED + ".csv")['value']
+        except: return []
+    #------------------------
     # Removing punctuations and empty texts
     formattedData = []
+    # If we need to split the textual data by sentences...
+    if scrapeby=="sentence": data = sentenceTokenize('. '.join(data))
+    # Let's go...
     for x in data:
-        x, row = nltk.word_tokenize(x), []
+        x, row = wordTokenize(x), []
         for word in x:
             # Removing all words starting with non-alphanumeric or non-space characters
             try:
                 word.strip() # Removing leading or trailing spaces
-                # Only appending non-whitespace words not beginning with special characters or numbers.
-                if not re.match(r"[^\w\s]|\d", word): row.append(word)
+                # Appending only non-whitespace words not beginning with special characters or numbers
+                if len(word) > 1 and re.match(r"[^\W\d]", word) and not re.search(r"[\)\]\}]", word): row.append(word)
+                """
+                NOTE ON ABOVE CONDITIONS
+                --re.match(r"[^\W\d]", word)--
+                checks if the word does not start with special characters or numerals
+                (a word should not start with special characters or numerals).
+
+                However, in case of bracketed statements, brackets may be tokenized
+                along with the word itself, and though starting brackets will be removed
+                by the above match condition, the ending brackets may remain.
+                To resolve this issue, we have designed our word tokenizer to handle brackets
+                as punctuations.
+                """
             except: pass
         # Adding row to the list only if row is non-empty
         if len(row) > 0:
             row = ' '.join(row)
-            # If we need to split paragraphs into sentences...
-            if splitBySentence:
-                row = nltk.sent_tokenize(row)
-                for sentence in row:
-                    formattedData.append(sentence)
-            # If we don't need to split paragraphs into sentences...
-            else: formattedData.append(row)
+            formattedData.append(row)
     print("Formatting complete!")
 
-    # Saving the formatted data in the CSV file (only for my own reference while testing)
-    saveCSV(CLEANED + "-formatted", ['index', 'value'], list(enumerate(formattedData)))
+    # Saving the formatted data in the CSV file
+    saveCSV(FORMATTED, ['index', 'value'], list(enumerate(formattedData)))
     return formattedData
+
+# As an endpoint function
+def formatEndpoint(request): return endpoint(request=request, operation='format', returnData=False)
+#================================================
+# DATA PREPROCESSING 2: CLEANING
+
+# Helper functions...
 def spellCheck(data):
     # Correcting spelling
     spellCheckedData = []
@@ -247,31 +248,23 @@ def removeStopwords(data):
     # No data saved here, since this is the last step in the cleaning process.
     return noStopwordsData
 
+# Main function...
 # As an intermediate function
 def clean(request):
     # Checking for user input...
     data = []
     # If "scrape by" value is not empty
-    """
-    For 'clean', we need user input value to check if
-    we need to split scraped data into sentences.
-    (If so, scrapeby == "sentence" will be true)
-    """
-    scrapeby = scrapeByValue(request)
-    if scrapeby != False: data = scrape(request)
+    if scrapeByValue(request) != False: data = format(request)
     else: 
         # If "scrape by" value empty, obtaining data from the scraped dataset
-        try: data = pd.read_csv(SCRAPED + ".csv")['value']
+        try: data = pd.read_csv(FORMATTED + ".csv")['value']
         except: return []
-    #------------------------
-    # Removing punctuations + Converting to lowercase
-    cleanedData = format(data, scrapeby=="sentence")
     #------------------------
     # Correcting spelling
     # cleanedData = format(cleanedData)
     #------------------------
     # Removing stopwords
-    cleanedData = removeStopwords(cleanedData)
+    cleanedData = removeStopwords(data)
     #------------------------
     # Saving if non-empty
     if len(cleanedData) > 0:
@@ -309,35 +302,26 @@ def normalize(request):
         except: return []
     #------------------------
     # Tokenizing & simultaneously lemmatizing each review
-    normalizedData, summarizableData = [], []
-    # normalizedData: contains data fit for sentiment analysis
-    # summarizableData: contains data fit for summaries
+    normalizedData = []
+    # Will contain data fit for summaries
     
     for x in data:
-        # Obtaining tokens for the text
-        x, row_normalized, row_summarizable = nltk.pos_tag(nltk.word_tokenize(x)), [], []
-        """
-        nltk.pos_tag accepts a list of strings (words), and returns the POS tags for each string (word) in the form
-        [
-            (<string 1>, <POS tag 1>),
-            (<string 2>, <POS tag 2>)
-            ...
-        ]
-        """
+        # Obtaining tokens for the text along with POS tags
+        x = TextBlob(x).tags
         
-        # POS tags that should be excluded for summary data (using NLTK POS tags)
-        excludedTags = ('PRP', 'IN', 'DT', 'CC', 'MOD', 'POS', 'WDT', 'WP', 'WP$', 'WRB', 'CD')
+        # POS tags that should be excluded for summary data (using TextBlob POS tags)
+        excludedTags = ('PRP', 'PSP$', 'TO', 'IN', 'DT', 'CC', 'MD', 'POS', 'WDT', 'WP', 'WP$', 'WRB', 'CD')
         
+        # Lists for containing words of each text
+        row = []
+
         # Iterating through each token
         for word in x:
             lemma = Word(word[0]).lemmatize()
-            # Including token lemma into 'normalizedData'
-            row_normalized.append(lemma)
-            # Including token lemma into 'summarizableData' only if POS tags are appropriate
-            if word[1] not in excludedTags: row_summarizable.append(lemma)
+            # Including token lemma into 'normalizedData' only if POS tags are appropriate
+            if word[1] not in excludedTags: row.append(lemma)
         
-        normalizedData.append(' '.join(row_normalized))
-        summarizableData.append(' '.join(row_summarizable))
+        normalizedData.append(' '.join(row))
     """
     NOTE ON MAKING RESULTS AS PROPER STRINGS
     For the normalized data, I am saving the results as proper, whole strings.
@@ -364,12 +348,8 @@ def normalize(request):
         # Saving as CSV only if scraping results were non-empty
         # (using 'saveCSV' from .views_helpers)
         saveCSV(NORMALIZED, ['index', 'value'], list(enumerate(normalizedData)))
-    if len(summarizableData) > 0:
-        # Saving as CSV only if scraping results were non-empty
-        # (using 'saveCSV' from .views_helpers)
-        saveCSV(SUMMARIZABLE, ['index', 'value'], list(enumerate(summarizableData)))
     #------------------------
-    return {'normalized': normalizedData, 'summarizable': summarizableData}
+    return normalizedData
 
 # As an endpoint function
 def normalizeEndpoint(request): return endpoint(request=request, operation='normalize', returnData=False)
@@ -381,11 +361,11 @@ def wordFreq(request):
     # Checking for user input...
     data = []
     # If "scrape by" value is not empty
-    if scrapeByValue(request) != False: data = normalize(request)['summarizable']
+    if scrapeByValue(request) != False: data = normalize(request)
     # If no summarizable data available for 'normalize'
     else: 
         # If "scrape by" value empty, obtaining data from the cleaned dataset
-        try: data = pd.read_csv(SUMMARIZABLE + ".csv")['value']
+        try: data = pd.read_csv(NORMALIZED + ".csv")["value"]
         except: return {}
     #------------------------
     freqDist = {}
@@ -437,10 +417,10 @@ def analyze(request):
     # Checking for user input...
     data = []
     # If "scrape by" value is not empty
-    if scrapeByValue(request) != False: data = clean(request)
+    if scrapeByValue(request) != False: data = format(request)
     else: 
         # If "scrape by" value empty, obtaining data from the tokenized dataset
-        try: data = pd.read_csv(CLEANED + ".csv")['value']
+        try: data = pd.read_csv(FORMATTED + ".csv")['value']
         except: return []
     #------------------------
     sentiments = []

@@ -1,20 +1,434 @@
 index,value
-0,create drop-down list option
-1,try example
-2,select element create drop-down list
-3,select element form collect user input
-4,attribute needed reference form data form submitted attribute data drop-down list submitted
-5,id attribute needed associate drop-down list label
-6,option tag select element define available option drop-down list
-7,tip add label tag best accessibility practice
-8,select tag support global attribute html
-9,select tag support event attribute html
-10,use select optgroup tag
-11,html dom reference select object
-12,cs tutorial styling form
-13,none
-14,launchedw3schools video
-15,certifiedby completinga course today
-16,want report error want suggestion hesitate send e-mail
-17,help w3schools.com
-18,message sent w3schools
+0,acronym word formed initial component longer phrase
+1,acronym usually formed initial letter word nato atlantic treaty use syllable benelux belgium netherlands
+2,mixture radar detection
+3,acronym pronounced word nasa unesco individual letter fbi tnt atm letter word jpeg iupac
+4,broader sense meaning includes term pronounced letters—is criticized term original common use
+5,dictionary style-guide editor universal agreement naming abbreviation matter dispute term acronym legitimately applied abbreviation pronounced word language authority agree correct use spacing casing punctuation
+6,abbreviation formed string initial usually pronounced individual letter specifically called alphabetisms example fbi federal bureau investigation
+7,latin exempli gratia
+8,word acronym formed greek root acr- meaning height summit meaning
+9,neoclassical compound appears originated german attestation german form akronym appearing early
+10,citation english date translation novel german writer lion feuchtwanger
+11,abbreviation type shortened form word middle omitted example rd road dr end truncated prof
+12,acronym is—in broad sense—formed letter letter important word phrase aid acquired immuno-deficiency syndrome scuba self-contained underwater breathing
+13,loose rule thumb acronym built letter morpheme component letter middle end word key word long phrase
+14,le significant word usually dropped new york time dmv department motor international cat association doj department
+15,abbreviation formed string initial usually pronounced individual letter fbi federal bureau investigation
+16,latin exempli specifically called alphabetisms
+17,occasionally letter chosen pronunciation letter coincides pronunciation beginning word bx base
+18,acronym usually pronounced word aid scuba called word acronym disambiguate clearly initialisms especially user term initialism use acronym narrow sense meaning type sounded letter
+19,sub-type acronym related form depending syllabic abbreviation composed specifically multi-letter syllabic fragment abbreviated word example forex foreign exchange interpol international police english international criminal police
+20,usually syllable major component word exception navy term desron desron destroyer squadron
+21,special term abbreviation pronunciation involves combination letter name word word-like pronunciation string letter jpeg ms-dos
+22,similarly unique mixture syllabic abbreviation initialisms usually pronounced word
+23,radar radio detection ranging consisting syllabic abbreviation single letter sonar sound navigation ranging consisting syllabic abbreviation followed single acronymic letter generally qualify word acronym use term
+24,disagreement abbreviation speaker pronounce letter pronounce word
+25,example term url ira individual retirement pronounced individual letter respectively single word respectively
+26,character string pronounced differently meaning different ira sounded i-r-a standing irish republican army
+27,spelled-out form acronym initialism syllabic abbreviation abbreviation stand called expansion
+28,unsettled question english lexicography style guide legitimate use word acronym describe form use initial pronounced word
+29,plenty evidence acronym widely way source acknowledge usage reserving term acronym form pronounced word initialism abbreviation
+30,source acknowledge usage vary criticize forbid allow comment explicitly advocate
+31,mainstream english dictionary english-speaking world affirm sense acronym require pronounced word
+32,american english dictionary merriam-webster dictionary
+33,com random house webster unabridged american heritage british oxford english australian macquarie include sense entry acronym equating initialism american heritage dictionary criticizes label usage problem
+34,english language dictionary collins cobuild advanced dictionary cambridge advanced learner dictionary macmillan dictionary longman dictionary contemporary english new oxford american dictionary webster new world dictionary lexico oxford university acknowledge sense
+35,dictionary entry style guide recommendation term acronym twentieth century explicitly acknowledge support expansive sense
+36,merriam–webster dictionary english usage earliest publication advocate expansive sense major dictionary edition include sense acronym equating initialism published twenty-first century
+37,trend dictionary editor appears including sense defining acronym initialism merriam-webster collegiate dictionary added sense eleventh edition oxford english american heritage added sens edition
+38,edition english dictionary included exclusive sense acronym earliest citation
+39,early december duke university researcher stephen goranson published citation acronym american dialect society e-mail discussion list refers pgn pronounced pee-gee-enn antedating english language usage word
+40,linguist ben zimmer mentioned citation december language column acronym new york time magazine
+41,publication third edition english dictionary added expansive sense entry acronym included citation
+42,oxford english dictionary structure sens order chronological development give initialism sense
+43,english language usage style guide entry acronym generally criticize usage refers form pronounceable word
+44,fowler dictionary modern english usage say acronym denotes abbreviation formed initial letter word pronounced single word nato distinct add later everyday use acronym applied abbreviation technically initialisms pronounced separate letter
+45,chicago manual style acknowledges complexity furthermore acronym initialism occasionally combined line initialism clear defines term mutually exclusive
+46,guide deny legitimacy usage bryson dictionary troublesome word say abbreviation pronounced word abc acronym abbreviation
+47,garner modern american usage say letter part compound term
+48,read spoken single word letter letter
+49,new york time manual style usage say pronounced word abbreviation acronym
+50,contrast style guide support explicitly implicitly
+51,edition merriam-webster dictionary english usage defends usage basis claim dictionary distinction
+52,buzzfeed style guide describes cbs pb acronym ending
+53,acronymy retronymy linguistic process existed history little naming conscious attention systematic analysis relatively recent time
+54,retronymy common 20th century
+55,ancient example acronymy metalanguage time describe include following
+56,mid- late 19th century acronym-disseminating trend spread american european business community abbreviating corporation name side railroad car
+57,richmond fredericksburg potomac railroad rf p side barrel crate ticker tape small-print newspaper stock listing got data
+58,american telephone telegraph company
+59,well-known commercial example dating include nabisco national biscuit company esso
+60,standard oil sunoco sun oil company
+61,driver adoption modern warfare highly technical term
+62,recorded use military acronym document dating american civil war anv army northern virginia postdate war somewhat common world war vernacular language soldier world war ii referred
+63,widespread frequent use acronym range register relatively new linguistic phenomenon language increasingly evident mid-20th century
+64,literacy rate rose advance science technology brought constant stream new term concept practice abbreviating term increasingly convenient
+65,oxford english dictionary record printed use word initialism occurring come general use acronym common
+66,english acronym pronounced word phenomenon
+67,linguist david wilton word myth debunking linguistic urban legend claim forming word acronym distinctly twentieth- century phenomenon
+68,known pre-twentieth-century word acronymic origin vogue short time
+69,word colinderies colinda acronym colonial indian exposition held london year
+70,acronymic word employed general vocabulary 20th century wilton point concept formation treated effortlessly understood evidently edgar allan poe story write blackwood article includes contrived acronym
+71,use latin neo-latin term vernacular pan-european predates modern english
+72,example acronym class
+73,earliest example word derived acronym listed oed abjud abjad formed original letter arabic alphabet late 18th century
+74,acrostic predate restoration witticism arranging name member charles ii committee foreign affair produce cabal ministry
+75,acronym abbreviate name organization long frequently referenced term
+76,armed force government agency frequently employ acronym well-known example united state agency jokingly referred alphabet soup created franklin
+77,roosevelt course known fdr new deal
+78,business industry prolific coiner acronym
+79,rapid advance science technology recent century underlying force driving usage new invention concept multiword name create demand shorter manageable name
+80,representative example
+81,navy comcrudespac stand commander cruiser destroyer pacific seen comcrudespac
+82,yaba-compatible yaba stand bloody acronym mean term acronym pronounced offensive word
+83,choosing new sure yaba-compatible
+84,acronym use popularized text messaging mobile phone short message service instant messenger
+85,fit message 160-character sm limit save time acronym gf girlfriend lol laughing loud dl download low popular
+86,prescriptivists disdain texting acronym abbreviation decreasing clarity failure use pure english
+87,point language change happened thousand year argue embraced inevitable innovation adapts language changing circumstance
+88,view modern practice legitimate english current generation speaker abbreviation corporation name place limited writing space
+89,ticker tape newspaper column
+90,exact pronunciation word acronym pronounced word sounded individual vary speaker population
+91,regional occupational generational difference simply matter personal preference
+92,instance decade online debate pronounce gif bios
+93,similarly letter-by-letter initialisms word acronym time especially combining form ip internet protocol generally said letter ipsec internet protocol security pronounced increasing time variant spelling ipsec ipsec
+94,pronunciation vary single speaker vocabulary depending narrow context
+95,example database programming language sql said letter case reference microsoft implementation traditionally pronounced word sequel
+96,formal writing broad audience expansion typically given occurrence acronym given text benefit reader know stand
+97,addition expansion use publication key listing acronym expansion
+98,convenience reader reason
+99,reading entire publication sequentially common mode encounter acronym having seen expansion
+100,having key start end publication obviates skimming text searching earlier use find expansion
+101,especially important print medium search utility available
+102,second reason key feature pedagogical value educational work textbook
+103,give student way review meaning acronym introduced chapter line-by-line reading way quiz meaning covering expansion column recalling expansion memory checking answer
+104,addition feature enables reader possessing knowledge abbreviation encounter expansion
+105,expansion use abbreviation-key feature aid reader originated print era equally useful print online
+106,online medium allows aid tooltips hyperlink rapid search search engine technology
+107,acronym occur jargon
+108,acronym different meaning different area industry writing scholarship
+109,general reason convenience succinctness specialist led obfuscate meaning intentionally deter domain-specific knowledge unintentionally creating acronym existed
+110,medical literature struggling control proliferation acronym use evolved aiding communication hindering
+111,problem evaluated level medical academy american academy dermatology
+112,acronym taught mnemonic device example physic color visible spectrum said roy
+113,biv red-orange-yellow-green-blue-indigo-violet
+114,mental checklist example aviation gumps gas-undercarriage-mixture-propeller-seatbelts
+115,example mnemonic acronym slim pavpanic pemdas
+116,uncommon acronym cited kind false etymology called folk etymology word
+117,etymology persist popular culture factual basis historical linguistics example language-related urban legend
+118,example cop commonly cited derived presumed constable patrol posh port outward starboard home
+119,specious expansion belief etymology acronymic clearly tongue-in-cheek citers gentleman lady forbidden golf people uncritically taken fact
+120,taboo word particular commonly false etymology shit ship/store high transit special high-intensity training fuck unlawful carnal knowledge fornication consent/command king
+121,english abbreviation traditionally written stop/period/point place deleted ellipsis letter colon apostrophe role space stop
+122,case acronym letter abbreviation separate word theory termination mark
+123,punctuation diminishing belief presence all-capital letter sufficient indicate word abbreviation
+124,influential style guide bbc no longer require punctuation ellipsis proscribe
+125,larry trask american author penguin guide punctuation state categorically british english tiresome unnecessary practice obsolete
+126,influential style guide american require period certain instance
+127,example new york time manual style usage recommends following segment period letter pronounced individually
+128,pronounced word nato
+129,logic style pronunciation reflected graphically punctuation scheme
+130,multiple-letter abbreviation formed single word period general common informal usage
+131,tv example stand single word television general spelled punctuation
+132,p stand single word postscript latin spelled period
+133,slash separate letter acronym n/a applicable available c/o care
+134,inconveniently long word frequently related context represented according letter count numeronym
+135,example i18n abbreviates internationalization computer-science term adapting software worldwide use
+136,represents letter come internationalization
+137,localization abbreviated l10n multilingualization m17n accessibility a11y
+138,addition use specific number replacing letter general replace unspecified number letter
+139,example include crxn crystallization series familiar physician history diagnosis treatment hx dx tx
+140,question pluralize acronym
+141,writer add following apostrophe pc
+142,kate turabian writing style academic writing allows apostrophe form plural acronym abbreviation contains internal period capital lowercase letter
+143,turabian prefer dvd url ph
+144,modern language american psychological prohibit apostrophe pluralize acronym regardless period compact disc cd
+145,new york time manual style usage requires apostrophe pluralizing abbreviation regardless period pc tv vcr
+146,possessive plural include apostrophe mere pluralization period appear especially complex example
+147,label label compact
+148,instance apostrophe increase clarity example final letter abbreviation so abbreviation ending
+149,sos pluralizing abbreviation period
+150,particularly rich source option arises plural acronym normally indicated word final word spelled
+151,classic example member parliament plural member parliament
+152,possible abbreviate
+153,australian prime minister ben chifley
+154,usage common form end mp appear dated pedantic
+155,common usage weapon mass destruction wmd prisoner war pow run batted rbi
+156,argument acronym different plural form example stand disc stand disc general disregarded practicality distinguishing singular plural
+157,case abbreviation understood describe plural noun example
+158,short united state united state
+159,case option making possessive form abbreviation plural form final awkward example
+160,etc
+161,instance possessive abbreviation forgone favor simple attributive usage example
+162,economy expanding abbreviation form making possessive example united state economy
+163,hand speech pronunciation united state
+164,abbreviation come single multiple word tv television usually pluralized apostrophe tv writer feel apostrophe reserved possessive tv antenna
+165,language convention doubling letter acronym indicate plural word example spanish ee
+166,uu
+167,estados unidos united state
+168,old convention followed limited number english abbreviation s
+169,saint pp
+170,latin plural page paginae ms manuscript
+171,case pp
+172,derives original latin phrase procurationem meaning agency english translation alternative particular page book document pp
+173,
+174,common capitalization scheme seen acronym all-uppercase linguistically taken identity regular word acronymous etymology word fading background common knowledge occurred word scuba laser radar known anacronyms
+175,anacronyms homophonously confused anachronyms type misnomer
+176,small cap run capital letter le jarring reader
+177,example style american publication including atlantic monthly usa today use small cap acronym longer letter [ citation
+178,fdr normal cap nato small cap
+179,acronym ad bc smallcapped bc ad
+180,word derived acronym affixing typically expressed mixed case root acronym clear
+181,example pre-wwii politics post-nato world dnaase
+182,case derived acronym expressed mixed case
+183,example messenger rna transfer rna mrna trna
+184,publication choose capitalize letter acronym reserving all-caps styling initialisms writing pronounced acronym nato aid mixed case initialisms usa fbi cap
+185,example style guardian bbc news typically edits style official style guide dating recommends
+186,logic style pronunciation reflected graphically capitalization scheme
+187,conflict conventional english usage first-letter upper-casing marker name case
+188,aid stand acquired immuno-deficiency syndrome proper aid style
+189,style manual base letter case number
+190,new york time example keep nato capital guide british press render nato us lower case unicef united nation international child emergency fund letter style cap look ungainly appearance shouting capital
+191,abbreviation typically exclude initial short function word case
+192,function word included pronounceable acronym core racial
+193,letter representing word written lower case case tfl transport london lotr usually occurs acronym represents multi-word proper noun
+194,number cardinal name represented digit initial letter fourth generation language g77 group
+195,large number use metric prefix year written y2k si symbol stand kelvin si unit
+196,exception initial number include tla three-letter acronym/abbreviation gof gang
+197,abbreviation number purpose include repetition a2dp advanced audio distribution profile w3c world wide web consortium t3 tip tool everyday pronunciation b2b business business numeronyms i18n internationalization represents letter initial final
+198,author expository writing capitalize distinctively format initial expansion pedagogical emphasis example writing congestive heart failure onset congestive heart failure conflict convention english orthography reserve capital middle sentence proper noun rendered onset congestive heart failure following ama manual style
+199,apparent acronym abbreviation stand not expanded meaning
+200,pseudo-acronyms pronunciation-based bbq barbecue k9 canine
+201,pseudo-acronyms frequently develop orphan initialisms existing acronym redefined non-acronymous severing link previous meaning
+202,example letter sat college entrance test originally dubbed scholastic aptitude test no longer officially stand
+203,us-based pro-choice organization naral example case organization changed time long-form corresponding letter naral eventually opting simply known short-form connected long-form
+204,common company want retain brand recognition moving away outdated image american telephone telegraph t kentucky fried chicken kfc de-emphasize role frying preparation signature dish british petroleum bp
+205,russia today rebranded rt
+206,american movie classic simply rebranded amc
+207,genzyme transgenics corporation gtc biotherapeutics inc
+208,learning channel tlc american district telegraph simply known adt
+209,pseudo-acronyms advantage international market
+210,example national affiliate international business machine legally incorporated ibm name example ibm translating local language
+211,likewise ubs merged union bank switzerland swiss bank corporation hsbc replaced long hongkong shanghai banking corporation
+212,company giving clear indication place origin choose use acronym expanding foreign market example toronto-dominion bank continues operate canada
+213,subsidiary known td bank royal bank canada canada constitutional now-defunct
+214,subsidiary called rbc bank
+215,india-based jsw group company example original south west re-branded pseudo-acronym expanding geographical area india
+216,rebranding lead redundant acronym syndrome trustee saving bank bank railway express agency rea express
+217,high-tech company taken redundant acronym extreme example ism information system management corp
+218,shl systemhouse ltd
+219,example entertainment include television show csi crime scene investigation navy ncis navy dropped second redundancy likely designed educate new viewer initial stood
+220,reasoning evidence royal bank canada canadian operation rebranded rbc royal bank bank montreal rebranded retail banking subsidiary bmo bank montreal
+221,common example ram memory redundant ram random-access memory includes initial word memory
+222,pin stand personal identification number obviating second word pin number case retention motivated avoid ambiguity homophonous word pin
+223,example include atm machine eab bank hiv virus microsoft nt technology redundant sat test simply sat reasoning test
+224,tnn nashville/national renamed new tnn brief interlude
+225,initial continue stand expanded meaning original meaning simply replaced
+226,example
+227,backronym phrase constructed fact previously existing word
+228,example novelist critic anthony burgess proposed word book stand box organized knowledge
+229,classic real-world example predecessor apple macintosh apple lisa said refer local integrated software architecture actually named steve job daughter born
+230,backronyms oftentimes comedic effect [ citation
+231,example creating backronym comedic effect naming group organization
+232,stand clever regiment nerdy young men
+233,acronym contrived deliberately designed especially apt thing named having dual meaning borrowing positive connotation existing
+234,example contrived acronym usa patriot spam captcha act
+235,clothing company french connection began referring fcuk standing french connection united kingdom
+236,company created t-shirt advertising campaign exploit acronym similarity taboo word fuck
+237,department defense defense advanced research project agency known developing contrived acronym project including resurrect nirvana dude
+238,july wired magazine reported darpa announced program
+239,transform biology descriptive predictive field science named batman robin biochronicity temporal mechanism arising nature robustness biologically-inspired network reference batman robin comic-book superheroes
+240,short-form name clinical trial scientific study constitute large class acronym includes contrived example partial complete correspondence letter expansion component
+241,trial tend name accurately descriptive trial long serve practically name syntax sentence short developed serve syntactically useful handle provide degree mnemonic reminder
+242,example widely known medicine include trial lipid-lowering treatment prevent heart attack charm trial heart failure assessment reduction mortality
+243,fact ra syndrome involved letter don entirely match pointed annoyed researcher preoccupied idea archetypal form acronym originated one-to-one letter matching impropriety deviating form
+244,raison être clinical trial acronym gene protein symbol simply syntactically usable easily recalled short complement long syntactically unusable memorized
+245,useful short reminder long support reasonable censure cutesy example provide little hint
+246,reasonably close correspondence short chief utility functioning cognitively cryptic forgettable string albeit faithful matching letter
+247,reasonable critique irresponsible mention trial acronym explaining providing long name document proliferation trial acronym resulted ambiguity different trial called aspect reason failing explain document irresponsible scientific communication
+248,study evaluated citation impact trait acronym-named trial compared finding good aspect help potential flaw driven
+249,acronym chosen deliberately avoid considered undesirable example verliebt berlin german telenovela intended alles nur au liebe changed avoid resultant acronym anal
+250,likewise computer literacy internet technology qualification known clait clit
+251,canada canadian conservative reform alliance quickly renamed canadian reform conservative alliance opponent pointed initial spelled ccrap crap
+252,irish institute technology chose different acronym institute upgraded regional technical college
+253,tralee rtc institute technology tralee opposed tralee institute technology
+254,galway rtc galway-mayo institute technology opposed galway institute technology
+255,charity sport organization team training known tnt tit
+256,technological institute textile science known tit
+257,george mason university planning law school antonin scalia school law honor late antonin scalia change antonin scalia law school later
+258,macronym nested acronym acronym letter stand acronym
+259,word macronym portmanteau macro- acronym
+260,example macronyms
+261,macronyms multiply nested second-order acronym point hierarchy
+262,informal competition run magazine new scientist fully documented specimen discovered deeply nested rars regional atovs retransmission service atovs advanced tovs tovs tiro operational vertical sounder tiro television infrared observational satellite
+263,fully expanded rars regional advanced television infrared observational satellite operational vertical sounder retransmission service produce unwieldy acronym ratiosovsrs
+264,example vital expands vhdl initiative asic library total word fully
+265,rars stand directly string word interchanged syntax way chf usefully interchanged congestive heart failure prescriptive misapprehension linguistically accurate description true nature term closer anacronymic interchangeable simpler acronym
+266,fully reducible attempt spell avoid abbreviation irreducible respect annotated parenthetical explanation not eliminated speech writing useful practical way
+267,word laser radar function word syntax cognition need focus acronymic origin term rars cha2ds2–vasc score irreducible natural language purged form language left conform imposed rule not described remaining natural
+268,similarly protein gene nomenclature us symbol extensively includes term nacht protein domain reflects symbol protein contain domain naip family apoptosis inhibitor c2ta histocompatibility complex class ii transcription het-e locus protein podospora tp1 syntactically reducible
+269,symbol acronym expansion not replace preserving function natural syntax clause clearly parsable human reader listener
+270,special type macronym recursive acronym letter expansion refers macronym
+271,earliest example appears hacker dictionary mung stand mung good
+272,example recursive acronym
+273,english language discussion language syllabic logographic writing system chinese japanese acronym describe short form selected character multi-character word
+274,example chinese university literally great learning usually abbreviated simply great institute
+275,peking university commonly shortened 北大
+276,north-great taking character peking northern capital
+277,case character selected
+278,example local short form hong kong university us kong hong
+279,case longer phrase abbreviated drastically especially chinese politics proper noun initially translated soviet leninist term
+280,instance china highest ruling council politburo standing committee standing committee central political bureau communist party china
+281,term reduced communist party china standing committee acronym create 中共中央政治局常委
+282,alternatively omitted communist party altogether creating politburo standing committee eventually standing committee
+283,psc member designation member standing committee central political bureau communist party china eventually drastically reduced simply changwei term ruchang increasingly official destined future seat psc
+284,example word 全国人民代表大会 people broken part nation 人民 people 代表 representative 大会 conference
+285,short form 人大 man/people big character second fourth part selected 全国 third 代表 simply ignored
+286,describing abbreviation term initialism inapplicable
+287,research
+288,proper noun shorter shorter time
+289,example cctv new year gala literally read china central television spring festival joint celebration evening gala shortened spring festival joint celebration evening gala eventually referred simply chunwan
+290,vein cctv zhongguo zhongyang dianshi tai reduced mid-2000s
+291,aspect academic korea follow similar acronym pattern chinese owing language commonality word big great
+292,dae refer university daehak literally great learning big school acceptable
+293,interpreted similarly american university appellation upenn texas tech
+294,acronym shortened form school hongik university hongik shortened hongdae hong big hong-u acronym refer university main subject
+295,korea national university education hanguk gyowon shortened gyowondae big ed
+296,ed
+297,school use koreanized version english acronym
+298,korea advanced institute science technology hanguk gwahak referred kaist english korean
+299,prestigious school korea known sky combining letter english name national korea yonsei
+300,addition college scholastic ability test daehak suhang neungryeok shortened suneung
+301,japanese language make extensive use abbreviation acronym
+302,chinese-based word us similar acronym formation chinese tōdai tōkyō daigaku tokyo
+303,case alternative pronunciation saikyō 埼京 saitama tōkyo saitō
+304,non-chinese foreign borrowing instead frequently abbreviated clipped compound acronym initial sound
+305,visible katakana transcription foreign word found native word
+306,example pokémon medium franchise originally stood pocket monster long-form japanese wāpuro stand word processor
+307,greater degree english german tends acronym use initial syllable initial single letter us type
+308,example syllabic type gestapo gsp geheime staatspolizei secret state police flak fak fliegerabwehrkanone anti-aircraft kripo kp kriminalpolizei detective division
+309,extension contraction pervasive whimsical degree mockingly labeled aküfi abkürzungsfimmel strange habit
+310,example aküfi include vokuhila vorne kurz hinten lang short long
+311,mocking adolf hitler title gröfaz feldherr aller zeiten greatest general time
+312,common initial letter word composing acronym regardless abbreviation sign gershayim written second-last letter non-inflected form acronym separate letter original word
+313,example mind hebrew read ארה״ב ארצות הברית united ברה״מ ברית המועצות soviet ראשל״צ ראשון לציון rishon ביה״ס בית הספר
+314,example take initial letter component word צה״ל צבא הגנה לישראל israel defense
+315,inflected form abbreviation sign gershayim remains second-last letter non-inflected form acronym
+316,report singular דו״ח plural דו״חות squad commander masculine מ״כ feminine
+317,widespread use acronym indonesia aspect social life
+318,example golkar political party stand partai golongan karya mona stand monumen nasional angkot public transport stand angkutan kota public warnet stand warung internet
+319,acronym considered formal officially considered informal slang colloquial
+320,capital metropolitan area surrounding satellite jabodetabek infamous acronym
+321,stand jakarta-bogor-depok-tangerang-bekasi
+322,highway named acronym method
+323,jalan tol jagorawi purbaleunyi joglo semar
+324,language especially use certain alphabet acronym come governmental use particularly military law enforcement service
+325,indonesian military tentara nasional indonesian police kepolisian republik infamous heavy acronym use
+326,example include kopassus pasukan khusus special force kopaska pasukan katak frogman kodim distrik militer military district command indonesian army administrative serka kepala head militer military academy term rank unit division procedure etc
+327,common indonesian number malay word formed merging word tadika taman didikan kanak-kanak pawagam panggung wayang gambar
+328,le prevalent modern era contrary indonesian
+329,name organisation name famous mara majlis amanah rakyat trust council government agency malaysia
+330,acronym developed jawi arabic spelling reflect latin counterpart pa parti islam se-malaysia islamic originated jawi acronym ڤاس ڤرتي إسلام سمليسيا pronunciation letter word islam jawi us letter aleph pronounced letter position acronym
+331,rule writing initialisms malay differ based script
+332,latin form initialism spelt english capital written spacing tnb tenaga nasional berhad
+333,jawi way initialisms different depending source language
+334,malay initialisms initial jawi letter written separated period
+335,ديوان بهاس دان ڤوستاک
+336,initialism different language written transliterating letter original language عيم
+337,سي
+338,عيم
+339,سي
+340,mcmc
+341,الفا
+342,ڤي
+343,ثيتا
+344,acronym use part word necessarily commonplace russian
+345,газпром газовая промышленность promyshlennost gas industry
+346,initialisms сми средства массовой информации sredstva massovoy informatsii mean mass informing
+347,гулаг combine initial letter final word stand главное управление лагерей upravlenie lagerey chief administration camp
+348,historically otma acronym daughter emperor nicholas ii russia consort feodorovna group nickname built letter girl order birth olga tatiana maria anastasia
+349,swahili acronym common naming organization tuki stand taasisi ya uchunguzi wa kiswahili institute swahili
+350,multiple initial letter initial syllable drawn seen language
+351,vietnamese abundance compound word initialisms commonly proper common noun
+352,example include tp
+353,hcm phố hồ chí minh ho chi minh thpt học phổ thông high clb lạc bộ csdl sở dữ liệu nxb xuất bản ôbace bà anh chị em general form cttđvn thánh tử đạo việt vietnamese
+354,longer example include chxhcnvn hòa xã hội chủ nghĩa việt nam socialist republic mtdtgpmnvn trận dân tộc giải phóng miền nam việt nam viet
+355,long initialisms widespread legal context vietnam example ttlt-vksndtc-tandtc
+356,common writer coin ad hoc initialism repeated use article
+357,letter initialism corresponds morpheme syllable
+358,letter syllable tone mark diacritic diacritic omitted initialism example đna đná đông lmca lmcâ liên minh châu âu
+359,letter replaced initialisms avoid confusion example ubtwmttqvn ubtưmttqvn ủy ban trung ương mặt trận tổ quốc việt nam committee vietnamese fatherland
+360,initialisms purely written convenience pronounced way expansion
+361,name vietnamese letter disyllabic le convenient pronounce initialism individual letter
+362,acronym pronounced word rare vietnamese occurring acronym borrowed language
+363,example include siđa respelling french acronym sida voa literal reading english initialism voice america nasa borrowed directly english acronym
+364,chinese compound word shortened syllable forming longer word
+365,example term việt cộng derived syllable việt nam cộng sản
+366,mechanism limited sino-vietnamese vocabulary
+367,chinese clipped compound considered portmanteau word blend word acronym initialisms vietnamese alphabet requires component word written character
+368,language noun declined method
+369,example finnish colon separate inflection letter
+370,process similar way hyphen clarity english prefix added acronym pre-nato policy
+371,language scottish gaelic irish lenition consonant commonplace acronym modified situation case context dictate
+372,case scottish gaelic lower-case added initial consonant example bbc scotland genitive case written bhbc alba acronym pronounced vbc
+373,likewise gaelic acronym telebhisean television tbh pronounced tv english
+374,acronym
+375,pronunciation brit
+376,origin formed english compounding modelled german lexical item
+377,etymon acro- comb
+378,form comb
+379,form
+380,etymology acro- comb
+381,form comb
+382,form german akronym
+383,originally
+384,group initial letter abbreviation expression letter pronounced separately initialism atm
+385,term initialism phenomenon
+386,sense
+387,use word
+388,word formed initial letter word initial part syllable taken word pronounced single word nato
+389,people feel strongly acronym term nato pronounced single word initialism individual letter pronounced distinctly fbi
+390,research show commonly refer type abbreviation
+391,glance paris german news told wiesener new paper old
+392,thought difference
+393,pee-gee-enn word word initial
+394,memory beginning fail
+395,day technical expression couldn remember
+396,growing old
+397,dozen
+398,pee-gee-enn
+399,acronym
+400,word initial
+401,remember
+402,acronym definition acronym word radar formed initial letter letter successive part major part compound term abbreviation formed initial letter initialism
+403,ac·ro·nym
+404,word formed combining initial letter multipart nato north atlantic treaty organization combining initial letter part series word radar radio detecting ranging
+405,usage problem initialism
+406,a·cron′y·mous adj
+407,usage note strict usage term acronym refers word initial letter part word sonar vigation
+408,distinguishing feature acronym pronounced single word manner nato nasa
+409,acronym distinguished initialisms fbi nih individual letter pronounced separate syllable
+410,observing distinction virtue precision lost people term refers kind abbreviation
+411,acronym/ˈækrənɪm/
+412,word formed initial letter sequence word radar radio detection anzac australian new zealand army
+413,compare initialism
+414,initialism
+415,modelled
+416,ac·ro·nym
+417,abbreviation formed initial letter word pronounced word
+418,ascii
+419,greek akron tip ’ onoma pattern homonym
+420,acronym number commentator copperud janis howard believe acronym differentiated abbreviation pronounceable word
+421,dictionary distinction writer general
+422,powder metallurgy industry officially adopted acronym p/m part metal molding january
+423,user term acronym distinction pronounced word
+424,pronounced series character praninskas trade creation
+425,fault let acronym household word european scholar literary supp
+426,february
+427,confusion pentagon abbreviation acronyms—words formed letter word weinraub
+428,time december
+429,pyle algeo divide acronym initialisms consists initial letter pronounced letter name word acronym pronounced word
+430,initialism older word acronym little known general public serve customary term standing contrast acronym narrow sense
+431,ac·ro·nym ˈa-krə-ˌnim word radar formed initial letter letter successive part major part compound ac·ro·nym·ic ˌa-krə-ˈni-mik adj ac·ro·nym·i·c·al·ly adv
+432,ac·ro·nym ˈa-krə-ˌnim word radar formed initial letter letter successive part major part compound term abbreviation formed initial letter initialism— ac·ro·nym·ic ˌa-krə-ˈni-mik adj ac·ro·nym·i·c·al·ly adv
