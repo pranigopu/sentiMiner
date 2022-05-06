@@ -6,6 +6,7 @@ This data directory is meant to contain the following files statically (such tha
 This data directory is meant to contain the following dynamically generated files:
 
 - Scraped data ("_scraped.csv")
+- Formatted data ("_formatted.csv")
 - Cleaned data ("_cleaned.csv")
 - Normalized data ("_normalized.csv")
 - Analyzed data ("_analyzed.csv")
