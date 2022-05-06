@@ -45,7 +45,8 @@ The popup of the extension has three input boxes. The first input denotes the HT
 **Testing functions...**<br>
 
 - scrape _(to simply perform scraping and obtain the data as CSV in the subdirectory "backend/data")_
-- clean _(to simply perform simple text processing and obtain the data as CSV in the subdirectory "backend/data")_
+- format _(to simply perform text formatting and obtain the data as CSV in the subdirectory "backend/data")_
+- clean _(to simply perform stopword removal and obtain the data as CSV in the subdirectory "backend/data")_
 - normalize _(to simply perform text mining and lemmatization and obtain the data as CSV in the subdirectory "backend/data")_
 
 **End-user functions...**<br>
