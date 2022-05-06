@@ -23,8 +23,7 @@ To run the backend properly, make sure that you have installed the following Pyt
 
 - `django`<br>_Needed for running the backend (the localhost server)_
 - `django-cors-headers`<br>_Needed for allow the localhost server to send data in responses to cross-origin requests (in our case, these are requests from the extension) by setting the appropriate CORS headers (discussed further in implementation notes)._
-- `nltk`<br>_Needed for word tokenization & POS tagging._
-- `textblob`<br>_Needed for lemmatization & sentiment analysis._
+- `textblob`<br>_Needed for lemmatization, POS tagging & sentiment analysis._
 - `requests`<br>_Needed for making get requests to a URL to obtain the webpage HTML DOM._
 - `bs4`<br>_Has **BeautifulSoup**, which is needed to parse the received data from a **get** request as HTML._
 - `pandas`<br>_Needed for reading from and writing to CSV files._
