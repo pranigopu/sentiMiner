@@ -155,7 +155,7 @@ We were using 'nltk.word_tokenize' from the 'nltk' library to tokenize words sin
 For a similar reason, we were using 'nltk.sent_tokenize' from the nltk library to split a paragraphs into sentences (if splitBySentence == True). However, to reduce the dependencies for this code, we have created a function to achieve what 'nltk.sent_tokenize' achieves.
 
 ### Data formatting and cleaning
-### PROCESS FLOW
+#### Process flow
 The data formatting and cleaning functions were intended to be executed in the same order as they are defined in the code. 'clean' is the function that calls 'format' 'spellCheck' and 'removeStopwords', though 'format' can be a standalone endpoint function as well.
 The intended order of the operations is:
 
