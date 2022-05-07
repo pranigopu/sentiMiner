@@ -55,10 +55,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 
-# Allowing access to the server from external requests
-ALLOWED_HOSTS=['*'] # You can also particular addresses, for specificity
+# Allowing external requests access to data from the server
+ALLOWED_HOSTS=['*'] # You can also put particular addresses (of desired request origins), for specificity
 CORS_ORIGIN_ALLOW_ALL = True
-# If you want to not allow all hosts to allow access to them from any origin
+# If you want to allow all hosts to allow access to them from any origin
 """
 CORS_ORIGIN_ALLOW_ALL = FALSE
 CORS_ORIGIN_WHITELIST = (
