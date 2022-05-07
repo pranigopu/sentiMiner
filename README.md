@@ -86,7 +86,7 @@ I have modified the installed package (in the "extension" directory in the repos
 To access the 'WordCloud' function from 'wordcloud2.js' using the popup script, I simply include the script in 'popup.html' before the popup script. The required canvas element must be created in the popup page's DOM, either dynamically or in the HTML document itself.
 
 #### Accessing through content script (unused)
-__(And why this approach was abandoned)__ <br><br>
+_(And why this approach was abandoned)_ <br><br>
 To access the 'WordCloud' function from 'wordcloud2.js' using the content script, I simply added the relative path to 'wordcloud2.js' in the "content_scripts" field of the 'manifest.json' file. Accessing the word cloud functionalities in the content script was necessary to create and insert a canvas object with the word cloud within the current webpage's DOM (since the current webpage is not stored locally in the extension's directory, we cannot simply add a script tag with a reference to 'wordcloud2.js' using the relative path).
 <br><br>
 This approach to a user interface was abandoned due to the following reasons:
