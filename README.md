@@ -35,7 +35,7 @@ To run the backend properly, make sure that you have installed the following Pyt
 - Select the "Load unpacked" option (button near window's top left)
 - Select the "extension" subdirectory from the local repository directory
 - In your local system's terminal / command prompt, navigate to the "backend" subdirectory in the local repository directory
-- Run the "manage.py" file with the option "runserver", i.e. type and enter `python manage.py runserver`
+- Run the "manage.py" file with the option "runserver", i.e. type and enter<br>`python manage.py runserver`
 - In Google Chrome, click the extensions icon in the menu bar and pin this extension (called "Beta")
 - Click the button of the pinned extension to view the popup and enter commands
 
