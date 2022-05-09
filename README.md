@@ -23,7 +23,7 @@ To run the backend properly, make sure that you have installed the following Pyt
 
 - `django`<br>_Needed for running the backend (the localhost server)_
 - `django-cors-headers`<br>_Needed for allow the localhost server to send data in responses to cross-origin requests (in our case, these are requests from the extension) by setting the appropriate CORS headers (discussed further in implementation notes)._
-- `textblob`<br>_Needed for lemmatization, POS tagging & sentiment analysis._
+- `textblob`<br>_Needed for lemmatization, POS tagging & sentiment analysis... It depends on the `nltk` package, which should be installed automatically when installing `textblob`_
 - `requests`<br>_Needed for making get requests to a URL to obtain the webpage HTML DOM._
 - `bs4`<br>_Has **BeautifulSoup**, which is needed to parse the received data from a **get** request as HTML._
 - `pandas`<br>_Needed for reading from and writing to CSV files._
@@ -154,6 +154,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 We were using 'nltk.word_tokenize' from the 'nltk' library to tokenize words since it efficiently removes punctuations appearing next to words (ex. commas, quotes, colons), and includes these punctuations as separate items. This is not achieved when using .split() alone, or using regular expressions alone. However, to reduce the dependencies for this code, we have created a function to achieve what 'nltk.word_tokenize' achieves.
 <br><br>
 For a similar reason, we were using 'nltk.sent_tokenize' from the nltk library to split a paragraphs into sentences (if splitBySentence == True). However, to reduce the dependencies for this code, we have created a function to achieve what 'nltk.sent_tokenize' achieves.
+<br><br>
+Now note that when we say "reduce dependencies", we don't mean remove the dependency on NLTK, since the TextBlob package depends on NLTK. However, "reduce dependencies" does mean that nothing extra will need to be downloaded or installed from the broader NLTK library, such as the `punkt` module, which contains the word and sentence tokenizing functions.
 
 ### Data formatting and cleaning
 #### Process flow
