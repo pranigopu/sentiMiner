@@ -16,7 +16,7 @@ Run and view the results of text mining and sentiment analysis functions impleme
 Processes user input, make requests to the background service worker for data, get response, and performs operations on the data to finally present it in the popup page.
 
 **Background service worker**:<br>
-Makes requests to the Django-based localhost server and sends the obtained response back to the popup script. The background service worker is used since it only unloads when the process it has performed has completed, while popup script will unload if you click away from the popup page. This can pose problems, since HTTP requests and data processing can take time, and we want to be able to collect the necessary data any time it is ready.
+Makes requests to the Django-based localhost server and sends the obtained response back to the popup script. Now, note that we can simply use the popup script to send a request to the Django-based localhost server and get back the required response. Practically, taking this approach will not degrade the current performance of the extension. Our reasons for using the background service workers are elaborated in the implementation notes.
 
 ## Python backend dependencies
 To run the backend properly, make sure that you have installed the following Python packages in your Python environment:
@@ -71,9 +71,14 @@ The third input denotes the particular option you want to add to the command. Th
 
 ## Implementation notes
 ### Using service worker vs. using popup script
-To make the request to the server, we can use any extension script. Using popup script would have been most direct, since messaging would not be necessary, and we can directly show the response in the popup page.
-<br><br>
-Our reason for using background service worker was because a background service worker loads when an event it listens for is triggered, and only halts after the completion of its code's exectution. On the other hand, a popup script is only loaded as long as the popup page is loaded. For more time consuming processes, such as text mining or sentiment analysis, it could be an issue, since closing the popup page (maybe by mistake, or to switch to tabs...) would halt those processes.
+To make the request to the server, we can use any extension script. Using popup script would have been most direct, since messaging would not be necessary, and we can directly show the response in the popup page. However, the background service worker is used for the following reasons...
+
+- Abstraction between presentation layer (popup script) and application layer
+- Background service worker only unloads when unused (hence, after it has completed its processes), while popup script unloads when the popup page is closed. In the current implementation of the project, this is not an issue. But to allow for functionalities that may happen independently the popup page, such as
+    - Downloading results from analysis
+    - Perform analysis (which could be time consuming) and store the results in a database to be retrieved when desired
+
+Admittedly, for our project as it is currently, it was not practically necessary to use a background service worker, but we have done so due to the above points.
 
 ### Word cloud script
 The JavaScript code for word cloud was taken from the 'wordcloud' library:
