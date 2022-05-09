@@ -26,7 +26,7 @@ To run the backend properly, make sure that you have installed the following Pyt
 - `textblob`<br>_Needed for lemmatization, POS tagging & sentiment analysis... It depends on the `nltk` package, which should be installed automatically when installing `textblob`_
 - `requests`<br>_Needed for making get requests to a URL to obtain the webpage HTML DOM._
 - `bs4`<br>_Has **BeautifulSoup**, which is needed to parse the received data from a **get** request as HTML._
-- `pandas`<br>_Needed for reading from and writing to CSV files._
+- `csv`<br>_Needed for reading from and writing to CSV files._
 - `re`<br>_Needed for string pattern identification and processing._
 
 ## How to install
