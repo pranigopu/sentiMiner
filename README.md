@@ -76,7 +76,7 @@ To make the request to the server, we can use any extension script. Using popup 
 - Abstraction between presentation layer (popup script) and application layer
 - Background service worker only unloads when unused (hence, after it has completed its processes), while popup script unloads when the popup page is closed. In the current implementation of the project, this is not an issue. But to allow for functionalities that may happen independently the popup page, such as
     - Downloading results from analysis
-    - Perform analysis (which could be time consuming) and store the results in a database to be retrieved when desired
+    - Performing analysis (which could be time consuming) and storing the results in a database to be retrieved when desired
 
 Admittedly, for our project as it is currently, it was not practically necessary to use a background service worker, but we have done so due to the above points.
 
