@@ -18,8 +18,9 @@ def scrapeByValue(request):
     if notEmptyString(scrapeby) == False: return False
     else: return scrapeby
 #================================================
-# SAVING AS CSV
+# WRITING AND READING CSV FILES
 import csv
+# Creating and saving
 def saveCSV(fileName, headers, rows):
     # Saving as CSV file
     file = open(fileName + ".csv", 'w', encoding='UTF8')
@@ -28,6 +29,28 @@ def saveCSV(fileName, headers, rows):
     myWriter.writerow(headers)
     # Giving texts
     myWriter.writerows(rows)
+    # Closing file writer stream
+    file.close()
+
+def readCSV(fileName):
+    file = open(fileName, 'r')
+    print(file)
+    myReader = csv.reader(file)
+    # Taking out the headers
+    next(myReader)
+    """
+    The next() method returns the current row of a
+    file and advances the iterator to the next row
+    """
+    # Obtaining data rows from the file reader stream
+    indices, values = [], []
+    for row in myReader:
+        print(row)
+        indices.append(row[0])
+        values.append(row[1])
+    # Closing file reader stream
+    file.close()
+    return {"index": indices, "value": values}
 #================================================
 # RESPONSE MAKER
 from django.http import JsonResponse
