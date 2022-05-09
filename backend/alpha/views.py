@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 from textblob import Word, TextBlob
-import pandas as pd
 import re
 #================================================
 # Create your views here.
@@ -169,7 +168,7 @@ def format(request): # Simultaneously performs tokenization
     if scrapeby != False: data = scrape(request)
     else: 
         # If "scrape by" value empty, obtaining data from the scraped dataset
-        try: data = pd.read_csv(SCRAPED + ".csv")['value']
+        try: data = readCSV(SCRAPED + ".csv")['value']
         except: return []
     #------------------------
     # Removing punctuations and empty texts
@@ -257,7 +256,7 @@ def clean(request):
     if scrapeByValue(request) != False: data = format(request)
     else: 
         # If "scrape by" value empty, obtaining data from the scraped dataset
-        try: data = pd.read_csv(FORMATTED + ".csv")['value']
+        try: data = readCSV(FORMATTED + ".csv")['value']
         except: return []
     #------------------------
     # Correcting spelling
@@ -298,7 +297,7 @@ def normalize(request):
     if scrapeByValue(request) != False: data = clean(request)
     else: 
         # If "scrape by" value empty, obtaining data from the cleaned dataset
-        try: data = pd.read_csv(CLEANED + ".csv")['value']
+        try: data = readCSV(CLEANED + ".csv")['value']
         except: return []
     #------------------------
     # Tokenizing & simultaneously lemmatizing each review
@@ -319,7 +318,7 @@ def normalize(request):
         for word in x:
             lemma = Word(word[0]).lemmatize()
             # Including token lemma into 'normalizedData' only if POS tags are appropriate
-            if word[1] not in excludedTags: row.append(lemma)
+            if lemma.isalnum() and word[1] not in excludedTags: row.append(lemma)
         
         normalizedData.append(' '.join(row))
     """
@@ -365,7 +364,7 @@ def wordFreq(request):
     # If no summarizable data available for 'normalize'
     else: 
         # If "scrape by" value empty, obtaining data from the cleaned dataset
-        try: data = pd.read_csv(NORMALIZED + ".csv")["value"]
+        try: data = readCSV(NORMALIZED + ".csv")["value"]
         except: return {}
     #------------------------
     freqDist = {}
@@ -431,7 +430,7 @@ def analyze(request):
         normalize(request)
    
    # No 'else' block, since we will always read from the formatted data file anyways...
-    try: data = pd.read_csv(FORMATTED + ".csv")['value']
+    try: data = readCSV(FORMATTED + ".csv")['value']
     except: return []
     #------------------------
     sentiments = []
