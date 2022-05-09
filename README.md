@@ -13,10 +13,10 @@ Run and view the results of text mining and sentiment analysis functions impleme
 
 ## Purpose of each extension script
 **Popup script**:<br>
-Process user input, make requests to the background service worker for data, get response, and perform operations on the data to finally present it in the popup page.
+Processes user input, make requests to the background service worker for data, get response, and performs operations on the data to finally present it in the popup page.
 
 **Background service worker**:<br>
-Make requests to the Django-based localhost server and send response to popup script. Background service worker is used since it only unloads when the process it has performed has completed, while popup script will unload if you click away from the popup page. This can pose problems, since HTTP requests and data processing can take time, and we want to be able to collect the necessary data any time it is ready.
+Makes requests to the Django-based localhost server and sends response to popup script. The background service worker is used since it only unloads when the process it has performed has completed, while popup script will unload if you click away from the popup page. This can pose problems, since HTTP requests and data processing can take time, and we want to be able to collect the necessary data any time it is ready.
 
 ## Python backend dependencies
 To run the backend properly, make sure that you have installed the following Python packages in your Python environment:
