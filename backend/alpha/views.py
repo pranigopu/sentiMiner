@@ -417,11 +417,22 @@ def analyze(request):
     # Checking for user input...
     data = []
     # If "scrape by" value is not empty
-    if scrapeByValue(request) != False: data = format(request)
-    else: 
-        # If "scrape by" value empty, obtaining data from the tokenized dataset
-        try: data = pd.read_csv(FORMATTED + ".csv")['value']
-        except: return []
+    if scrapeByValue(request) != False:
+        # 'format' produces required data for analysis
+        # 'clean' produces required data for normalization
+        # 'normalize' produces required data for summarization
+        # Hence, we will run 'normalize'...
+        """
+        This comes in handy when you run 'analyze' before 'summarize',
+        but want the same data available for 'summarize' as well.
+        It is sufficient to run 'normalize', since it runs 'clean',
+        and 'clean' runs 'format'.
+        """
+        normalize(request)
+   
+   # No 'else' block, since we will always read from the formatted data file anyways...
+    try: data = pd.read_csv(FORMATTED + ".csv")['value']
+    except: return []
     #------------------------
     sentiments = []
     for x in data:
