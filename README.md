@@ -40,29 +40,31 @@ To run the backend properly, make sure that you have installed the following Pyt
 - Click the button of the pinned extension to view the popup and enter commands
 
 ## How to use
-The popup of the extension has three input boxes. The first input denotes the HTML element (in lowercase only) that you want to extract from the current webpage's DOM, such as _p_, _div_, _h1_... The second input denotes the particular command you want to perform on the scraped data. The command list is as follows (in lowercase only):
+The popup of the extension has three inputs. The first input is a text input that denotes the HTML element (in lowercase only) that you want to extract from the current webpage's DOM, such as _p_, _div_, _h1_... The default options (available in the data list for the input) are "Paragraph" and "Sentence", both of which involve scraping the current webpage's paragraph elements. In "Paragraph", the data rows are for each paragraph element's content, while in "Sentence", the data rows are for each sentence in the overall content (obtained by sentence tokenization).
+<br><br>
+The second input is a dropdown menu that contains the commands you you can perform on the scraped data. The command list is as follows:
 
 **Testing functions...**<br>
 
-- scrape _(to simply perform scraping and obtain the data as CSV in the subdirectory "backend/data")_
-- format _(to simply perform text formatting and obtain the data as CSV in the subdirectory "backend/data")_
-- clean _(to simply perform stopword removal and obtain the data as CSV in the subdirectory "backend/data")_
-- normalize _(to simply perform text mining and lemmatization and obtain the data as CSV in the subdirectory "backend/data")_
+- Scrape _(to simply perform scraping and obtain the data as CSV in the subdirectory "backend/data")_
+- Format _(to simply perform text formatting and obtain the data as CSV in the subdirectory "backend/data")_
+- Clean _(to simply perform stopword removal and obtain the data as CSV in the subdirectory "backend/data")_
+- Normalize _(to simply perform text mining and lemmatization and obtain the data as CSV in the subdirectory "backend/data")_
 
 **End-user functions...**<br>
 
-- summarize _(to obtain the word cloud and word frequency bar graph for the normalized data)_
-- analyze _(to obtain bipolar sentiment analysis summary and fine grained analysis of sentiment polarities)_<br>_(Note that sentiment analysis is done element by element. For example, if you have scraped paragraphs using **p** in the first input, the sentiment analysis will be done for each paragraph)_
+- Summarize _(to obtain the word cloud and word frequency bar graph for the normalized data)_
+- Analyze _(to obtain bipolar sentiment analysis summary and fine grained analysis of sentiment polarities)_<br>_(Note that sentiment analysis is done element by element. For example, if you have scraped paragraphs using **p** in the first input, the sentiment analysis will be done for each paragraph)_
 
 The third input denotes the particular option you want to add to the command. The option list is as follows, for each command that has options:
 
-**summarize**<br>
+**Summarize**<br>
 
 - wordcloud _(to only obtain word cloud)_
 - freqdist _(to only obtain word frequency distribution of top 10 most frequent words)_
 - freqdist, n _(where n is an integer, to only obtain word frequency distribution of top n most frequent words)_
 
-**analyze**<br>
+**Analyze**<br>
 
 - bipolar _(to only obtain bipolar sentiments pie chart (positive, negative and neutral))_
 - bipolar, noneutral _(where noneutral is as it is, to only obtain bipolar sentiments pie chart (positive and negative, no neutral))_
