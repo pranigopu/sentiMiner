@@ -37,11 +37,23 @@ To run the backend properly, make sure that you have installed the following Pyt
 - In your local system's terminal / command prompt, navigate to the "backend" subdirectory in the local repository directory
 - Run the "manage.py" file with the option "runserver", i.e. type and enter<br>`python manage.py runserver`
 - In Google Chrome, click the extensions icon in the menu bar and pin this extension (called "Beta")
-- Click the button of the pinned extension to view the popup and enter commands
+- Click the button of the pinned extension to view the popup and enter inputs
 
 ## How to use
-The popup of the extension has three inputs. The first input is a text input that denotes the HTML element (in lowercase only) that you want to extract from the current webpage's DOM, such as _p_, _div_, _h1_... The default options (available in the data list for the input) are "Paragraph" and "Sentence", both of which involve scraping the current webpage's paragraph elements. In "Paragraph", the data rows are for each paragraph element's content, while in "Sentence", the data rows are for each sentence in the overall content (obtained by sentence tokenization).
+The popup of the extension has three inputs.
+
+### Input 1
+The first input is a text input that denotes the HTML element(s) (in lowercase only) that you want to extract from the current webpage's DOM, such as _p_, _div_, _h1_... The default options (available in the data list provided for the input box) are "Paragraph" and "Sentence", both of which involve scraping the current webpage's paragraph elements. In "Paragraph", the data rows are for each paragraph element's content, while in "Sentence", the data rows are for each sentence in the overall content (obtained by sentence tokenization).
 <br><br>
+To further customize the webscraping, you can provide the ID and class of the desired element. Consider the following examples for illustration:
+
+- `p,id=reviews` will scrape all paragraph elements with the ID "reviews"
+- `div,class=nospace` will scrape all div elements that come under the class "nospace"
+- `div,id=reviews,class=nospace` will scrape all div elements that come under the class "nospace" and have the ID "reviews
+
+Note that to specify the tag, you do not need any prefix, while to specify ID, you need the prefix `id=`, and to specify class, you need the prefix `class=`. Also note that each specification should be comma separated, and the order of the comma separated values and the spacing between the comma separated values do not matter.
+
+### Input 2
 The second input is a dropdown menu that contains the commands you you can perform on the scraped data. The command list is as follows:
 
 **Testing functions...**<br>
@@ -56,6 +68,7 @@ The second input is a dropdown menu that contains the commands you you can perfo
 - Summarize _(to obtain the word cloud and word frequency bar graph for the normalized data)_
 - Analyze _(to obtain bipolar sentiment analysis summary and fine grained analysis of sentiment polarities)_<br>_(Note that sentiment analysis is done element by element. For example, if you have scraped paragraphs using **p** in the first input, the sentiment analysis will be done for each paragraph)_
 
+### Input 3
 The third input denotes the particular option you want to add to the command. The option list is as follows, for each command that has options:
 
 **Summarize**<br>
