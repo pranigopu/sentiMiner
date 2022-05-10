@@ -1,6 +1,14 @@
 <html>
     <body>
         <h1>SentiMiner</h1>
+        <label for="backendaddress">Backend address:</label><br>
+        <input id="backendaddress"
+        type="text" list="scrapebychoices"
+        value="http://127.0.0.1:8000/"
+        style="color:blue">
+        <br><br>
+        <!--Default address of the localhost server is http://127.0.0.1:8000/-->
+        <!--Note that http://127.0.0.1 is a generic IP address referring to the user's system (localhost)-->
 
         <label for="scrapeby">Scrape by: </label><br>
         <input id="scrapeby" type="text" list="scrapebychoices">
