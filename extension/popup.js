@@ -46,11 +46,15 @@ function makeRequest(){
             console.log("Current tab URL:", tabs[0].url);
 
             // Creating message
+            // Backend address provided
+            let backendaddress = document.querySelector("#backendaddress").value;
+            // "Scrape by" input
             let scrapeby = getScrapeBy();
             let message = {
                 "operation": usercmd,
                 "scrapeby": scrapeby,
                 "targeturl": tabs[0].url,
+                "backendaddress": backendaddress
             }
 
             // Displaying a statement indicating that the extension is waiting for a response
