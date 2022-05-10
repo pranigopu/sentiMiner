@@ -45,7 +45,7 @@ The popup of the extension has three inputs.
 ### Input 1
 The first input is a text input that denotes the HTML element(s) (in lowercase only) that you want to extract from the current webpage's DOM, such as _p_, _div_, _h1_... The default options (available in the data list provided for the input box) are "Paragraph" and "Sentence", both of which involve scraping the current webpage's paragraph elements. In "Paragraph", the data rows are for each paragraph element's content, while in "Sentence", the data rows are for each sentence in the overall content (obtained by sentence tokenization).
 <br><br>
-To further customize the webscraping, you can provide the ID and class of the desired element. Consider the following examples for illustration:
+To further customize the webscraping, you can provide the ID and class of the desired element. This feature was mainly used for testing, and is not a feature intended for regular usage. Consider the following examples for illustration:
 
 - `p,id=reviews` will scrape all paragraph elements with the ID "reviews"
 - `div,class=nospace` will scrape all div elements that come under the class "nospace"
