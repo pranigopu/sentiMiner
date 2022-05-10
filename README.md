@@ -40,6 +40,16 @@ To run the backend properly, make sure that you have installed the following Pyt
 - Click the button of the pinned extension to view the popup and enter inputs
 
 ## How to use
+### Topmost input (addressing the backend server host)
+For now, in our project, the backend that contains the functions required by our extension is meant to be hosted as an emulated server within the user’s computer (i.e. localhost server). By default, this server runs from the port 8000, making its internal IP address:
+
+- https://127.0.0.1:8000/
+
+(Note that https://127.0.0.1 is generic internal IP address (internal here means within your machine) of your own machine).
+<br><br>
+However, if for some reason the server is run on some other port, we can provide the revised internal IP address of the server to the extension scripts using the topmost input of the popup page of the extension.
+
+### Other three inputs
 Excluding the topmost input (for the backend server host’s address, which is generally unchanged across systems), the popup of the extension has three inputs...
 
 ### Input 1
