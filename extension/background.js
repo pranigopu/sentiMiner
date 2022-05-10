@@ -1,7 +1,3 @@
-// Defining the server address
-let serverhost = "http://127.0.0.1:8000/"; // localhost address
-// NOTE: localhost => my own computer
-
 // Checking if background service worker is loaded properly
 console.log("Background service worker, check.");
 
@@ -9,6 +5,9 @@ console.log("Background service worker, check.");
 chrome.runtime.onMessage.addListener(respondToMessage);
 function respondToMessage(message, sender, sendResponse){
     console.log("Message received:", message);
+    //------------------------------------
+    // Obtaining backend server host's address
+    let backendaddress = message.backendaddress;
     //------------------------------------
     // Defining endpoint URL
     /*
@@ -19,10 +18,10 @@ function respondToMessage(message, sender, sendResponse){
 
     NOTE: For the URL to work, the server should be running!
     */
-    let url = serverhost + "alpha/"; // Base URL, including the web application URL;
+    let url = backendaddress + "alpha/"; // Base URL, including the web application URL;
 
     // Endpoint URL based on the requested service (from the popup script)
-        url = url + message.operation + "?targeturl=" + message.targeturl + "&scrapeby=" + message.scrapeby;
+    url = url + message.operation + "?targeturl=" + message.targeturl + "&scrapeby=" + message.scrapeby;
     // Viewing the URL for confirmation in the console
     console.log("Endpoint URL:", url)
     //------------------------------------
