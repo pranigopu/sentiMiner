@@ -24,7 +24,7 @@ def endpoint(*, request, operation, returnData=True, specialCase=None):
     data, report = [], True
 
     # Obtaining data from the appropriate function
-    # (We don't ValueError exceptions since we don't expect them to happen in this context)
+    # (ValueError exceptions are not handled since we don't expect them to happen here)
     data = {
         'scrape': scrape,
         'format': format,
