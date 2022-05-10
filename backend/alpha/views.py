@@ -277,16 +277,7 @@ def cleanEndpoint(request): return endpoint(request=request, operation='clean', 
 # TOKENIZATION + LEMMATIZATION USING SPACY
 # Main focus is on lemmatization
 # We will use the cleaned data we have obtained for efficiency
-"""
-NOTE ON USAGE OF SPACY VS. NLTK
-I tried NLTK lemmatizer, it was not as effective.
-Hence, I decided to use spaCy, which gave the best results
-for lemmatization, but was sometimes overly aggressive.
-Furthermore, I wanted to reduce the dependencies for this code,
-and spaCy's usage was both very limited and easily replaceable using other imported modules.
-Hence, I settled for the package 'textblob', which gave more satisfactory results than NLTK
-through the module "Word".
-"""
+
 # As an intermediate function
 def normalize(request):
     # Checking for user input...
@@ -326,17 +317,14 @@ def normalize(request):
     so I want this data to be easily accessible by other functions.
     Storing the texts as proper strings make them easier to split and covert to a list.
     
-    NOTE ON POSSIBLE STOPWORD REMOVING WITH LEMMATIZATION
-    Note that the English language model we have instantiated (we named it 'nlp')
-    performs parts-of-speech analysis along with lemmatization.
-    Since most pronouns, prepositions and conjunctions can be considered stopwrds,
-    we could be selective of the words added to our 'normalizedData' list based on their POS tag,
-    given by each token's 'pos_' attribute, which can be accessed using 'word.pos_'.
-    ___
-    However, stopword removal before lemmatization reduces the computational load greatly,
-    hence increasing performance, since POS tagging is more computationally intensive task than stopword removal.
-    Of course, by default, POS tagging is always performed. But by removing stopwords beforehand,
-    POS tagging is done on fewer words, hence improving performance.
+    NOTE ON STOPWORD REMOVING WITH LEMMATIZATION
+    We can exclude many words from the normalized dataset, based on what
+    part of speech they are.
+    
+    POS tagging is more computationally intensive task than stopword removal.
+    Furthermore, stopword removal is more customizable, and needs fewer dependencies.
+    By removing stopwords beforehand, POS tagging is done on fewer words,
+    hence improving performance.
     """
     print("Normalization complete!")
     #------------------------
