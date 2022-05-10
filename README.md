@@ -40,7 +40,7 @@ To run the backend properly, make sure that you have installed the following Pyt
 - Click the button of the pinned extension to view the popup and enter inputs
 
 ## How to use
-The popup of the extension has three inputs.
+Excluding the topmost input (for the backend server host’s address, which is generally unchanged across systems), the popup of the extension has three inputs...
 
 ### Input 1
 The first input is a text input that denotes the HTML element(s) (in lowercase only) that you want to extract from the current webpage's DOM, such as _p_, _div_, _h1_... The default options (available in the data list provided for the input box) are "Paragraph" and "Sentence", both of which involve scraping the current webpage's paragraph elements. In "Paragraph", the data rows are for each paragraph element's content, while in "Sentence", the data rows are for each sentence in the overall content (obtained by sentence tokenization).
