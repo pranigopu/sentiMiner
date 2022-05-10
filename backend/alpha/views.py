@@ -182,7 +182,6 @@ def format(request): # Simultaneously performs tokenization
         # Tokenizing the words in x
         x, row = wordTokenize(x), []
         for word in x:
-            # Removing all words starting with non-alphanumeric or non-space characters
             try:
                 word.strip() # Removing leading or trailing spaces
                 # Appending only non-whitespace words that are not only composed of special characters or numerals
