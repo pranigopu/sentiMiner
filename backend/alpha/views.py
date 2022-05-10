@@ -374,7 +374,8 @@ def wordFreq(request):
             except: freqDist[w] = 1
     
     """
-    For the functions I am using, a dictionary is not very helpful.
+    For the functions I am using in the frontend (Chrome extension scripts),
+    a dictionary data structure is not very helpful.
     I used a dictionary above since it is the most efficient
     data structure for updating word-frequency pairs.
     """
