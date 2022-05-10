@@ -146,8 +146,8 @@ Or for multiple attributes:
 <base url>?attribute1=value1&attribute2=value2...
 
 For the above 'scrape' function, we need to provide:
-http://127.0.0.1:8000/alpha/name?name=xyz
-...to get response of the name 'xyz'.
+http://127.0.0.1:8000/alpha/scrape?scrapeby=xyz
+...to get response of the user input 'xyz'.
 If the attribute is not found, 'None' is returned.
 """
 #================================================
@@ -174,27 +174,26 @@ def format(request): # Simultaneously performs tokenization
     # Removing punctuations and empty texts
     formattedData = []
     # If we need to split the textual data by sentences...
-    if scrapeby=="sentence": data = sentenceTokenize('. '.join(data))
+    if scrapeby=="sentence":
+        # Sentence tokenization
+        data = sentenceTokenize('. '.join(data))
     # Let's go...
     for x in data:
+        # Tokenizing the words in x
         x, row = wordTokenize(x), []
         for word in x:
             # Removing all words starting with non-alphanumeric or non-space characters
             try:
                 word.strip() # Removing leading or trailing spaces
-                # Appending only non-whitespace words not beginning with special characters or numbers
-                if len(word) > 1 and re.match(r"[^\W\d]", word) and not re.search(r"[\)\]\}]", word): row.append(word)
+                # Appending only non-whitespace words that are not only composed of special characters or numerals
+                if len(word) > 1 and re.search(r"[^\W\d]+", word): row.append(word)
                 """
                 NOTE ON ABOVE CONDITIONS
-                --re.match(r"[^\W\d]", word)--
-                checks if the word does not start with special characters or numerals
-                (a word should not start with special characters or numerals).
-
-                However, in case of bracketed statements, brackets may be tokenized
-                along with the word itself, and though starting brackets will be removed
-                by the above match condition, the ending brackets may remain.
-                To resolve this issue, we have designed our word tokenizer to handle brackets
-                as punctuations.
+                --re.search(r"[^\W\d]", word)--
+                checks if the word has at least one character that is not a
+                special character or a digit (a word should not contain only special characters or numerals).
+                This rule helps avoid summarization of citation numbers,
+                page numbers, and other miscellaneous symbols and markers.
                 """
             except: pass
         # Adding row to the list only if row is non-empty
