@@ -34,7 +34,6 @@ def saveCSV(fileName, headers, rows):
 
 def readCSV(fileName):
     file = open(fileName, 'r')
-    print(file)
     myReader = csv.reader(file)
     # Taking out the headers
     next(myReader)
@@ -45,7 +44,6 @@ def readCSV(fileName):
     # Obtaining data rows from the file reader stream
     indices, values = [], []
     for row in myReader:
-        print(row)
         indices.append(row[0])
         values.append(row[1])
     # Closing file reader stream
@@ -148,6 +146,9 @@ def getArgs(userinput):
 #================================================
 # TOKENIZERS
 import re
+def isPunctuation(c):
+    if c in '.,!?;:,\'\"()\{\}[]<>«»': return True
+    return False
 def wordTokenize(txt):
     txt += ' '
     """
@@ -159,10 +160,9 @@ def wordTokenize(txt):
     Hence, we add a space at the end of 'txt' to
     make the code add the last word as well.
     """
-    punctuations = '.,;:,\'\"()\{\}[]<>«»'
     words, tmp = [], ''
     for c in txt:
-        if c in punctuations:
+        if isPunctuation(c):
             words.append(tmp)
             words.append(c) 
             tmp = ''
@@ -178,19 +178,16 @@ def sentenceTokenize(txt):
 # ABBREVIATION DECONTRACTION FOR WHOLE PHRASE
 def decontracted(phrase):
     phrase = phrase.lower()
+    # Replacing ’ with ' for ease of handling shortened words...
+    phrase = re.sub("’", "'", phrase)
 
+    # Expanding 're
     phrase = re.sub(r"\'re", " are", phrase)
     
     # Expanding irregular shortened negatives
-    # Can't
     phrase = re.sub(r"can\'t", "cannot", phrase)
-    phrase = re.sub(r"can\st[\.\,\s]+", "cannot", phrase)
-    # Won't
     phrase = re.sub(r"won\'t", "will not", phrase)
-    phrase = re.sub(r"won\st[\.\,\s]+", "will not ", phrase)
-    # Shan't
     phrase = re.sub(r"shan\'t", "shall not", phrase)
-    phrase = re.sub(r"shan\st[\.\,\s]+", "shall not ", phrase)
     """
     NOTES:
     I think "won't" and "shan't" i.e. "will not" and "shall not"
@@ -199,7 +196,6 @@ def decontracted(phrase):
     
     # Expanding regular shortened negatives
     phrase = re.sub(r"n\'t", " not", phrase)
-    phrase = re.sub(r"n\st[\.\,\s]+", " not ", phrase)
     
     # Other shortened forms
     phrase = re.sub(r"\'d", " would", phrase)
@@ -217,19 +213,19 @@ For the second patterns, since you are also checking for potential spaces, perio
 after n\st, you will also be replacing spaces. Hence, make sure you have
 spaces in the substitute text.
 
-WHY THE SECOND PATTERNS FOR SHORTENED NEGATIVES?
+SPECIAL SINGLE QUOTES
+The character U+2019 "’" could be confused with
+the character U+0060 "`", which is more common in source code.
+
 When tokenizing, the Python code treats the
 directed inverted quotes as whitespace characters.
 Hence, "aren’t" would be tokenized into 'are' and 't'.
 Hence, when the data is cleaned, "aren’t" will become "aren t".
-To account for such issues, I have included a second pattern for each abbreviation.
+To account for such issues, I have substituted all ’ with '.
 
 Note that directed inverted quote are often found in online documents,
 as opposed to the directionless quote that is common in code.
 
-NOTE ON SINGLE QUOTES:
-The character U+2019 "’" could be confused with
-the character U+0060 "`", which is more common in source code.
 """
 #================================================
 # MERGE SORT WITH LABELS (descending order)
