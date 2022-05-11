@@ -1,4 +1,4 @@
-<a href="http://cliparts.co/clipart/3486936" title="Image from cliparts.co"><img src="http://cliparts.co/cliparts/dc4/595/dc4595pzi.png" width="350" alt="The Sword's Other Edge | Daddy Needs a Nap" /></a>
+<a href="http://cliparts.co/clipart/3540379" title="Image from cliparts.co"><img src="http://cliparts.co/cliparts/di9/rkK/di9rkK7nT.png" width="350" alt="Cute Fun Monster Clipart" /></a>
 <br>
 
 # SentiMiner
