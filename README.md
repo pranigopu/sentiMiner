@@ -1,4 +1,4 @@
-<a href="http://cliparts.co/clipart/3540379" title="Image from cliparts.co"><img src="http://cliparts.co/cliparts/di9/rkK/di9rkK7nT.png" width="350" alt="Cute Fun Monster Clipart" /></a>
+<a href="http://cliparts.co/clipart/3540379" title="Image from cliparts.co"><img src="http://cliparts.co/cliparts/di9/rkK/di9rkK7nT.png" width="50" alt="Cute Fun Monster Clipart" /></a>
 <br>
 
 # SentiMiner
