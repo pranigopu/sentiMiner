@@ -89,7 +89,7 @@ function makeRequest(){
                     //------------------------------------
                     // If data is non-empty, then acting based on response operation and user-given option
                     
-                    // Checking for "scrapeby" valueted options (that offer functionalities on top of the respective command)
+                    // Checking for "scrapeby" value's options (that offer functionalities on top of the respective command)
                     /*
                     The full intended format of an option is
                     <option name>, <parameter1>, <parameter2>...
