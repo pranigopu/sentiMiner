@@ -238,10 +238,10 @@ def mergeSort(x, y):
     # If more than one element, split into two and perform merge sort on each partition
     if len(y) > 1:
         mid = len(y) // 2
-        # Dividing into left and right partition
+        # Dividing into left and right partitions
         Lx, Ly = x[:mid], y[:mid]
         Rx, Ry = x[mid:], y[mid:]
-        # Applying merge sort for each partition
+        # Applying merge sort for each partitions
         mergeSort(Lx, Ly)
         mergeSort(Rx, Ry)
         # Merging into descending order
@@ -257,17 +257,17 @@ def mergeSort(x, y):
         """
         NOTE ON ELEMENTS LEFT AFTER 1ST WHILE LOOP
         Due to the way the elements are added in the first while loop,
-        elements will be left out either in the left subtree or in the
-        right subtree, but never in both.
+        elements will be left out either in the left partition or in the
+        right partition, but never in both.
         """
 
 """
 NOTE ON MERGE SORT
 At the last nested call of 'mergeSort' with x and y lengths being more than one,
-the function handles subtrees having either 1 or 0 elements.
-This means the previous call will handle subtrees having either 2 or 1 elements.
-On the whole, this means individual subtrees will be properly sorted.
-Hence, suppose we add all the elements of one subtree in the 1st loop,
-even if we add all the remaining elements of the other subtree in the 2nd or 3rd
+the function handles partitions having either 1 or 0 elements.
+This means the previous call will handle partitions having either 2 or 1 elements.
+On the whole, this means individual partitions will be properly sorted.
+Hence, suppose we add all the elements of one partition in the 1st loop,
+even if we add all the remaining elements of the other partition in the 2nd or 3rd
 loop, the sorting order will be achieved.
 """
