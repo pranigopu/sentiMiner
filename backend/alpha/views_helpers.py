@@ -235,13 +235,13 @@ def mergeSort(x, y):
     # y denotes values
     # NOTE: y will be sorted, x will be changed correspondingly
     
-    # If more than one element, split into two and perform merge sort on each subtree
+    # If more than one element, split into two and perform merge sort on each partition
     if len(y) > 1:
         mid = len(y) // 2
-        # Dividing into left and right subtrees
+        # Dividing into left and right partition
         Lx, Ly = x[:mid], y[:mid]
         Rx, Ry = x[mid:], y[mid:]
-        # Applying merge sort for each subtree
+        # Applying merge sort for each partition
         mergeSort(Lx, Ly)
         mergeSort(Rx, Ry)
         # Merging into descending order
@@ -250,9 +250,9 @@ def mergeSort(x, y):
             if Ly[i] > Ry[j]: x[k], y[k], i = Lx[i], Ly[i], i+1
             else: x[k], y[k], j = Rx[j], Ry[j], j + 1
             k += 1
-        # If elements were left out in left subtree
+        # If elements were left out in left partition
         while i < len(Ly): x[k], y[k], i, k = Lx[i], Ly[i], i+1, k+1
-        # If elements were left out in right subtree
+        # If elements were left out in right partition
         while j < len(Ry): x[k], y[k], j, k = Rx[j], Ry[j], j+1, k+1
         """
         NOTE ON ELEMENTS LEFT AFTER 1ST WHILE LOOP
