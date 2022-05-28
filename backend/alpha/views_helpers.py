@@ -250,9 +250,9 @@ def mergeSort(x, y):
             if Ly[i] > Ry[j]: x[k], y[k], i = Lx[i], Ly[i], i+1
             else: x[k], y[k], j = Rx[j], Ry[j], j + 1
             k += 1
-        # If an element was left out in left subtree
+        # If elements were left out in left subtree
         while i < len(Ly): x[k], y[k], i, k = Lx[i], Ly[i], i+1, k+1
-        # If an element were left out in left subtree
+        # If elements were left out in right subtree
         while j < len(Ry): x[k], y[k], j, k = Rx[j], Ry[j], j+1, k+1
         """
         NOTE ON ELEMENTS LEFT AFTER 1ST WHILE LOOP
