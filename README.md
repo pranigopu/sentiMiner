@@ -16,7 +16,7 @@ Run and view the results of text mining and sentiment analysis functions impleme
 
 ## Purpose of each extension script
 **Popup script**:<br>
-Processes user input, make requests to the background service worker for data, get response, and performs operations on the data to finally present it in the popup page.
+Processes user input, makes requests to the background service worker for data, gets the response, and performs operations on the data received from the response (if at all) to finally present it in the popup page.
 
 **Background service worker**:<br>
 Makes requests to the Django-based localhost server and sends the obtained response back to the popup script. Now, note that we can simply use the popup script to send a request to the Django-based localhost server and get back the required response. Practically, taking this approach will not degrade the current performance of the extension. Our reasons for using the background service workers are elaborated in the implementation notes.
