@@ -102,7 +102,7 @@ The third input denotes the particular option you want to add to the command. Th
 To make the request to the server, we can use any extension script. Using popup script would have been most direct, since messaging would not be necessary, and we can directly show the response in the popup page. However, the background service worker is used for the following reasons...
 
 - Abstraction between presentation layer (popup script) and application layer
-- Background service worker only unloads when unused (hence, after it has completed its processes), while popup script unloads when the popup page is closed. In the current implementation of the project, this is not an issue. But to allow for functionalities that may happen independently the popup page, such as
+- Background service worker only unloads when unused (hence, after it has completed its processes), while popup script unloads when the popup page is closed. In the current implementation of the project, this is not an issue. But this allows for functionalities that may happen independently the popup page, such as
     - Downloading results from analysis
     - Performing analysis (which could be time consuming) and storing the results in a database to be retrieved when desired
 
