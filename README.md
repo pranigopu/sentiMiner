@@ -1,5 +1,6 @@
 <div style="margin:auto;padding-left:40%;"><a href="http://cliparts.co/clipart/3540379" title="Image from cliparts.co"><img src="http://cliparts.co/cliparts/di9/rkK/di9rkK7nT.png" width="100" alt="Cute Fun Monster Clipart" /></a></div>
 <br>
+
 # SentiMiner
 _Text mining & sentiment analysis Chrome extension (prototype)_
 
