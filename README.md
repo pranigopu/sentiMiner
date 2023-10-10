@@ -1,8 +1,15 @@
 <div style="margin:auto;padding-left:40%;"><a href="http://cliparts.co/clipart/3540379" title="Image from cliparts.co"><img src="http://cliparts.co/cliparts/di9/rkK/di9rkK7nT.png" width="100" alt="Cute Fun Monster Clipart" /></a></div>
 <br>
-
 # SentiMiner
 _Text mining & sentiment analysis Chrome extension (prototype)_
+
+## Credits
+This project is the combined work of the following people:
+
+- Hyeok Kim
+- Barath Sudhakar
+- Pranav Gopalkrishna
+
 ## Test repositories for this project
 - Test codes and notes for sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
 
