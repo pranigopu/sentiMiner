@@ -9,7 +9,7 @@ This project is the combined work of the following people:
 
 - Hyeok Kim
 - Barath Sudhakar
-- Pranav Gopalkrishna
+- Pranav Gopalkrishna (a.k.a. Prani Gopu)
 
 ## Test repositories for this project
 - Test codes and notes for sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
