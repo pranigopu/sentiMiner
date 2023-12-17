@@ -220,4 +220,4 @@ For example, if the spell-checking operations are taking too long and are not th
 #### Note on the difference in formatting and cleaning
 Formatted data is better for sentiment analysis, since key stopwords such as 'not', 'don't', etc. are not omitted, and hence the full underlying sentiment is preserved.
 <br><br>
-Formatted data after stopword removal is better for summarizing, since stopwords are omitted, and only the words more indicative of the contents of the text are retained.
+Clearned data, i.e. ormatted data after stopword removal is better for summarizing, since stopwords are omitted, and only the words more indicative of the contents of the text are retained.
