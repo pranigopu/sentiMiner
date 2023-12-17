@@ -56,7 +56,7 @@ For now, in our project, the backend that contains the functions required by our
 
 - https://127.0.0.1:8000/
 
-(Note that https://127.0.0.1 is generic internal IP address (internal here means within your machine) of your own machine).
+(Note that https://127.0.0.1 is generic internal IP address (internal here means within the scope of your machine) of your own machine).
 <br><br>
 However, if for some reason the server is run on some other port, we can provide the revised internal IP address of the server to the extension scripts using the topmost input of the popup page of the extension.
 
