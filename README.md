@@ -196,7 +196,7 @@ We were using 'nltk.word_tokenize' from the 'nltk' library to tokenize words sin
 <br><br>
 For a similar reason, we were using 'nltk.sent_tokenize' from the nltk library to split a paragraphs into sentences (if splitBySentence == True). However, to reduce the dependencies for this code, we have created a function to achieve what 'nltk.sent_tokenize' achieves.
 <br><br>
-Now note that when we say "reduce dependencies", we don't mean remove the dependency on NLTK, since the TextBlob package depends on NLTK. However, "reduce dependencies" does mean that nothing extra will need to be downloaded or installed from the broader NLTK library, such as the `punkt` module, which contains the word and sentence tokenizing functions.
+Note that when we say "reduce dependencies", we don't mean remove the dependency on NLTK, since the TextBlob package depends on NLTK. However, "reduce dependencies" does mean that nothing extra will need to be downloaded or installed from the broader NLTK library, such as the `punkt` module, which contains the word and sentence tokenizing functions.
 
 ### Data formatting and cleaning
 #### Process flow
