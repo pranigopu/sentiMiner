@@ -7,8 +7,8 @@ _Text mining & sentiment analysis Chrome extension (prototype)_
 ## Credits
 This project is the combined work of the following people:
 
-- Hyeok Kim
-- Barath Sudhakar
+- Barath Sudhakar (a.k.a. S Barath)
+- Hyeok Kim (a.k.a. Kim-Hyeok)
 - Pranav Gopalkrishna (a.k.a. Prani Gopu)
 
 ## Test repositories for this project
