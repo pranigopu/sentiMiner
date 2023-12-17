@@ -146,7 +146,7 @@ I have modified the installed package (in the "extension" directory in the repos
 #### Accessing through popup script
 To access and instantiate the 'Chart' class from 'chart.js' using the popup script, I simply include the script in 'popup.html' before the popup script. The required canvas element must be created in the popup page's DOM, either dynamically or in the HTML document itself.
 
-#### NOTE ON THE Chart.js library AND REUSING CANVAS ELEMENT
+#### NOTE ON THE Chart.js LIBRARY AND REUSING CANVAS ELEMENT
     
 Unlike the word cloud function we used, we cannot simply add the new chart to the same canvas element if we had already added an instance to it. This is because the canvas element for which the chart object was created acts as a unique key for the chart object, hence preventing other chart objects from using the same key i.e. canvas element. Applying `.destroy` to a chart object destroys a created chart instance. This will clean up any references stored in the chart object, along with any associated event listeners attached to the JavaScript code by the 'Chart.js' library. This must be called before the canvas is reused for a new chart.
 <br><br>
