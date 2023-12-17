@@ -166,11 +166,12 @@ Here, `key` refers to the canvas element. It can be any one of the following:
 - https://stackoverflow.com/questions/40056555/destroy-chart-js-bar-graph-to-redraw-other-graph-in-same-canvas
 
 ### Cross origin request from extension to localhost server
-**NOTE 1**: "Cross-origin" refers to the case wherein requests for data or resources are sent from a different domain or origin.
-<br>
-**NOTE 2**: CORS stands for "Cross-Origin Resource Sharing".
-<br><br>
-To prevent leaks of sensitive information, webpages are generally not allowed to fetch cross-origin data or share cross-origin resources. Unless a valid CORS header is present on the response, the page's request will fail with an error like the one above.
+**PRELIMINARY POINTS**:
+
+- "Cross-origin" implies that requests for data or resources are sent from a different domain or origin
+- CORS stands for "Cross-Origin Resource Sharing"
+
+<br>To prevent leaks of sensitive information, webpages are generally not allowed to fetch cross-origin data or share cross-origin resources. Unless a valid CORS header is present on the response, the page's request will fail with an error like the one above.
 <br><br>
 A valid CORS header in this case would indicate that the requested resource (in whose response the header would be present) (ex. a server host or website) allows requests from other origins (ex. other server hosts or websites) to access its resources (ex. response data).
 
