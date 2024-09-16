@@ -70,7 +70,7 @@ To further customize the webscraping, you can provide the ID and class of the de
 
 - `p,id=reviews` will scrape all paragraph elements with the ID "reviews"
 - `div,class=nospace` will scrape all div elements that come under the class "nospace"
-- `div,id=reviews,class=nospace` will scrape all div elements that come under the class "nospace" and have the ID "reviews
+- `div,id=reviews,class=nospace` will scrape all div elements that come under the class "nospace" and have the ID "reviews"
 
 Note that to specify the tag, you do not need any prefix, while to specify ID, you need the prefix `id=`, and to specify class, you need the prefix `class=`. Also note that each specification should be comma separated, and the order of the comma separated values and the spacing between the comma separated values do not matter.
 
