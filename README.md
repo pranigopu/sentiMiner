@@ -34,7 +34,7 @@ This project is the combined work of the following people (in alphabetic order):
     - [Accessing through content script (unused)](#accessing-through-content-script-unused)
   - [Graph and chart script](#graph-and-chart-script)
     - [Accessing through popup script](#accessing-through-popup-script-1)
-    - [NOTE ON THE Chart.js LIBRARY AND REUSING CANVAS ELEMENT](#note-on-the-chartjs-library-and-reusing-canvas-element)
+    - [Note on the Chart.js library and reusing canvas element](#note-on-the-chartjs-library-and-reusing-canvas-element)
       - [REFERENCES](#references)
   - [Cross origin request from extension to localhost server](#cross-origin-request-from-extension-to-localhost-server)
     - [Reiteration of key point and side notes](#reiteration-of-key-point-and-side-notes)
