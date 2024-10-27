@@ -59,10 +59,10 @@ There are expected to be three analysis modules, one for fine-grained analysis, 
 - Prediction (of sentiment, based on trained models)
 
 # Users & clients for the application 
-Businesses looking for reviews on their products and responses to their campaigns
-Application developers looking for feedback on their application
-Surveyors
-Market researchers
+- Businesses looking for reviews on their products and responses to their campaigns
+- Application developers looking for feedback on their application
+- Surveyors
+- Market researchers
 
 # Assumptions
 We are assuming the following for our project:
