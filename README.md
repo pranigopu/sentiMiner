@@ -11,18 +11,12 @@ This project is the combined work of the following people (in alphabetic order):
 - Hyeok Kim (a.k.a. Kim-Hyeok)
 - Pranav Gopalkrishna (a.k.a. Prani Gopu)
 
-## Test repositories for this project
-- Test codes and notes for sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
-
-## Other learning repositories
-- Learning about text mining:<br>https://github.com/pranigopu/exploringTextMining
-- Learning about browser extension:<br>https://github.com/pranigopu/exploringChromeExtensions
-- Learning TensorFlow:<br>https://github.com/pranigopu/exploringTensorFlow
-
 ---
 
 **Document Navigation**:
 
+- [Test repositories for this project](#test-repositories-for-this-project)
+- [Other learning repositories](#other-learning-repositories)
 - [Project aims](#project-aims)
 - [Purpose of each extension script](#purpose-of-each-extension-script)
 - [Python backend dependencies](#python-backend-dependencies)
@@ -53,6 +47,14 @@ This project is the combined work of the following people (in alphabetic order):
     - [Note on the difference in formatting and cleaning](#note-on-the-difference-in-formatting-and-cleaning)
 
 ---
+
+## Test repositories for this project
+- Test codes and notes for sentiment analysis:<br>https://github.com/pranigopu/exploringSentimentAnalysis
+
+## Other learning repositories
+- Learning about text mining:<br>https://github.com/pranigopu/exploringTextMining
+- Learning about browser extension:<br>https://github.com/pranigopu/exploringChromeExtensions
+- Learning TensorFlow:<br>https://github.com/pranigopu/exploringTensorFlow
 
 ## Project aims
 Run and view the results of text mining and sentiment analysis functions implemented in a Python backend using a Chrome extension.
