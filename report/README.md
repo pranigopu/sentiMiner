@@ -67,9 +67,5 @@ Market researchers
 # Assumptions
 We are assuming the following for our project:
 
-1.<br>
-
-We will be able to read and organise textual data from any website, and use this data within our analytical code at runtime.
-
-2.<br>
-We will be able to train models for recognizing aspects (particular topics of interest) effectively for a wide range of applications, i.e. we will have sufficient and accurate training data.
+1. We will be able to read and organise textual data from any website, and use this data within our analytical code at runtime
+2. We will be able to train models for recognizing aspects (particular topics of interest) effectively for a wide range of applications, i.e. we will have sufficient and accurate training data
