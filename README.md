@@ -23,10 +23,7 @@ This project is the combined work of the following people (in alphabetic order):
 - [How to install](#how-to-install)
 - [How to use](#how-to-use)
   - [Topmost input (addressing the backend server host)](#topmost-input-addressing-the-backend-server-host)
-  - [Other three inputs](#other-three-inputs)
-  - [Input 1](#input-1)
-  - [Input 2](#input-2)
-  - [Input 3](#input-3)<br><br>
+  - [Other three inputs](#other-three-inputs)<br><br>
 - [Implementation notes](#implementation-notes)
   - [Using service worker vs. using popup script](#using-service-worker-vs-using-popup-script)
   - [Word cloud script](#word-cloud-script)
